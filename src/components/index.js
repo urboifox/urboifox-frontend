@@ -1,6 +1,6 @@
 import Blob from "./Blob";
 import Cursor from "./Cursor";
 import Home from "./Home";
-import ScrollBottom from "./ScrollBottom";
+import ChevronButton from "./ChevronButton";
 
-export { Blob, Cursor, Home, ScrollBottom };
+export { Blob, Cursor, Home, ChevronButton };

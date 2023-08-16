@@ -23,6 +23,7 @@ function App() {
       <Cursor />
       {/* <Blob /> */}
       <RouterProvider router={myRouter} />
+      <div className="h-[300vh]"></div>
     </>
   );
 }
