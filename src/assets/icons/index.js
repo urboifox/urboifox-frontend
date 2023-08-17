@@ -1,3 +1,4 @@
 import ChevronBottom from "./ChevronBottom";
-
-export { ChevronBottom };
+import Sun from "./Sun";
+import Burger from "./Burger";
+export { ChevronBottom, Sun, Burger };

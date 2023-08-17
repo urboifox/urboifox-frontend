@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { ChevronBottom } from "../../assets/icons/";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 
 const ScrollBottom = () => {
   const [isHovered, setIsHovered] = useState(false);
-
+  const darkTheme = useSelector((state) => state.theme.darkTheme);
   return (
     <div
       onMouseEnter={() => setIsHovered(true)}
@@ -21,10 +22,18 @@ const ScrollBottom = () => {
           ease: "circOut",
         }}
         whileTap={{ scale: 0.4 }}
-        className="md:group-hover:bg-light transition-all ease-out duration-700 border-2 border-light rounded-full aspect-square w-full flex items-center justify-center"
+        className={`${
+          darkTheme
+            ? "md:group-hover:bg-light border-light"
+            : "md:group-hover:bg-dark border-dark"
+        } transition-all ease-out duration-700 border-2  rounded-full aspect-square w-full flex items-center justify-center`}
       >
         <ChevronBottom
-          className={`stroke-light scale-75 md:scale-50 aspect-square md:group-hover:stroke-dark transition-all duration-300`}
+          className={`${
+            darkTheme
+              ? "stroke-light md:group-hover:stroke-dark"
+              : "stroke-dark md:group-hover:stroke-light"
+          } scale-75 md:scale-50 aspect-square  transition-all duration-300`}
         />
       </motion.div>
     </div>

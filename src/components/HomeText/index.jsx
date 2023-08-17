@@ -1,7 +1,14 @@
+import { useSelector } from "react-redux";
+
 const HomeText = () => {
+  const darkTheme = useSelector((state) => state.theme.darkTheme);
   return (
     <div>
-      <div className="flex flex-col link absolute top-[25%] md:top-[20%] left-5 md:left-20 text-dimmed text-xs md:text-base font-extralight opacity-20 transition-all duration-500 md:hover:opacity-100">
+      <div
+        className={`${
+          darkTheme ? "text-dimmed opacity-20" : "text-dark opacity-40"
+        } flex flex-col link absolute top-[25%] md:top-[20%] left-5 md:left-20 text-xs md:text-base font-extralight  transition-all duration-500 md:hover:opacity-100`}
+      >
         <span className="block">{"<p>"}</span>
         <div className="inline-block translate-x-5">
           <div className="wrapper">
@@ -22,7 +29,11 @@ const HomeText = () => {
         </div>
         <span className="block">{"</p>"}</span>
       </div>
-      <div className="flex flex-col ml-10 link absolute bottom-[25%] md:bottom-[20%] right-10 md:right-20 text-dimmed text-xs md:text-base font-extralight opacity-20 transition-all duration-500 lg:hover:opacity-100">
+      <div
+        className={`${
+          darkTheme ? "text-dimmed opacity-20" : "text-dark opacity-50"
+        } flex flex-col ml-10 link absolute bottom-[25%] md:bottom-[20%] right-10 md:right-20  text-xs md:text-base font-extralight transition-all duration-500 lg:hover:opacity-100`}
+      >
         <span className="block">{"<p>"}</span>
         <div className="inline-block translate-x-5">
           <div className="wrapper">

@@ -12,6 +12,7 @@ export default {
         dark: "#141414",
         light: "#ffffff",
         dimmed: "#ffffff80",
+        darkDimmed: "#14141480",
         gradient: {
           100: "#24C6DC",
           200: "#514A9D",

@@ -2,9 +2,11 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useSelector } from "react-redux";
 gsap.registerPlugin(ScrollTrigger);
 
 const Heading = () => {
+  const darkTheme = useSelector((state) => state.theme.darkTheme);
   const openTag = useRef(null);
   const closeTag = useRef(null);
   const scope = useRef(null);
@@ -28,7 +30,7 @@ const Heading = () => {
       }
 
       headingTl.to("h1", {
-        y: 70,
+        y: window.innerWidth < 767 ? 50 : 100,
         ease: "none",
         scrollTrigger: {
           trigger: "h1",
@@ -47,7 +49,11 @@ const Heading = () => {
   }, []);
   return (
     <div ref={scope} className="headingContainer">
-      <h1 className="m-0 lg:mainHeading link text-7xl md:text-9xl font-cursive font-extralight text-dimmed">
+      <h1
+        className={`${
+          darkTheme ? "text-dimmed" : "text-darkDimmed"
+        } transition-all duration-500 m-0 lg:mainHeading link text-7xl md:text-9xl font-cursive font-extralight`}
+      >
         <span ref={openTag} className="inline-flex">
           {"<"}
         </span>
@@ -60,7 +66,9 @@ const Heading = () => {
             bottom: 20,
             left: 20,
           }}
-          className="font-medium inline-block text-white textAnimate"
+          className={`${
+            darkTheme ? "text-light" : "text-dark"
+          } font-medium inline-block textAnimate transition-all duration-500`}
         >
           Fox
         </motion.span>
