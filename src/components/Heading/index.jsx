@@ -52,9 +52,9 @@ const Heading = () => {
       <h1
         className={`${
           darkTheme ? "text-dimmed" : "text-darkDimmed"
-        } transition-all duration-500 m-0 lg:mainHeading link text-7xl md:text-9xl font-cursive font-extralight`}
+        }  m-0 lg:mainHeading link text-7xl md:text-9xl font-cursive font-extralight`}
       >
-        <span ref={openTag} className="inline-flex">
+        <span ref={openTag} className="inline-flex transition-all duration-500">
           {"<"}
         </span>
         <motion.span
@@ -73,7 +73,10 @@ const Heading = () => {
           Fox
         </motion.span>
         {` `}
-        <span ref={closeTag} className="inline-flex">
+        <span
+          ref={closeTag}
+          className="inline-flex transition-all duration-500"
+        >
           {" />"}
         </span>
       </h1>
