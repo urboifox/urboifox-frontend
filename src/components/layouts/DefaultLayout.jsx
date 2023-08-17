@@ -2,10 +2,21 @@ import { Circ, gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import { Outlet } from "react-router";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useDispatch } from "react-redux";
+import { setTheme } from "../../redux/slices/themeSlice";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const DefaultLayout = () => {
+  const dispatch = useDispatch();
+  const localDarkTheme = localStorage.getItem("darkTheme");
+  function initiateTheme() {
+    if (localDarkTheme) {
+      dispatch(setTheme(JSON.parse(localDarkTheme)));
+    }
+  }
+  initiateTheme();
+
   const scope = useRef(null);
   useEffect(() => {
     const ctx = gsap.context(() => {
