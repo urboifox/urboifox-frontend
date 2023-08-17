@@ -13,6 +13,8 @@ const DefaultLayout = () => {
   function initiateTheme() {
     if (localDarkTheme) {
       dispatch(setTheme(JSON.parse(localDarkTheme)));
+    } else {
+      dispatch(setTheme(true));
     }
   }
   initiateTheme();
