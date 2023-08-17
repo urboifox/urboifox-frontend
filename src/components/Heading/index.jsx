@@ -5,10 +5,28 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Heading = () => {
+  const openTag = useRef(null);
+  const closeTag = useRef(null);
   const scope = useRef(null);
   useEffect(() => {
     const ctx = gsap.context(() => {
       const headingTl = gsap.timeline();
+
+      function handleTagsAnimation(e, direction) {
+        const tagsTl = gsap.timeline();
+        tagsTl
+          .to(e, {
+            x: direction === "left" ? -50 : 50,
+            duration: 0.8,
+            delay: 1,
+          })
+          .to(e, {
+            x: 0,
+            duration: 0.1,
+            ease: "none",
+          });
+      }
+
       headingTl.to("h1", {
         y: 70,
         ease: "none",
@@ -20,6 +38,8 @@ const Heading = () => {
           pin: false,
         },
       });
+      handleTagsAnimation(openTag.current, "left");
+      handleTagsAnimation(closeTag.current, "right");
     }, scope);
     return () => {
       ctx.revert();
@@ -28,7 +48,9 @@ const Heading = () => {
   return (
     <div ref={scope} className="headingContainer">
       <h1 className="m-0 lg:mainHeading link text-7xl md:text-9xl font-cursive font-extralight text-dimmed">
-        {"<"}
+        <span ref={openTag} className="inline-flex">
+          {"<"}
+        </span>
         <motion.span
           drag
           dragSnapToOrigin
@@ -42,7 +64,10 @@ const Heading = () => {
         >
           Fox
         </motion.span>
-        {" />"}
+        {` `}
+        <span ref={closeTag} className="inline-flex">
+          {" />"}
+        </span>
       </h1>
     </div>
   );

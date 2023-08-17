@@ -13,6 +13,13 @@ $dimmed-color: #ffffff80;
   margin: 0;
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: none;
+}
 
 body {
   font-size: 16px;

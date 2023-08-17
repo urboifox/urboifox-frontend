@@ -20,7 +20,7 @@ const ScrollBottom = () => {
           duration: 0.2,
           ease: "circOut",
         }}
-        whileTap={{ scale: 0.9 }}
+        whileTap={{ scale: 0.4 }}
         className="md:group-hover:bg-light transition-all ease-out duration-700 border-2 border-light rounded-full aspect-square w-full flex items-center justify-center"
       >
         <ChevronBottom
