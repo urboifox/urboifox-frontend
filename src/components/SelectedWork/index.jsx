@@ -3,14 +3,16 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Skeleton from "react-loading-skeleton";
+gsap.registerPlugin(ScrollTrigger);
 const SelectedWork = () => {
   const elements = useSelector((state) => state.websiteData.data.selected_work);
   const sectionRef = useRef(null);
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const ctx = gsap.context(() => {
-      gsap.fromTo(
+      gsap.to(sectionRef.current, { x: "0", duration: 0.0000000000001 });
+      const tl = gsap.timeline();
+      tl.fromTo(
         sectionRef.current,
         { x: "0" },
         {
@@ -24,8 +26,7 @@ const SelectedWork = () => {
             end: "45% 60%",
           },
         }
-      );
-      gsap.fromTo(
+      ).fromTo(
         sectionRef.current,
         { x: "-50%" },
         {
@@ -49,22 +50,38 @@ const SelectedWork = () => {
   return (
     <div className="mt-96 flex justify-center relative  mx-auto">
       <motion.div ref={sectionRef} className="w-max flex flex-col gap-52 ">
-        {elements?.map((element, i) => {
-          return (
-            <motion.div
-              initial={{ x: i % 2 !== 0 ? "50%" : "0" }}
-              key={element.id}
-              className={`max-w-[60rem]`}
-            >
-              <img
-                draggable={false}
-                className="w-full object-cover"
-                src={element.img}
-                alt={element.description}
-              />
-            </motion.div>
-          );
-        })}
+        {elements
+          ? elements?.map((element, i) => {
+              return (
+                <motion.div
+                  initial={{ x: i % 2 !== 0 ? "50%" : "0" }}
+                  key={element.id}
+                  className={`w-[60rem] aspect-video`}
+                >
+                  <motion.img
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { duration: 0.5 } }}
+                    draggable={false}
+                    className="w-full object-cover h-full"
+                    src={element.img}
+                    alt={element.description}
+                  />
+                </motion.div>
+              );
+            })
+          : Array(3)
+              .fill(0)
+              .map((_, i) => {
+                return (
+                  <motion.div
+                    initial={{ x: i % 2 !== 0 ? "50%" : "0" }}
+                    key={i}
+                    className={`w-[60rem] aspect-video`}
+                  >
+                    <Skeleton width={"100%"} height={"100%"} />
+                  </motion.div>
+                );
+              })}
       </motion.div>
     </div>
   );

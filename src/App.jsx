@@ -5,6 +5,8 @@ import { RouterProvider } from "react-router";
 import myRouter from "./routes";
 import { useSelector } from "react-redux";
 import { lenis } from "./lenis";
+import { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 function App() {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   document.body.style.backgroundColor = darkTheme ? "#111" : "#ddd";
@@ -19,11 +21,13 @@ function App() {
 
   return (
     <>
-      <ScrollBar />
-      <Cursor />
-      {/* <Blob /> */}
-      <RouterProvider router={myRouter} />
-      <div className="h-[300vh]"></div>
+      <SkeletonTheme baseColor="#141414" highlightColor="#444">
+        <ScrollBar />
+        <Cursor />
+        {/* <Blob /> */}
+        <RouterProvider router={myRouter} />
+        <div className="h-[300vh]"></div>
+      </SkeletonTheme>
     </>
   );
 }

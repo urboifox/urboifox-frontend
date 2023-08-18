@@ -26,7 +26,10 @@ const ScrollBar = () => {
     };
   }, []);
   return (
-    <div ref={scrollbar} className="fixed w-1 h-0 bg-light top-0 right-0"></div>
+    <div
+      ref={scrollbar}
+      className="fixed w-1 h-0 bg-light top-0 right-0 z-[999999]"
+    ></div>
   );
 };
 
