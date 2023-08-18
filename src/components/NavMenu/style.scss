@@ -1,5 +1,5 @@
 .navMenuUl li {
-  @apply p-10 pr-32 w-full uppercase border-b transition-colors duration-75;
+  @apply p-8 md:p-10 pr-32 w-full uppercase border-b transition-colors duration-75;
   &:first-child {
     @apply border-t;
   }
