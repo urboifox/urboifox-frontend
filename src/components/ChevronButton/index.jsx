@@ -21,7 +21,7 @@ const ScrollBottom = () => {
           duration: 0.2,
           ease: "circOut",
         }}
-        whileTap={{ scale: window.innerWidth > 767 && 0.4 }}
+        whileTap={{ scale: window.innerWidth > 767 ? 0.4 : 0.9 }}
         className={`${
           darkTheme
             ? "md:group-hover:bg-light border-light"

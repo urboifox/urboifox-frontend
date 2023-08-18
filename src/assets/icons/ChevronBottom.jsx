@@ -19,7 +19,7 @@ const ChevronBottom = ({ className }) => {
           {" "}
           <path
             d="M6 9L12 15L18 9"
-            strokeWidth="0.36"
+            strokeWidth="0.5"
             strokeLinecap="round"
             strokeLinejoin="round"
           ></path>{" "}
