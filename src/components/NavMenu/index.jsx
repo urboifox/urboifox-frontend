@@ -31,44 +31,37 @@ const NavMenu = () => {
   }, [menuVisible]);
 
   return (
-    <AnimatePresence initial={false} mode="wait">
-      {menuVisible && (
-        <>
-          <motion.div
-            onClick={() => handleToggleMenu()}
-            key={"blur"}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 100,
-              transition: {
-                duration: 0.2,
-              },
-            }}
-            exit={{ opacity: 0 }}
-            className="fixed w-full h-full backdrop-blur-md z-30 top-0 left-0"
-          ></motion.div>
-          <motion.div
-            key={"menu"}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 100,
-              transition: {
-                duration: 0.4,
-              },
-            }}
-            exit={{ opacity: 0 }}
-            className={`${
-              darkTheme ? "text-light " : " text-dark"
-            } left-0 h-full fixed flex items-center transition-colors duration-300 top-0 font-extralight w-[70%] md:w-1/2 lg:w-1/3 tracking-[.15em] z-50`}
-          >
-            <ul
-              ref={list}
-              className="flex flex-col item-center  w-full navMenuUl text-xl md:text-2xl xl:text-5xl"
+    <>
+      <AnimatePresence initial={false}>
+        {menuVisible && (
+          <>
+            <motion.div
+              onClick={() => handleToggleMenu()}
+              key={"blur"}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: {
+                  duration: 0.2,
+                },
+              }}
+              exit={{ opacity: 0 }}
+              className="fixed w-full h-full backdrop-blur-md z-30 top-0 left-0"
+            ></motion.div>
+            <motion.div
+              key={"menu"}
+              className={`${
+                darkTheme ? "text-light " : " text-dark"
+              } left-0 h-full fixed flex items-center transition-colors duration-300 top-0 font-extralight w-[70%] md:w-1/2 lg:w-1/3 tracking-[.15em] z-50`}
             >
-              {listItems.map((itemText, i) => {
-                return (
-                  <>
+              <ul
+                ref={list}
+                className="flex flex-col item-center  w-full navMenuUl text-xl md:text-2xl xl:text-5xl"
+              >
+                {listItems.map((itemText, i) => {
+                  return (
                     <Link
+                      key={i}
                       to={
                         itemText.toLowerCase() === "home"
                           ? "/"
@@ -81,16 +74,21 @@ const NavMenu = () => {
                         animate={{
                           x: 0,
                           opacity: 1,
+                          transition: {
+                            // duration: 0.1,
+                            delay: i * 0.1,
+                            type: "spring",
+                            stiffness: 80,
+                            damping: 15,
+                          },
                         }}
-                        exit={{ x: -200, opacity: 0 }}
-                        transition={{
-                          duration: 0.3,
-                          delay: i * 0.1,
-                          type: "spring",
-                          stiffness: 80,
-                          damping: 10,
+                        exit={{
+                          x: -200,
+                          opacity: 0,
+                          transition: {
+                            duration: 0.1,
+                          },
                         }}
-                        key={i}
                         className={`${
                           darkTheme ? "before:bg-light" : "before:bg-dark"
                         } link`}
@@ -98,14 +96,14 @@ const NavMenu = () => {
                         {itemText}
                       </motion.li>
                     </Link>
-                  </>
-                );
-              })}
-            </ul>
-          </motion.div>
-        </>
-      )}
-    </AnimatePresence>
+                  );
+                })}
+              </ul>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

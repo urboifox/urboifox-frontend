@@ -7,6 +7,8 @@ import HomeText from "./HomeText";
 import ScrollBar from "./ScrollBar";
 import Navbar from "./Navbar";
 import NavMenu from "./NavMenu";
+import NotFound from "./NotFound";
+
 export {
   Blob,
   Cursor,
@@ -17,4 +19,5 @@ export {
   ScrollBar,
   Navbar,
   NavMenu,
+  NotFound,
 };
