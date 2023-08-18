@@ -8,9 +8,11 @@ import ScrollBar from "./ScrollBar";
 import Navbar from "./Navbar";
 import NavMenu from "./NavMenu";
 import NotFound from "./NotFound";
+import SelectedWork from "./SelectedWork";
 
 export {
   Blob,
+  SelectedWork,
   Cursor,
   Home,
   ChevronButton,

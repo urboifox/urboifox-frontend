@@ -15,7 +15,7 @@ const Navbar = () => {
     dispatch(toggleNavMenu());
   };
   return (
-    <div className="z-[70] px-5 md:px-10 flex items-center justify-between text-light absolute top-0 left-0 w-full h-20">
+    <div className="cont mx-auto z-[70] px-5 md:px-10 flex items-center justify-between text-light absolute -translate-x-1/2 top-0 left-1/2 w-full h-20">
       <motion.div
         whileTap={{ scale: 0.9 }}
         className="link w-8 aspect-square group relative"

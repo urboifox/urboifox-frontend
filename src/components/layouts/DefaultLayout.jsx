@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import { setTheme } from "../../redux/slices/themeSlice";
 import Navbar from "../Navbar";
 import NavMenu from "../NavMenu";
+import axios from "axios";
+import { initiateData } from "../../redux/slices/websiteDataSlice";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,10 +41,21 @@ const DefaultLayout = () => {
         duration: 0,
       });
     }, scope);
+
     return () => {
       ctx.revert();
     };
   }, []);
+
+  // get api data
+  useEffect(() => {
+    const handleSetData = (data) => {
+      dispatch(initiateData(data));
+    };
+    const res = axios.get("https://api.npoint.io/8170167729955bc6815a");
+    res.then((res) => handleSetData(res.data));
+  }, [dispatch]);
+
   return (
     <div ref={scope}>
       <Navbar />

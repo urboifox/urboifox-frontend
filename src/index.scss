@@ -15,10 +15,11 @@ $dimmed-color: #ffffff80;
 }
 ::-webkit-scrollbar {
   width: 0;
+  height: 0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: none;
+  background-color: transparent;
 }
 
 body {
@@ -27,6 +28,16 @@ body {
   user-select: none;
 }
 
+@media (min-width: 1280px) {
+  .cont {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+  .cont {
+    max-width: 1536px;
+  }
+}
 // lenis required css
 html.lenis {
   height: auto;

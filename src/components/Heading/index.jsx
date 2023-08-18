@@ -52,7 +52,7 @@ const Heading = () => {
       <h1
         className={`${
           darkTheme ? "text-dimmed" : "text-darkDimmed"
-        }  m-0 lg:mainHeading link text-7xl md:text-9xl font-cursive font-extralight`}
+        }  m-0 lg:mainHeading link text-7xl md:text-8xl lg:text-9xl font-cursive font-extralight`}
       >
         <span
           ref={openTag}
