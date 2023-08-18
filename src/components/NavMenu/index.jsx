@@ -25,7 +25,7 @@ const NavMenu = () => {
       : [];
     if (menuLinks && menuVisible) {
       menuLinks.forEach((link) => {
-        animateText(link, 30);
+        animateText(link, 40);
       });
     }
   }, [menuVisible]);
@@ -58,8 +58,8 @@ const NavMenu = () => {
             }}
             exit={{ opacity: 0 }}
             className={`${
-              darkTheme ? "text-light bg-[#131313]" : "bg-light text-dark"
-            } left-0 h-full fixed flex items-center transition-colors duration-300 top-0 shadow-xl font-extralight w-[70%] md:w-1/2 lg:w-1/3 tracking-[.15em] z-50`}
+              darkTheme ? "text-light " : " text-dark"
+            } left-0 h-full fixed flex items-center transition-colors duration-300 top-0 font-extralight w-[70%] md:w-1/2 lg:w-1/3 tracking-[.15em] z-50`}
           >
             <ul
               ref={list}
@@ -67,28 +67,28 @@ const NavMenu = () => {
             >
               <li
                 className={`${
-                  darkTheme ? "border-dimmed" : "border-darkDimmed"
+                  darkTheme ? "before:bg-light" : "before:bg-dark"
                 } link`}
               >
                 Home
               </li>
               <li
                 className={`${
-                  darkTheme ? "border-dimmed" : "border-darkDimmed"
+                  darkTheme ? "before:bg-light" : "before:bg-dark"
                 } link`}
               >
                 About
               </li>
               <li
                 className={`${
-                  darkTheme ? "border-dimmed" : "border-darkDimmed"
+                  darkTheme ? "before:bg-light" : "before:bg-dark"
                 } link`}
               >
                 Work
               </li>
               <li
                 className={`${
-                  darkTheme ? "border-dimmed" : "border-darkDimmed"
+                  darkTheme ? "before:bg-light" : "before:bg-dark"
                 } link`}
               >
                 Contact
