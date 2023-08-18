@@ -6,7 +6,7 @@ const HomeText = () => {
     <div>
       <div
         className={`${
-          darkTheme ? "text-dimmed opacity-20" : "text-dark opacity-40"
+          darkTheme ? "text-white opacity-[45%]" : "text-dark opacity-70"
         } flex flex-col link absolute top-[25%] md:top-[20%] left-5 md:left-20 text-xs md:text-base font-extralight  transition-all duration-500 md:hover:opacity-100`}
       >
         <span className="block">{"<p>"}</span>
@@ -31,7 +31,7 @@ const HomeText = () => {
       </div>
       <div
         className={`${
-          darkTheme ? "text-dimmed opacity-20" : "text-dark opacity-50"
+          darkTheme ? "text-white opacity-[45%]" : "text-dark opacity-70"
         } flex flex-col ml-10 link absolute bottom-[25%] md:bottom-[20%] right-10 md:right-20  text-xs md:text-base font-extralight transition-all duration-500 lg:hover:opacity-100`}
       >
         <span className="block">{"<p>"}</span>
