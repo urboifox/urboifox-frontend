@@ -18,7 +18,7 @@ const Heading = () => {
         const tagsTl = gsap.timeline();
         tagsTl
           .to(e, {
-            x: direction === "left" ? -50 : 50,
+            x: direction === "left" ? -30 : 30,
             duration: 0.8,
             delay: 1,
           })
@@ -61,14 +61,6 @@ const Heading = () => {
           {"<"}
         </span>
         <motion.span
-          drag
-          dragSnapToOrigin
-          dragConstraints={{
-            top: 20,
-            right: 20,
-            bottom: 20,
-            left: 20,
-          }}
           className={`${
             darkTheme ? "text-light" : "text-dark"
           } font-medium inline-block textAnimate transition-colors duration-500`}

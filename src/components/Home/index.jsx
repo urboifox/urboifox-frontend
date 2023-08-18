@@ -1,9 +1,8 @@
-import { ChevronButton, Heading, HomeText, Navbar } from "../";
+import { ChevronButton, Heading, HomeText } from "../";
 
 const Home = () => {
   return (
     <div className="relative home h-screen w-full flex items-center justify-center">
-      <Navbar />
       <div className="wrapper">
         <div className="animateUp">
           <Heading />

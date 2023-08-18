@@ -4,6 +4,8 @@ import { Outlet } from "react-router";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useDispatch } from "react-redux";
 import { setTheme } from "../../redux/slices/themeSlice";
+import Navbar from "../Navbar";
+import NavMenu from "../NavMenu";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -43,6 +45,8 @@ const DefaultLayout = () => {
   }, []);
   return (
     <div ref={scope}>
+      <Navbar />
+      <NavMenu />
       <Outlet />
     </div>
   );

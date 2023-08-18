@@ -6,7 +6,7 @@ import Heading from "./Heading";
 import HomeText from "./HomeText";
 import ScrollBar from "./ScrollBar";
 import Navbar from "./Navbar";
-
+import NavMenu from "./NavMenu";
 export {
   Blob,
   Cursor,
@@ -16,4 +16,5 @@ export {
   HomeText,
   ScrollBar,
   Navbar,
+  NavMenu,
 };

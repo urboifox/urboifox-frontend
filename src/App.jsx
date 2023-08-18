@@ -3,17 +3,12 @@
 import { Cursor, ScrollBar } from "./components";
 import { RouterProvider } from "react-router";
 import myRouter from "./routes";
-import Lenis from "@studio-freight/lenis";
 import { useSelector } from "react-redux";
-
+import { lenis } from "./lenis";
 function App() {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   document.body.style.backgroundColor = darkTheme ? "#141414" : "#ddd";
   document.body.style.transition = darkTheme ? "300ms" : "300ms";
-  const lenis = new Lenis({
-    duration: 2,
-    smoothTouch: 0.1,
-  });
 
   function raf(time) {
     lenis.raf(time);
