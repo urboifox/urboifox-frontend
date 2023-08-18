@@ -5,12 +5,14 @@ import { toggleNavMenu } from "../../redux/slices/navMenuSlice";
 import { lenis } from "../../lenis";
 import { useEffect, useRef } from "react";
 import { animateText } from "../../functions";
+import { Link } from "react-router-dom";
 
 const NavMenu = () => {
   const list = useRef(null);
   const menuVisible = useSelector((state) => state.navMenu.visible);
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   const dispatch = useDispatch();
+  const listItems = ["Home", "About", "Work", "Contact"];
   const handleToggleMenu = () => {
     dispatch(toggleNavMenu());
   };
@@ -23,11 +25,9 @@ const NavMenu = () => {
     const menuLinks = list.current
       ? [...list.current.querySelectorAll("li")]
       : [];
-    if (menuLinks && menuVisible) {
-      menuLinks.forEach((link) => {
-        animateText(link, 40);
-      });
-    }
+    menuLinks?.forEach((link) => {
+      animateText(link, 40);
+    });
   }, [menuVisible]);
 
   return (
@@ -45,7 +45,7 @@ const NavMenu = () => {
               },
             }}
             exit={{ opacity: 0 }}
-            className="fixed w-full h-full backdrop-blur-md z-30"
+            className="fixed w-full h-full backdrop-blur-md z-30 top-0 left-0"
           ></motion.div>
           <motion.div
             key={"menu"}
@@ -65,34 +65,42 @@ const NavMenu = () => {
               ref={list}
               className="flex flex-col item-center  w-full navMenuUl text-xl md:text-2xl xl:text-5xl"
             >
-              <li
-                className={`${
-                  darkTheme ? "before:bg-light" : "before:bg-dark"
-                } link`}
-              >
-                Home
-              </li>
-              <li
-                className={`${
-                  darkTheme ? "before:bg-light" : "before:bg-dark"
-                } link`}
-              >
-                About
-              </li>
-              <li
-                className={`${
-                  darkTheme ? "before:bg-light" : "before:bg-dark"
-                } link`}
-              >
-                Work
-              </li>
-              <li
-                className={`${
-                  darkTheme ? "before:bg-light" : "before:bg-dark"
-                } link`}
-              >
-                Contact
-              </li>
+              {listItems.map((itemText, i) => {
+                return (
+                  <>
+                    <Link
+                      to={
+                        itemText.toLowerCase() === "home"
+                          ? "/"
+                          : itemText.toLowerCase()
+                      }
+                      onClick={() => handleToggleMenu()}
+                    >
+                      <motion.li
+                        initial={{ x: -200, opacity: 0 }}
+                        animate={{
+                          x: 0,
+                          opacity: 1,
+                        }}
+                        exit={{ x: -200, opacity: 0 }}
+                        transition={{
+                          duration: 0.3,
+                          delay: i * 0.1,
+                          type: "spring",
+                          stiffness: 80,
+                          damping: 10,
+                        }}
+                        key={i}
+                        className={`${
+                          darkTheme ? "before:bg-light" : "before:bg-dark"
+                        } link`}
+                      >
+                        {itemText}
+                      </motion.li>
+                    </Link>
+                  </>
+                );
+              })}
             </ul>
           </motion.div>
         </>

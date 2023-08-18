@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { lenis } from "./lenis";
 function App() {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
-  document.body.style.backgroundColor = darkTheme ? "#141414" : "#ddd";
+  document.body.style.backgroundColor = darkTheme ? "#111" : "#ddd";
   document.body.style.transition = darkTheme ? "300ms" : "300ms";
 
   function raf(time) {
