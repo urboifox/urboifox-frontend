@@ -4,8 +4,10 @@ import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Skeleton from "react-loading-skeleton";
+import "./style.scss";
 gsap.registerPlugin(ScrollTrigger);
 const SelectedWork = () => {
+  const darkTheme = useSelector((state) => state.theme.darkTheme);
   const elements = useSelector((state) => state.websiteData.data.selected_work);
   const sectionRef = useRef(null);
   useEffect(() => {
@@ -48,21 +50,34 @@ const SelectedWork = () => {
     };
   }, []);
   return (
-    <div className="mt-96 flex justify-center relative  mx-auto">
-      <motion.div ref={sectionRef} className="w-max flex flex-col gap-52 ">
+    <div
+      id="selected"
+      className="mt-96 pt-24 flex justify-center relative  mx-auto"
+    >
+      <motion.div ref={sectionRef} className="w-max flex flex-col gap-60 ">
         {elements
           ? elements?.map((element, i) => {
               return (
                 <motion.div
                   initial={{ x: i % 2 !== 0 ? "50%" : "0" }}
                   key={element.id}
-                  className={`w-[60rem] aspect-video`}
+                  className={`w-[60rem] selectedEl group aspect-video relative link shadow-sm`}
                 >
+                  <div
+                    className={`${
+                      darkTheme
+                        ? "text-light md:text-dimmed group-hover:text-light"
+                        : "text-dark md:text-darkDimmed group-hover:text-dark"
+                    } text-2xl uppercase transition-colors duration-500 absolute tracking-widest link z-50 -bottom-4 font-light -left-8 -rotate-90 origin-left `}
+                  >
+                    {element.title}
+                  </div>
+
                   <motion.img
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1, transition: { duration: 0.5 } }}
                     draggable={false}
-                    className="w-full object-cover h-full"
+                    className="w-full object-cover h-full transition-transform saturate-[1.2] duration-500"
                     src={element.img}
                     alt={element.description}
                   />

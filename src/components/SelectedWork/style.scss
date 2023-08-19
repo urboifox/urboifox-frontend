@@ -1,0 +1,13 @@
+.selectedEl {
+  &::after,
+  &::before {
+    content: "";
+    @apply bg-dimmed h-full w-full absolute top-0 left-0 transition-all duration-500 -z-10 ease-out;
+  }
+  &:hover::after {
+    @apply left-3 top-3;
+  }
+  &:hover::before {
+    @apply left-6 top-6;
+  }
+}

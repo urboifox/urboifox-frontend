@@ -2,12 +2,17 @@ import { useState } from "react";
 import { ChevronBottom } from "../../assets/icons/";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
+import { lenis } from "../../lenis";
 
 const ScrollBottom = () => {
   const [isHovered, setIsHovered] = useState(false);
   const darkTheme = useSelector((state) => state.theme.darkTheme);
+  const handleClick = () => {
+    lenis.scrollTo("#selected");
+  };
   return (
     <div
+      onClick={() => handleClick()}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="group link w-20 md:w-40 lg:w-72 aspect-square"
