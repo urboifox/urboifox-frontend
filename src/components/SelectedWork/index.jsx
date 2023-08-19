@@ -1,15 +1,23 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Skeleton from "react-loading-skeleton";
 import "./style.scss";
+import { changeScreenWidth } from "../../redux/slices/screenSlice";
 gsap.registerPlugin(ScrollTrigger);
 const SelectedWork = () => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
+  const bigScreen = useSelector((state) => state.screen.width);
   const elements = useSelector((state) => state.websiteData.data.selected_work);
   const sectionRef = useRef(null);
+  const dispatch = useDispatch();
+
+  window.onresize = () => {
+    dispatch(changeScreenWidth(window.innerWidth));
+  };
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(sectionRef.current, { x: "0", duration: 0.0000000000001 });
@@ -18,7 +26,7 @@ const SelectedWork = () => {
         sectionRef.current,
         { x: "0" },
         {
-          x: "-50%",
+          x: bigScreen > 767 ? "-50%" : "0",
           duration: 1,
           ease: "none",
           scrollTrigger: {
@@ -30,7 +38,7 @@ const SelectedWork = () => {
         }
       ).fromTo(
         sectionRef.current,
-        { x: "-50%" },
+        { x: bigScreen > 767 ? "-50%" : "0" },
         {
           x: "0",
           duration: 1,
@@ -48,27 +56,29 @@ const SelectedWork = () => {
     return () => {
       ctx.kill();
     };
-  }, []);
+  }, [bigScreen]);
   return (
     <div
       id="selected"
-      className="mt-96 pt-24 flex justify-center relative  mx-auto"
+      className="mt-20 lg:mt-96 pt-16 flex justify-center relative cont mx-auto"
     >
-      <motion.div ref={sectionRef} className="w-max flex flex-col gap-60 ">
+      <motion.div
+        ref={sectionRef}
+        className="w-max flex items-center flex-col gap-20 md:gap-40 lg:gap-60"
+      >
         {elements
-          ? elements?.map((element, i) => {
+          ? elements?.map((element) => {
               return (
-                <motion.div
-                  initial={{ x: i % 2 !== 0 ? "50%" : "0" }}
+                <div
                   key={element.id}
-                  className={`w-[60rem] selectedEl group aspect-video relative link shadow-sm`}
+                  className={`w-[80%] lg:w-[90%]  max-w-[70rem] translate-x-0 selectedEl group aspect-video relative link shadow-sm`}
                 >
                   <div
                     className={`${
                       darkTheme
                         ? "text-light md:text-dimmed group-hover:text-light"
                         : "text-dark md:text-darkDimmed group-hover:text-dark"
-                    } text-2xl uppercase transition-colors duration-500 absolute tracking-widest link z-50 -bottom-4 font-light -left-8 -rotate-90 origin-left `}
+                    } text-sm md:text-xl lg:text-2xl uppercase transition-colors duration-500 absolute tracking-widest link z-50 max-md:-top-7  left-0 md:-bottom-4 font-light md:-left-8 md:-rotate-90 md:origin-left `}
                   >
                     {element.title}
                   </div>
@@ -81,20 +91,16 @@ const SelectedWork = () => {
                     src={element.img}
                     alt={element.description}
                   />
-                </motion.div>
+                </div>
               );
             })
           : Array(3)
               .fill(0)
               .map((_, i) => {
                 return (
-                  <motion.div
-                    initial={{ x: i % 2 !== 0 ? "50%" : "0" }}
-                    key={i}
-                    className={`w-[60rem] aspect-video`}
-                  >
+                  <div key={i} className={`w-[60rem] aspect-video selectedEl`}>
                     <Skeleton width={"100%"} height={"100%"} />
-                  </motion.div>
+                  </div>
                 );
               })}
       </motion.div>

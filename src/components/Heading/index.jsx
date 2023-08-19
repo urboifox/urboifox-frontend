@@ -3,10 +3,12 @@ import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useSelector } from "react-redux";
+import { handleTagsAnimation } from "../../functions";
 gsap.registerPlugin(ScrollTrigger);
 
 const Heading = () => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
+  const bigScreen = useSelector((state) => state.screen.width);
   const openTag = useRef(null);
   const closeTag = useRef(null);
   const scope = useRef(null);
@@ -14,39 +16,23 @@ const Heading = () => {
     const ctx = gsap.context(() => {
       const headingTl = gsap.timeline();
 
-      function handleTagsAnimation(e, direction) {
-        const tagsTl = gsap.timeline();
-        tagsTl
-          .to(e, {
-            x: direction === "left" ? -30 : 30,
-            duration: 0.8,
-            delay: 1,
-          })
-          .to(e, {
-            x: 0,
-            duration: 0.1,
-            ease: "none",
-          });
-      }
-
       headingTl.to("h1", {
-        y: window.innerWidth < 767 ? 50 : 100,
+        y: bigScreen > 767 ? 100 : 50,
         ease: "none",
         scrollTrigger: {
           trigger: "h1",
-          scrub: 1,
+          scrub: true,
           start: "top 40%",
           end: "bottom top",
-          pin: false,
         },
       });
-      handleTagsAnimation(openTag.current, "left");
-      handleTagsAnimation(closeTag.current, "right");
+      handleTagsAnimation(openTag.current, -30);
+      handleTagsAnimation(closeTag.current, 30);
     }, scope);
     return () => {
       ctx.revert();
     };
-  }, []);
+  }, [bigScreen]);
   return (
     <div ref={scope} className="headingContainer">
       <h1

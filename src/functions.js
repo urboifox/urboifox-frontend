@@ -1,3 +1,5 @@
+import { gsap } from "gsap";
+
 // animate text function
 export function animateText(element, duration) {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -18,4 +20,19 @@ export function animateText(element, duration) {
       inter += 1 / 3;
     }, duration);
   };
+}
+
+export function handleTagsAnimation(e, direction) {
+  const tagsTl = gsap.timeline();
+  tagsTl
+    .to(e, {
+      x: direction,
+      duration: 0.8,
+      delay: 1,
+    })
+    .to(e, {
+      x: 0,
+      duration: 0.1,
+      ease: "none",
+    });
 }
