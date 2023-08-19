@@ -71,7 +71,7 @@ const SelectedWork = () => {
           className="w-max max-w-full flex items-center flex-col gap-20 md:gap-40 lg:gap-60"
         >
           {elements
-            ? elements?.map((element) => {
+            ? elements?.map((element, i) => {
                 return (
                   <div
                     key={element.id}
@@ -85,6 +85,15 @@ const SelectedWork = () => {
                       } text-sm md:text-xl lg:text-2xl uppercase transition-colors duration-500 absolute tracking-widest link z-50 max-md:-top-7  left-2 md:-bottom-4 font-light md:-left-8 md:-rotate-90 md:origin-left `}
                     >
                       {element.title}
+                    </div>
+                    <div
+                      className={`${
+                        darkTheme
+                          ? "text-light md:text-dimmed group-hover:text-light"
+                          : "text-dark md:text-darkDimmed group-hover:text-dark"
+                      } text-sm md:text-xl lg:text-2xl uppercase transition-colors duration-500 absolute tracking-widest link z-50 max-md:-top-7  right-2 md:top-4 font-light md:-left-8 md:-rotate-90 md:origin-left `}
+                    >
+                      {i + 1}
                     </div>
 
                     <motion.img
