@@ -27,19 +27,24 @@ const DefaultLayout = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const wrapperTl = gsap.timeline();
-      wrapperTl.from(".animateUp", 1, {
-        y: "100%",
-        ease: Circ.Out,
-        scrollTrigger: {
-          trigger: ".animateUp",
-          start: "top 80%",
-        },
-      });
-      wrapperTl.to(".wrapper", {
-        overflow: "unset",
-        delay: 1,
-        duration: 0,
-      });
+      wrapperTl
+        .to(".wrapper", {
+          overflow: "hidden",
+          duration: 0,
+        })
+        .from(".animateUp", 1, {
+          y: "100%",
+          ease: Circ.Out,
+          scrollTrigger: {
+            trigger: ".animateUp",
+            start: "top 80%",
+          },
+        })
+        .to(".wrapper", {
+          overflow: "unset",
+          delay: 1,
+          duration: 0,
+        });
     }, scope);
 
     return () => {
