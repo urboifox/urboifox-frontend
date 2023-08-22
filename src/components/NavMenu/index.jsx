@@ -46,7 +46,7 @@ const NavMenu = () => {
                 },
               }}
               exit={{ opacity: 0 }}
-              className="fixed w-full h-full backdrop-blur-md z-30 top-0 left-0"
+              className="fixed w-full h-full backdrop-blur-md min-w-[100vw] min-h-[100vh] z-30 top-0 left-0"
             ></motion.div>
             <motion.div
               key={"menu"}

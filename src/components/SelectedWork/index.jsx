@@ -7,6 +7,7 @@ import Skeleton from "react-loading-skeleton";
 import "./style.scss";
 import { changeScreenWidth } from "../../redux/slices/screenSlice";
 import { SectionHeading } from "../";
+import { gsapSelected } from "../../functions";
 
 gsap.registerPlugin(ScrollTrigger);
 const SelectedWork = () => {
@@ -15,53 +16,24 @@ const SelectedWork = () => {
   const elements = useSelector((state) => state.websiteData.data.selected_work);
   const sectionRef = useRef(null);
   const dispatch = useDispatch();
-
+  const scope = useRef(null);
   window.onresize = () => {
     dispatch(changeScreenWidth(window.innerWidth));
   };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.to(sectionRef.current, { x: "0", duration: 0.0000000000001 });
-      const tl = gsap.timeline();
-      tl.fromTo(
-        sectionRef.current,
-        { x: "0" },
-        {
-          x: bigScreen > 767 ? "-50%" : "0",
-          duration: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            scrub: 1,
-            start: "45% 80%",
-            end: "45% 60%",
-          },
-        }
-      ).fromTo(
-        sectionRef.current,
-        { x: bigScreen > 767 ? "-50%" : "0" },
-        {
-          x: "0",
-          duration: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            scrub: 1,
-            start: "80% 80%",
-            end: "80% 60%",
-          },
-        }
-      );
-    });
+      gsapSelected(sectionRef, bigScreen);
+    }, scope);
 
     return () => {
-      ctx.kill();
+      ctx.revert();
     };
   }, [bigScreen]);
   return (
     <>
       <div
+        ref={scope}
         id="selected"
         className="mt-20 lg:mt-96 py-16 flex flex-col items-center relative cont mx-auto"
       >

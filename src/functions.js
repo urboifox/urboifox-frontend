@@ -36,3 +36,66 @@ export function handleTagsAnimation(e, direction) {
       ease: "none",
     });
 }
+
+// gsap functions
+export function gsapSelected(sectionRef, bigScreen) {
+  gsap.to(sectionRef.current, { x: "0", duration: 0.0000000000001 });
+  const tl = gsap.timeline();
+  tl.fromTo(
+    sectionRef.current,
+    { x: "0" },
+    {
+      x: bigScreen > 767 ? "-50%" : "0",
+      ease: "none",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        scrub: 1,
+        start: "35% 80%",
+        end: "35% 20%",
+      },
+    }
+  ).fromTo(
+    sectionRef.current,
+    { x: bigScreen > 767 ? "-50%" : "0" },
+    {
+      x: "0",
+      ease: "none",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        scrub: 1,
+        start: "75% 80%",
+        end: "75% 20%",
+      },
+    }
+  );
+}
+
+export function gsapFadeIn(element) {
+  const opacityTl = gsap.timeline();
+  opacityTl.from(element.current, {
+    opacity: 0,
+    duration: 2,
+    scrollTrigger: {
+      trigger: element.current,
+      start: "bottom 90%",
+      scrub: 1,
+    },
+  });
+}
+
+export function gsapMoveRight(element) {
+  gsap.fromTo(
+    element.current,
+    { x: 0 },
+    {
+      x: 100,
+      ease: "none",
+      scrollTrigger: {
+        trigger: element.current,
+        start: "top bottom",
+        end: "bottom 0",
+        scrub: 1,
+      },
+    }
+  );
+}

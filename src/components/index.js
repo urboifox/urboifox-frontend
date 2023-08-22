@@ -10,9 +10,10 @@ import NavMenu from "./NavMenu";
 import NotFound from "./NotFound";
 import SelectedWork from "./SelectedWork";
 import SectionHeading from "./SectionHeading";
-
+import About from "./About";
 export {
   Blob,
+  About,
   SectionHeading,
   SelectedWork,
   Cursor,
