@@ -7,7 +7,7 @@ const HomeText = () => {
       <div
         className={`${
           darkTheme ? "text-white opacity-[45%]" : "text-dark opacity-70"
-        } flex flex-col link absolute top-[21%] md:top-[20%] left-5 md:left-20 !text-sm tracking-wide md:text-base font-extralight  transition-all duration-500 md:hover:opacity-100`}
+        } flex flex-col link absolute top-[21%] md:top-[20%] left-5 md:left-20 text-xs max-sm:scale-90 tracking-wide md:text-sm font-extralight  transition-all duration-500 md:hover:opacity-100`}
       >
         <span className="block">{"<p>"}</span>
         <div className="inline-block translate-x-5">
@@ -32,7 +32,7 @@ const HomeText = () => {
       <div
         className={`${
           darkTheme ? "text-white opacity-[45%]" : "text-dark opacity-70"
-        } flex flex-col ml-10 link absolute bottom-[22%] md:bottom-[20%] right-10 md:right-20 md:text-base font-extralight transition-all duration-500 lg:hover:opacity-100 !text-sm tracking-wide`}
+        } flex flex-col ml-10 link absolute bottom-[22%] md:bottom-[20%] right-10 md:right-20 md:text-sm max-sm:scale-90 font-extralight transition-all duration-500 lg:hover:opacity-100 text-xs tracking-wide`}
       >
         <span className="block">{"<p>"}</span>
         <div className="inline-block translate-x-5">

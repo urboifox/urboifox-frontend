@@ -1,22 +1,36 @@
 import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
-import { gsapFadeIn, gsapMoveRight } from "../../functions";
+import { gsapFadeIn } from "../../functions";
 import { gsap } from "gsap";
 
 /* eslint-disable react/prop-types */
 const SectionHeading = ({ text }) => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   const el = useRef(null);
+  const bigScreen = useSelector((state) => state.screen.width);
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsapMoveRight(el);
+      gsap.fromTo(
+        el.current,
+        { x: 0 },
+        {
+          x: bigScreen > 767 ? 100 : 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: el.current,
+            start: "top bottom",
+            end: "bottom 0",
+            scrub: 1,
+          },
+        }
+      );
       gsapFadeIn(el);
     });
 
     return () => {
       ctx.revert();
     };
-  }, []);
+  }, [bigScreen]);
   return (
     <div
       ref={el}

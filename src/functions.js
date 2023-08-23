@@ -39,15 +39,13 @@ export function handleTagsAnimation(e, direction) {
 
 // gsap functions
 export function gsapSelected(sectionRef, bigScreen) {
-  const tl = gsap.timeline();
-
-  // First animation
   gsap.fromTo(sectionRef.current, { x: "0" }, { x: "0", duration: 0.1 });
+  const tl = gsap.timeline();
   tl.fromTo(
     sectionRef.current,
     { x: "0" },
     {
-      x: bigScreen ? "-50%" : "0",
+      x: bigScreen > 767 ? "-50%" : "0",
       ease: "none",
       scrollTrigger: {
         trigger: sectionRef.current,
@@ -56,12 +54,9 @@ export function gsapSelected(sectionRef, bigScreen) {
         end: "10% 60%",
       },
     }
-  );
-
-  // Second animation
-  tl.fromTo(
+  ).fromTo(
     sectionRef.current,
-    { x: bigScreen ? "-50%" : "0" },
+    { x: bigScreen > 767 ? "-50%" : "0" },
     {
       x: "0",
       ease: "none",
@@ -86,21 +81,4 @@ export function gsapFadeIn(element) {
       scrub: 1,
     },
   });
-}
-
-export function gsapMoveRight(element) {
-  gsap.fromTo(
-    element.current,
-    { x: 0 },
-    {
-      x: 100,
-      ease: "none",
-      scrollTrigger: {
-        trigger: element.current,
-        start: "top bottom",
-        end: "bottom 0",
-        scrub: 1,
-      },
-    }
-  );
 }
