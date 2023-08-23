@@ -5,10 +5,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        cursive: ["Kalam", "cursive"],
         main: ["Montserrat", "sans-serif"],
       },
       colors: {
+        primary: {
+          100: "#CC0000",
+        },
         dark: "#111",
         light: "#ffffff",
         dimmed: "#ffffff80",

@@ -1,4 +1,3 @@
-import Blob from "./Blob";
 import Cursor from "./Cursor";
 import Home from "./Home";
 import ChevronButton from "./ChevronButton";
@@ -14,7 +13,6 @@ import About from "./About";
 import PrimaryButton from "./PrimaryButton";
 import Skills from "./Skills";
 export {
-  Blob,
   Skills,
   PrimaryButton,
   About,

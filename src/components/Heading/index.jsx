@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useSelector } from "react-redux";
 import { handleTagsAnimation } from "../../functions";
+import "./style.scss";
 gsap.registerPlugin(ScrollTrigger);
 
 const Heading = () => {
@@ -12,6 +13,38 @@ const Heading = () => {
   const openTag = useRef(null);
   const closeTag = useRef(null);
   const scope = useRef(null);
+  const theO = useRef(null);
+
+  const handleMouseMove = (event) => {
+    const oElement = theO.current;
+    const oBounds = oElement.getBoundingClientRect();
+
+    const oCenterX = oBounds.left + oBounds.width / 2;
+    const oCenterY = oBounds.top + oBounds.height / 2;
+
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    const angle = Math.atan2(mouseY - oCenterY, mouseX - oCenterX);
+
+    const maxDistance = Math.min(oBounds.width, oBounds.height) / 2;
+
+    const offsetX = Math.cos(angle) * maxDistance;
+    const offsetY = Math.sin(angle) * maxDistance;
+    oElement.animate(
+      {
+        transform: `translate(${offsetX}px, ${offsetY}px)`,
+      },
+      { duration: 1000, fill: "forwards" }
+    );
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousemove", (e) => handleMouseMove(e));
+    return () => {
+      document.removeEventListener("mousemove", (e) => handleMouseMove(e));
+    };
+  }, []);
   useEffect(() => {
     const ctx = gsap.context(() => {
       const headingTl = gsap.timeline();
@@ -34,29 +67,33 @@ const Heading = () => {
     };
   }, [bigScreen]);
   return (
-    <div ref={scope} className="headingContainer font-cursive">
+    <div ref={scope} className="wrapper headingContainer font-main">
       <h1
         className={`${
           darkTheme ? "text-dimmed" : "text-darkDimmed"
-        }  m-0 lg:mainHeading link text-7xl md:text-8xl lg:text-9xl font-light`}
+        } animateUp m-0 lg:mainHeading link text-7xl md:text-8xl lg:text-9xl font-light`}
       >
         <span
           ref={openTag}
-          className="inline-flex transition-colors duration-500"
+          className="inline-flex transition-colors duration-500 tracking-tighter font-thin"
         >
           {"<"}
         </span>
         <motion.span
           className={`${
             darkTheme ? "text-light" : "text-dark"
-          } font-medium inline-block textAnimate transition-colors duration-500`}
+          } font-thin inline-block textAnimate tracking-tighter transition-colors duration-500`}
         >
-          Fox
+          F
+          <span className="theO">
+            <span ref={theO} className="theOSon max-md:!translate-x-0"></span>o
+          </span>
+          x
         </motion.span>
         {` `}
         <span
           ref={closeTag}
-          className="inline-flex transition-colors duration-500"
+          className="inline-flex transition-colors duration-500 font-thin tracking-tighter"
         >
           {" />"}
         </span>

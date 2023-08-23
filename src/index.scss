@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,7 +26,7 @@ body {
   font-size: 16px;
   background-color: $dark-color;
   user-select: none;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   cursor: none;
 }
 

@@ -5,7 +5,7 @@
   }
   &::before {
     content: "";
-    @apply absolute aspect-square rounded-full w-2 left-3 top-1/2 -translate-y-1/2 transition-all duration-300 opacity-0;
+    @apply absolute bg-primary-100 aspect-square rounded-full w-2 left-3 top-1/2 -translate-y-1/2 transition-all duration-300 opacity-0;
   }
   &:first-child {
     @apply border-none;

@@ -24,7 +24,6 @@ function App() {
       <SkeletonTheme baseColor="#141414" highlightColor="#444">
         <ScrollBar />
         <Cursor />
-        {/* <Blob /> */}
         <RouterProvider router={myRouter} />
         {/* <div className="h-[300vh]"></div> */}
       </SkeletonTheme>
