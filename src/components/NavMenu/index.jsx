@@ -52,7 +52,7 @@ const NavMenu = () => {
               key={"menu"}
               className={`${
                 darkTheme ? "text-light " : " text-dark"
-              } left-0 h-full fixed flex items-center transition-colors duration-300 top-0 w-[70%] md:w-1/2 lg:w-1/3 tracking-widest font-light z-50`}
+              } left-0 h-full fixed flex items-center transition-colors duration-300 top-0 w-[70%] md:w-1/2 lg:w-1/3 tracking-widest font-extralight z-50`}
             >
               <ul
                 ref={list}

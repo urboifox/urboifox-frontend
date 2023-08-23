@@ -1,0 +1,13 @@
+.primary-btn {
+  &::before {
+    content: "";
+    @apply scale-x-0 origin-right absolute top-0 left-0 w-full h-full -z-10;
+  }
+  &::before {
+    transition: transform 400ms;
+    -webkit-transition: transform 400ms;
+    -moz-transition: transform 400ms;
+    -ms-transition: transform 400ms;
+    -o-transition: transform 400ms;
+  }
+}

@@ -6,8 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Skeleton from "react-loading-skeleton";
 import "./style.scss";
 import { changeScreenWidth } from "../../redux/slices/screenSlice";
-import { SectionHeading } from "../";
+import { PrimaryButton, SectionHeading } from "../";
 import { gsapSelected } from "../../functions";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 const SelectedWork = () => {
@@ -40,7 +41,7 @@ const SelectedWork = () => {
         <SectionHeading text={"Selected work"} />
         <motion.div
           ref={sectionRef}
-          className="w-max max-w-full flex items-center flex-col gap-20 md:gap-40 lg:gap-60"
+          className="w-max mb-32 max-w-full flex items-center flex-col gap-20 md:gap-40 lg:gap-60"
         >
           {elements
             ? elements?.map((element, i) => {
@@ -54,7 +55,7 @@ const SelectedWork = () => {
                         darkTheme
                           ? "text-light md:text-dimmed group-hover:text-light"
                           : "text-dark md:text-darkDimmed group-hover:text-dark"
-                      } text-sm md:text-xl lg:text-2xl uppercase transition-colors duration-500 absolute tracking-widest link z-50 max-md:-top-7  left-2 md:-bottom-4 font-light md:-left-8 md:-rotate-90 md:origin-left `}
+                      } text-sm md:text-xl lg:text-2xl uppercase transition-colors duration-500 absolute tracking-widest link z-50 max-md:-top-7  left-2 md:-bottom-4 font-extralight md:-left-8 md:-rotate-90 md:origin-left `}
                     >
                       {element.title}
                     </div>
@@ -92,6 +93,9 @@ const SelectedWork = () => {
                   );
                 })}
         </motion.div>
+        <Link to={`/work`} draggable={false}>
+          <PrimaryButton />
+        </Link>
       </div>
     </>
   );

@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        cursive: ["Arima", "cursive"],
-        main: ["Poppins", "sans-serif"],
+        cursive: ["Kalam", "cursive"],
+        main: ["Montserrat", "sans-serif"],
       },
       colors: {
         dark: "#111",

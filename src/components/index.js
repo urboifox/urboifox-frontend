@@ -11,8 +11,12 @@ import NotFound from "./NotFound";
 import SelectedWork from "./SelectedWork";
 import SectionHeading from "./SectionHeading";
 import About from "./About";
+import PrimaryButton from "./PrimaryButton";
+import Skills from "./Skills";
 export {
   Blob,
+  Skills,
+  PrimaryButton,
   About,
   SectionHeading,
   SelectedWork,

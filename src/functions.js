@@ -39,32 +39,37 @@ export function handleTagsAnimation(e, direction) {
 
 // gsap functions
 export function gsapSelected(sectionRef, bigScreen) {
-  gsap.to(sectionRef.current, { x: "0", duration: 0.0000000000001 });
   const tl = gsap.timeline();
+
+  // First animation
+  gsap.fromTo(sectionRef.current, { x: "0" }, { x: "0", duration: 0.1 });
   tl.fromTo(
     sectionRef.current,
     { x: "0" },
     {
-      x: bigScreen > 767 ? "-50%" : "0",
+      x: bigScreen ? "-50%" : "0",
       ease: "none",
       scrollTrigger: {
         trigger: sectionRef.current,
         scrub: 1,
-        start: "35% 80%",
-        end: "35% 20%",
+        start: "45% 80%",
+        end: "10% 60%",
       },
     }
-  ).fromTo(
+  );
+
+  // Second animation
+  tl.fromTo(
     sectionRef.current,
-    { x: bigScreen > 767 ? "-50%" : "0" },
+    { x: bigScreen ? "-50%" : "0" },
     {
       x: "0",
       ease: "none",
       scrollTrigger: {
         trigger: sectionRef.current,
         scrub: 1,
-        start: "75% 80%",
-        end: "75% 20%",
+        start: "80% 80%",
+        end: "40% 60%",
       },
     }
   );
