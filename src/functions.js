@@ -39,7 +39,14 @@ export function handleTagsAnimation(e, direction) {
 
 // gsap functions
 export function gsapSelected(sectionRef, bigScreen) {
-  gsap.fromTo(sectionRef.current, { x: "0" }, { x: "0", duration: 0.1 });
+  gsap.to(sectionRef.current, {
+    x: "0",
+    duration: 0.00000000001,
+    scrollTrigger: {
+      trigger: sectionRef.current,
+      start: "-10% bottom",
+    },
+  });
   const tl = gsap.timeline();
   tl.fromTo(
     sectionRef.current,
