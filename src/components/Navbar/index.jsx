@@ -24,10 +24,12 @@ const Navbar = () => {
         <span
           className={`${
             darkTheme
-              ? `${navVisible ? "bg-light" : "bg-dimmed group-hover:bg-light"}`
+              ? `${
+                  navVisible ? "bg-light" : "bg-dimmed group-hover:bg-light"
+                } max-md:bg-light`
               : `${
                   navVisible ? "bg-dark" : "bg-darkDimmed group-hover:bg-dark"
-                } `
+                } max-md:bg-dark`
           } ${
             navVisible
               ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45"
@@ -37,10 +39,12 @@ const Navbar = () => {
         <span
           className={`${
             darkTheme
-              ? `${navVisible ? "bg-light" : "bg-dimmed group-hover:bg-light"}`
+              ? `${
+                  navVisible ? "bg-light" : "bg-dimmed group-hover:bg-light"
+                } max-md:bg-light`
               : `${
                   navVisible ? "bg-dark" : "bg-darkDimmed group-hover:bg-dark"
-                } `
+                } max-md:bg-dark`
           } ${
             navVisible
               ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45"
@@ -58,8 +62,8 @@ const Navbar = () => {
           <Github
             className={`${
               darkTheme
-                ? "fill-dimmed group-hover:fill-light"
-                : "fill-darkDimmed group-hover:fill-dark"
+                ? "fill-dimmed group-hover:fill-light max-md:group-hover:fill-dimmed"
+                : "fill-darkDimmed group-hover:fill-dark max-md:group-hover:fill-darkDimmed"
             } w-full h-full transition-colors delay-0 duration-500`}
           />
         </motion.a>
@@ -69,8 +73,8 @@ const Navbar = () => {
           whileTap={{ scale: 0.9 }}
           className={`${
             darkTheme
-              ? "fill-dimmed hover:fill-light"
-              : "fill-darkDimmed hover:fill-dark"
+              ? "fill-dimmed hover:fill-light max-md:hover:fill-dimmed"
+              : "fill-darkDimmed hover:fill-dark max-md:hover:fill-darkDimmed"
           } w-5 aspect-square link`}
         >
           <Facebook
@@ -86,8 +90,8 @@ const Navbar = () => {
           <Linkedin
             className={`${
               darkTheme
-                ? "fill-dimmed group-hover:fill-light"
-                : "fill-darkDimmed group-hover:fill-dark"
+                ? "fill-dimmed group-hover:fill-light max-md:group-hover:fill-dimmed"
+                : "fill-darkDimmed group-hover:fill-dark max-md:group-hover:fill-darkDimmed"
             } w-full h-full transition-colors delay-0 duration-500`}
           />
         </motion.a>
