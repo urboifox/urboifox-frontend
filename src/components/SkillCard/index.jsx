@@ -13,7 +13,7 @@ const SkillCard = ({ skill }) => {
     >
       <div className="w-7">
         <img
-          className="max-w-full object-contain"
+          className="max-w-full w-full object-contain"
           src={skill.img}
           alt={skill.name}
         />
