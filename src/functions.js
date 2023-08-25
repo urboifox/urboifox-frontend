@@ -1,5 +1,4 @@
 import { gsap } from "gsap";
-
 // animate text function
 export function animateText(element, duration) {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

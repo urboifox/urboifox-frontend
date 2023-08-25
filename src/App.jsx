@@ -7,7 +7,9 @@ import { useSelector } from "react-redux";
 import { lenis } from "./lenis";
 import { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 function App() {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   document.body.style.backgroundColor = darkTheme ? "#111" : "#ddd";

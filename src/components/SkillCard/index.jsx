@@ -6,8 +6,10 @@ const SkillCard = ({ skill }) => {
   return (
     <div
       className={`${
-        darkTheme ? "bg-light text-dark" : "bg-dark text-light"
-      } link flex gap-3 items-center justify-center min-w-[18rem] rounded-sm px-5 py-10`}
+        darkTheme
+          ? "text-light from-[#131313] to-[#191919]"
+          : "text-dark from-[#d2d2d2] to-[#dadada]"
+      } link flex gap-3 bg-gradient-to-tr items-center justify-center min-w-[18rem] rounded-md py-7 md:py-10`}
     >
       <div className="w-7">
         <img
@@ -16,13 +18,7 @@ const SkillCard = ({ skill }) => {
           alt={skill.name}
         />
       </div>
-      <div
-        className={`${
-          darkTheme ? "font-normal" : "font-light"
-        } uppercase text-md`}
-      >
-        {skill.name}
-      </div>
+      <div className={`font-medium uppercase text-md`}>{skill.name}</div>
     </div>
   );
 };

@@ -104,7 +104,7 @@ const SelectedWork = () => {
                 })}
         </motion.div>
         <Link to={`/work`} draggable={false}>
-          <PrimaryButton />
+          <PrimaryButton text={`More Work`} />
         </Link>
       </div>
     </>

@@ -14,43 +14,44 @@ const Heading = () => {
   const theO = useRef(null);
   const theO2 = useRef(null);
 
-  const handleMouseMove = (event) => {
-    const oElement = theO.current;
-    const oElement2 = theO2.current;
-    const oBounds = oElement?.getBoundingClientRect();
-
-    const oCenterX = oBounds?.left + oBounds?.width / 2;
-    const oCenterY = oBounds?.top + oBounds?.height / 2;
-
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-
-    const angle = Math.atan2(mouseY - oCenterY, mouseX - oCenterX);
-
-    const maxDistance = Math.min(oBounds?.width, oBounds?.height) / 2.5;
-
-    const offsetX = Math.cos(angle) * maxDistance;
-    const offsetY = Math.sin(angle) * maxDistance;
-    oElement?.animate(
-      {
-        transform: `translate(${offsetX}px, ${offsetY}px)`,
-      },
-      { duration: 1000, fill: "forwards" }
-    );
-    oElement2?.animate(
-      {
-        transform: `translate(${offsetX}px, ${offsetY}px)`,
-      },
-      { duration: 1000, fill: "forwards" }
-    );
-  };
-
   useEffect(() => {
+    const handleMouseMove = (event) => {
+      const oElement = theO.current;
+      const oElement2 = theO2.current;
+      const oBounds = oElement?.getBoundingClientRect();
+
+      const oCenterX = oBounds?.left + oBounds?.width / 2;
+      const oCenterY = oBounds?.top + oBounds?.height / 2;
+
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
+
+      const angle = Math.atan2(mouseY - oCenterY, mouseX - oCenterX);
+
+      const maxDistance = Math.min(oBounds?.width, oBounds?.height) / 2.5;
+
+      const offsetX = Math.cos(angle) * maxDistance;
+      const offsetY = Math.sin(angle) * maxDistance;
+      if (bigScreen > 767) {
+        oElement?.animate(
+          {
+            transform: `translate(${offsetX}px, ${offsetY}px)`,
+          },
+          { duration: 1000, fill: "forwards" }
+        );
+        oElement2?.animate(
+          {
+            transform: `translate(${offsetX}px, ${offsetY}px)`,
+          },
+          { duration: 1000, fill: "forwards" }
+        );
+      }
+    };
     document.addEventListener("mousemove", (e) => handleMouseMove(e));
     return () => {
       document.removeEventListener("mousemove", (e) => handleMouseMove(e));
     };
-  }, []);
+  }, [bigScreen]);
   useEffect(() => {
     const ctx = gsap.context(() => {
       const headingTl = gsap.timeline();

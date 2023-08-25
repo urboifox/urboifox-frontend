@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import "./style.scss";
 
-const PrimaryButton = () => {
+const PrimaryButton = ({ text }) => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   return (
     <motion.div
@@ -16,7 +17,7 @@ const PrimaryButton = () => {
             : "text-dark border-dark before:bg-dark hover:text-light hover:border-dark"
         } cursor-none py-4 px-12 uppercase border-[1px] font-extralight transition-all text-xl duration-300 relative hover:before:origin-left hover:before:scale-x-100 primary-btn`}
       >
-        More Projects
+        {text}
       </button>
     </motion.div>
   );
