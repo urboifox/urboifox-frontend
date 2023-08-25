@@ -34,7 +34,7 @@ const ScrollBar = () => {
       ref={scrollbar}
       className={`${
         darkTheme ? "bg-light" : "bg-darkDimmed"
-      } fixed w-1 h-0 top-0 right-0 z-[999999] max-md:hidden transition-colors duration-300`}
+      } fixed w-1 h-0 top-0 right-0 z-[9999999999] max-md:hidden transition-colors duration-300`}
     ></div>
   );
 };

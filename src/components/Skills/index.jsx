@@ -1,31 +1,43 @@
 import { useSelector } from "react-redux";
 import SectionHeading from "../SectionHeading";
+import SkillCard from "../SkillCard";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 const Skills = () => {
   const skills = useSelector((state) => state.websiteData.data.skills);
+  const scope = useRef(null);
+  const slider = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(slider.current, {
+        x: `-${288 * skills?.length - 1000}px`,
+        ease: "none",
+        scrollTrigger: {
+          trigger: scope.current,
+          start: "200% bottom",
+          end: "200%  top",
+          scrub: 1,
+          pin: true,
+        },
+      });
+    }, scope);
+    return () => {
+      ctx.revert();
+    };
+  }, [skills]);
 
   return (
-    <div className="mt-20 lg:mt-40">
+    <div className="mt-20 lg:mt-40" ref={scope}>
       <SectionHeading text={"Tech Stack"} />
-      <div className="cont mx-auto ml-10">
-        <div className="flex gap-5 overflow-hidden">
-          {skills?.map((skill) => {
-            return (
-              <div
-                key={skill.id}
-                className="flex items-center justify-center bg-dark min-w-[24rem] text-light px-5 py-10"
-              >
-                <div className="w-10">
-                  <img
-                    className="max-w-full object-contain"
-                    src={skill.img}
-                    alt={skill.name}
-                  />
-                </div>
-                <div>{skill.name}</div>
-              </div>
-            );
-          })}
+      <div className="cont flex justify-center px-48 mx-auto">
+        <div className="overflow-hidden">
+          <div className="flex gap-5" ref={slider}>
+            {skills?.map((skill) => {
+              return <SkillCard skill={skill} key={skill.id} />;
+            })}
+          </div>
         </div>
       </div>
     </div>

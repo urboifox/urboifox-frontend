@@ -25,7 +25,7 @@ function App() {
       <SkeletonTheme baseColor="#141414" highlightColor="#444">
         <Cursor />
         <RouterProvider router={myRouter} />
-        {/* <div className="h-[300vh]"></div> */}
+        <div className="h-[100vh]"></div>
       </SkeletonTheme>
     </>
   );
