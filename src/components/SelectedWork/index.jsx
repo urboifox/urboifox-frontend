@@ -73,7 +73,7 @@ const SelectedWork = () => {
                       draggable={false}
                       className="w-full object-cover h-full transition-transform saturate-[1.2] duration-500"
                       src={element.img}
-                      alt={element.description || "Project image"}
+                      alt={element.title}
                     />
                   </div>
                 );
