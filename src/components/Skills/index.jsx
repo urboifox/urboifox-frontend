@@ -16,8 +16,8 @@ const Skills = () => {
         ease: "none",
         scrollTrigger: {
           trigger: scope.current,
-          start: "150% bottom",
-          end: "150%  top",
+          start: "140% bottom",
+          end: "140%  top",
           scrub: 1,
           pin: true,
         },
