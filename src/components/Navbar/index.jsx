@@ -54,6 +54,7 @@ const Navbar = () => {
       </motion.div>
       <div className="flex items-center gap-5">
         <motion.a
+          aria-label="Go to my Github"
           href="https://github.com/urboifox"
           target="_blank"
           whileTap={{ scale: 0.9 }}
@@ -68,6 +69,7 @@ const Navbar = () => {
           />
         </motion.a>
         <motion.a
+          aria-label="Go to my Facebook"
           href="https://www.facebook.com/profile.php?id=100008910966277"
           target="_blank"
           whileTap={{ scale: 0.9 }}
@@ -82,6 +84,7 @@ const Navbar = () => {
           />
         </motion.a>
         <motion.a
+          aria-label="Go to my Linkedin"
           href="https://www.linkedin.com/in/urboifox/"
           target="_blank"
           whileTap={{ scale: 0.9 }}
