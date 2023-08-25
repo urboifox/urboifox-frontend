@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Skeleton from "react-loading-skeleton";
 import "./style.scss";
 import { changeScreenWidth } from "../../redux/slices/screenSlice";
@@ -10,7 +9,6 @@ import { PrimaryButton, SectionHeading } from "../";
 import { gsapSelected } from "../../functions";
 import { Link } from "react-router-dom";
 
-gsap.registerPlugin(ScrollTrigger);
 const SelectedWork = () => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   const bigScreen = useSelector((state) => state.screen.width);
@@ -89,6 +87,18 @@ const SelectedWork = () => {
                       className={`w-[60rem] aspect-video selectedEl`}
                     >
                       <Skeleton width={"100%"} height={"100%"} />
+                    </div>
+                  );
+                }) ||
+              Array(3)
+                .fill(0)
+                .map((_, i) => {
+                  return (
+                    <div
+                      key={i}
+                      className={`w-[60rem] aspect-video selectedEl`}
+                    >
+                      <div className="w-full h-full bg-darkDimmed" />
                     </div>
                   );
                 })}

@@ -1,11 +1,9 @@
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useSelector } from "react-redux";
 import { handleTagsAnimation } from "../../functions";
 import "./style.scss";
-gsap.registerPlugin(ScrollTrigger);
 
 const Heading = () => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
@@ -17,21 +15,21 @@ const Heading = () => {
 
   const handleMouseMove = (event) => {
     const oElement = theO.current;
-    const oBounds = oElement.getBoundingClientRect();
+    const oBounds = oElement?.getBoundingClientRect();
 
-    const oCenterX = oBounds.left + oBounds.width / 2;
-    const oCenterY = oBounds.top + oBounds.height / 2;
+    const oCenterX = oBounds?.left + oBounds?.width / 2;
+    const oCenterY = oBounds?.top + oBounds?.height / 2;
 
     const mouseX = event.clientX;
     const mouseY = event.clientY;
 
     const angle = Math.atan2(mouseY - oCenterY, mouseX - oCenterX);
 
-    const maxDistance = Math.min(oBounds.width, oBounds.height) / 2;
+    const maxDistance = Math.min(oBounds?.width, oBounds?.height) / 1.5;
 
     const offsetX = Math.cos(angle) * maxDistance;
     const offsetY = Math.sin(angle) * maxDistance;
-    oElement.animate(
+    oElement?.animate(
       {
         transform: `translate(${offsetX}px, ${offsetY}px)`,
       },
@@ -50,7 +48,7 @@ const Heading = () => {
       const headingTl = gsap.timeline();
 
       headingTl.to("h1", {
-        y: bigScreen > 767 ? 100 : 50,
+        y: bigScreen > 1536 ? 100 : 50,
         ease: "none",
         scrollTrigger: {
           trigger: "h1",

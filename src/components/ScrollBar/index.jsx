@@ -1,14 +1,16 @@
 import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router";
 
 const ScrollBar = () => {
   const scrollbar = useRef(null);
   const darkTheme = useSelector((state) => state.theme.darkTheme);
+  const location = useLocation();
   function handleScroll() {
-    var body = document.body,
-      html = document.documentElement;
+    const body = document.body;
+    const html = document.documentElement;
 
-    var height = Math.max(
+    const height = Math.max(
       body.scrollHeight,
       body.offsetHeight,
       html.clientHeight,
@@ -21,12 +23,12 @@ const ScrollBar = () => {
     }%`;
   }
   useEffect(() => {
+    handleScroll();
     document.addEventListener("scroll", handleScroll);
-
     return () => {
       document.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [location]);
   return (
     <div
       ref={scrollbar}

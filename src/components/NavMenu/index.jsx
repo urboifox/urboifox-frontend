@@ -48,58 +48,60 @@ const NavMenu = () => {
               exit={{ opacity: 0 }}
               className="fixed w-full h-full backdrop-blur-md min-w-[100vw] min-h-[100vh] z-30 top-0 left-0"
             ></motion.div>
-            <motion.div
-              key={"menu"}
-              className={`${
-                darkTheme ? "text-light " : " text-dark"
-              } left-0 h-full fixed flex items-center transition-colors duration-300 top-0 w-[70%] md:w-1/2 lg:w-1/3 tracking-widest font-extralight z-50`}
-            >
-              <ul
-                ref={list}
-                className="flex flex-col item-center  w-full navMenuUl text-xl md:text-2xl xl:text-5xl"
+            <div className="cont w-full fixed h-screen left-1/2 -translate-x-1/2 top-0 z-50">
+              <motion.div
+                key={"menu"}
+                className={`${
+                  darkTheme ? "text-light " : " text-dark"
+                } left-0 h-full absolute flex items-center transition-colors duration-300 top-0 w-[70%] md:w-1/2 lg:w-1/3 tracking-widest font-extralight`}
               >
-                {listItems.map((itemText, i) => {
-                  return (
-                    <Link
-                      key={i}
-                      to={
-                        itemText.toLowerCase() === "home"
-                          ? "/"
-                          : itemText.toLowerCase()
-                      }
-                      onClick={() => handleToggleMenu()}
-                    >
-                      <motion.li
-                        initial={{ x: -200, opacity: 0 }}
-                        animate={{
-                          x: 0,
-                          opacity: 1,
-                          transition: {
-                            // duration: 0.1,
-                            delay: i * 0.1,
-                            type: "spring",
-                            stiffness: 80,
-                            damping: 15,
-                          },
-                        }}
-                        exit={{
-                          x: -200,
-                          opacity: 0,
-                          transition: {
-                            duration: 0.1,
-                          },
-                        }}
-                        className={`${
-                          darkTheme ? "before:bg-light" : "before:bg-dark"
-                        } link`}
+                <ul
+                  ref={list}
+                  className="flex flex-col item-center  w-full navMenuUl text-xl md:text-2xl xl:text-5xl"
+                >
+                  {listItems.map((itemText, i) => {
+                    return (
+                      <Link
+                        key={i}
+                        to={
+                          itemText.toLowerCase() === "home"
+                            ? "/"
+                            : itemText.toLowerCase()
+                        }
+                        onClick={() => handleToggleMenu()}
                       >
-                        {itemText}
-                      </motion.li>
-                    </Link>
-                  );
-                })}
-              </ul>
-            </motion.div>
+                        <motion.li
+                          initial={{ x: -200, opacity: 0 }}
+                          animate={{
+                            x: 0,
+                            opacity: 1,
+                            transition: {
+                              // duration: 0.1,
+                              delay: i * 0.1,
+                              type: "spring",
+                              stiffness: 80,
+                              damping: 15,
+                            },
+                          }}
+                          exit={{
+                            x: -200,
+                            opacity: 0,
+                            transition: {
+                              duration: 0.1,
+                            },
+                          }}
+                          className={`${
+                            darkTheme ? "before:bg-light" : "before:bg-dark"
+                          } link`}
+                        >
+                          {itemText}
+                        </motion.li>
+                      </Link>
+                    );
+                  })}
+                </ul>
+              </motion.div>
+            </div>
           </>
         )}
       </AnimatePresence>

@@ -4,15 +4,14 @@ import { Outlet } from "react-router";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useDispatch } from "react-redux";
 import { setTheme } from "../../redux/slices/themeSlice";
-import Navbar from "../Navbar";
-import NavMenu from "../NavMenu";
 import axios from "axios";
 import { initiateData } from "../../redux/slices/websiteDataSlice";
-
+import { ScrollBar, Navbar, NavMenu, ScrollToTop } from "../";
 gsap.registerPlugin(ScrollTrigger);
 
 const DefaultLayout = () => {
   const dispatch = useDispatch();
+
   const localDarkTheme = localStorage.getItem("darkTheme");
   function initiateTheme() {
     if (localDarkTheme) {
@@ -24,27 +23,31 @@ const DefaultLayout = () => {
   initiateTheme();
 
   const scope = useRef(null);
+
   useEffect(() => {
+    const animateUpElement = document.querySelector(".animateUp");
     const ctx = gsap.context(() => {
       const wrapperTl = gsap.timeline();
-      wrapperTl
-        .to(".wrapper", {
-          overflow: "hidden",
-          duration: 0,
-        })
-        .from(".animateUp", 1, {
-          y: "100%",
-          ease: Circ.Out,
-          scrollTrigger: {
-            trigger: ".animateUp",
-            start: "top 80%",
-          },
-        })
-        .to(".wrapper", {
-          overflow: "unset",
-          delay: 1,
-          duration: 0,
-        });
+      if (animateUpElement) {
+        wrapperTl
+          .to(".wrapper", {
+            overflow: "hidden",
+            duration: 0,
+          })
+          .from(".animateUp", 1, {
+            y: "100%",
+            ease: Circ.Out,
+            scrollTrigger: {
+              trigger: ".animateUp",
+              start: "top 80%",
+            },
+          })
+          .to(".wrapper", {
+            overflow: "unset",
+            delay: 1,
+            duration: 0,
+          });
+      }
     }, scope);
 
     return () => {
@@ -63,6 +66,8 @@ const DefaultLayout = () => {
 
   return (
     <div ref={scope}>
+      <ScrollToTop />
+      <ScrollBar />
       <Navbar />
       <NavMenu />
       <Outlet />

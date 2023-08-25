@@ -1,6 +1,6 @@
 .theO {
   @apply relative;
   .theOSon {
-    @apply absolute top-[55%] left-[47%] w-2 h-2 md:w-4 md:h-4 rounded-full bg-primary-100;
+    @apply absolute top-[54%] left-[47%] md:top-[52%] md:left-[46%] lg:top-[54%] lg:left-[47%] w-2 h-2 lg:w-4 lg:h-4 md:w-3 md:h-3 rounded-full bg-primary-100;
   }
 }
