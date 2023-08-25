@@ -39,7 +39,7 @@ const SelectedWork = () => {
         <SectionHeading text={"Selected work"} />
         <motion.div
           ref={sectionRef}
-          className="w-max mb-32 max-w-full flex items-center flex-col gap-20 md:gap-40 lg:gap-60"
+          className="min-h-[2180px] w-max mb-32 max-w-full flex items-center flex-col gap-20 md:gap-40 lg:gap-60"
         >
           {elements
             ? elements?.map((element, i) => {
@@ -78,30 +78,37 @@ const SelectedWork = () => {
                   </div>
                 );
               })
-            : Array(3)
-                .fill(0)
-                .map((_, i) => {
-                  return (
-                    <div
-                      key={i}
-                      className={`w-[60rem] aspect-video selectedEl`}
-                    >
-                      <Skeleton width={"100%"} height={"100%"} />
-                    </div>
-                  );
-                }) ||
-              Array(3)
-                .fill(0)
-                .map((_, i) => {
-                  return (
-                    <div
-                      key={i}
-                      className={`w-[60rem] aspect-video selectedEl`}
-                    >
-                      <div className="w-full h-full bg-darkDimmed" />
-                    </div>
-                  );
-                })}
+            : (
+                <div className="min-h-[2180px]">
+                  {Array(3)
+                    .fill(0)
+                    .map((_, i) => {
+                      return (
+                        <div
+                          key={i}
+                          className={`w-[60rem] aspect-video selectedEl`}
+                        >
+                          <Skeleton width={"100%"} height={"100%"} />
+                        </div>
+                      );
+                    })}
+                </div>
+              ) || (
+                <div className="min-h-[2180px]">
+                  {Array(3)
+                    .fill(0)
+                    .map((_, i) => {
+                      return (
+                        <div
+                          key={i}
+                          className={` w-[60rem] aspect-video selectedEl`}
+                        >
+                          <div className="w-full h-full bg-darkDimmed" />
+                        </div>
+                      );
+                    })}
+                </div>
+              )}
         </motion.div>
         <Link to={`/work`} draggable={false}>
           <PrimaryButton text={`More Work`} />
