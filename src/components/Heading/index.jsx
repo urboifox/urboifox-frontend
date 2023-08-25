@@ -12,9 +12,11 @@ const Heading = () => {
   const closeTag = useRef(null);
   const scope = useRef(null);
   const theO = useRef(null);
+  const theO2 = useRef(null);
 
   const handleMouseMove = (event) => {
     const oElement = theO.current;
+    const oElement2 = theO2.current;
     const oBounds = oElement?.getBoundingClientRect();
 
     const oCenterX = oBounds?.left + oBounds?.width / 2;
@@ -25,11 +27,17 @@ const Heading = () => {
 
     const angle = Math.atan2(mouseY - oCenterY, mouseX - oCenterX);
 
-    const maxDistance = Math.min(oBounds?.width, oBounds?.height) / 1.5;
+    const maxDistance = Math.min(oBounds?.width, oBounds?.height) / 2.5;
 
     const offsetX = Math.cos(angle) * maxDistance;
     const offsetY = Math.sin(angle) * maxDistance;
     oElement?.animate(
+      {
+        transform: `translate(${offsetX}px, ${offsetY}px)`,
+      },
+      { duration: 1000, fill: "forwards" }
+    );
+    oElement2?.animate(
       {
         transform: `translate(${offsetX}px, ${offsetY}px)`,
       },
@@ -84,7 +92,27 @@ const Heading = () => {
         >
           F
           <span className="theO">
-            <span ref={theO} className="theOSon max-md:!translate-x-0"></span>o
+            <span
+              className={`${
+                darkTheme ? "bg-light" : "bg-dark"
+              } theOSon max-md:!translate-x-0`}
+            >
+              <span
+                className={`${!darkTheme ? "bg-light" : "bg-dark"}`}
+                ref={theO}
+              ></span>
+            </span>
+            <span
+              className={`${
+                darkTheme ? "bg-light" : "bg-dark"
+              } theOSon2 max-md:!translate-x-0`}
+            >
+              <span
+                className={`${!darkTheme ? "bg-light" : "bg-dark"}`}
+                ref={theO2}
+              ></span>
+            </span>
+            o
           </span>
           x
         </motion.span>

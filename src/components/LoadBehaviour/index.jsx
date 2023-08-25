@@ -3,7 +3,7 @@ import { useLocation } from "react-router";
 import { lenis } from "../../lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const ScrollToTop = () => {
+const LoadBehaviour = () => {
   window.onbeforeunload = function () {
     lenis.stop();
     window.scrollTo(0, 0);
@@ -20,4 +20,4 @@ const ScrollToTop = () => {
   return null;
 };
 
-export default ScrollToTop;
+export default LoadBehaviour;

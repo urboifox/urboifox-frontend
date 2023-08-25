@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { setTheme } from "../../redux/slices/themeSlice";
 import axios from "axios";
 import { initiateData } from "../../redux/slices/websiteDataSlice";
-import { ScrollBar, Navbar, NavMenu, ScrollToTop } from "../";
+import { ScrollBar, Navbar, NavMenu, LoadBehaviour } from "../";
 gsap.registerPlugin(ScrollTrigger);
 
 const DefaultLayout = () => {
@@ -66,7 +66,7 @@ const DefaultLayout = () => {
 
   return (
     <div ref={scope}>
-      <ScrollToTop />
+      <LoadBehaviour />
       <ScrollBar />
       <Navbar />
       <NavMenu />

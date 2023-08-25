@@ -1,6 +1,19 @@
 .theO {
   @apply relative;
   .theOSon {
-    @apply absolute top-[54%] left-[47%] md:top-[52%] md:left-[46%] lg:top-[54%] lg:left-[47%] w-2 h-2 lg:w-4 lg:h-4 md:w-3 md:h-3 rounded-full bg-primary-100;
+    @apply absolute top-[49.8%] left-[25%] aspect-square w-2 lg:w-4 md:w-3 rounded-full;
+  }
+
+  .theOSon,
+  .theOSon2 {
+    span {
+      @apply w-1 h-1 md:w-2 md:h-2 max-md:-translate-x-1/2 max-md:-translate-y-1/2 left-[50%] top-[50%] md:top-[25%] md:left-[25%] rounded-full absolute;
+    }
+  }
+  .theOSon2 {
+    @apply absolute top-[50%] right-[13%] aspect-square w-2 lg:w-4 md:w-3 rounded-full;
+    span {
+      @apply md:top-[28%] md:left-[27%];
+    }
   }
 }

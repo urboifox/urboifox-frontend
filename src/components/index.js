@@ -12,12 +12,12 @@ import SectionHeading from "./SectionHeading";
 import About from "./About";
 import PrimaryButton from "./PrimaryButton";
 import Skills from "./Skills";
-import ScrollToTop from "./ScrollToTop";
+import LoadBehaviour from "./LoadBehaviour";
 import Work from "./Work";
 export {
   Skills,
   Work,
-  ScrollToTop,
+  LoadBehaviour,
   PrimaryButton,
   About,
   SectionHeading,
