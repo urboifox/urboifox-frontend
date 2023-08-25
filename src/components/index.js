@@ -14,8 +14,10 @@ import PrimaryButton from "./PrimaryButton";
 import Skills from "./Skills";
 import LoadBehaviour from "./LoadBehaviour";
 import Work from "./Work";
+import SkillCard from "./SkillCard";
 export {
   Skills,
+  SkillCard,
   Work,
   LoadBehaviour,
   PrimaryButton,

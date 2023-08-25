@@ -1,7 +1,7 @@
 .theO {
   @apply relative;
   .theOSon {
-    @apply absolute top-[49.8%] left-[25%] aspect-square w-2 lg:w-4 md:w-3 rounded-full;
+    @apply absolute top-[49.8%] left-[28%] aspect-square w-2 lg:w-4 md:w-3 rounded-full;
   }
 
   .theOSon,
@@ -11,7 +11,7 @@
     }
   }
   .theOSon2 {
-    @apply absolute top-[50%] right-[13%] aspect-square w-2 lg:w-4 md:w-3 rounded-full;
+    @apply absolute top-[50%] right-[16%] aspect-square w-2 lg:w-4 md:w-3 rounded-full;
     span {
       @apply md:top-[28%] md:left-[27%];
     }
