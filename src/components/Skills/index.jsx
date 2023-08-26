@@ -33,7 +33,10 @@ const Skills = () => {
       <SectionHeading className={`mb-14`} text={"Tech Stack"} />
       <div className="cont md:px-48 mx-auto max-md:px-4">
         <div className="md:overflow-hidden">
-          <div className="flex flex-col md:flex-row gap-5" ref={slider}>
+          <div
+            className="flex flex-col md:flex-row gap-5 max-md:translate-x-0"
+            ref={slider}
+          >
             {skills?.map((skill) => {
               return <SkillCard skill={skill} key={skill.id} />;
             })}
