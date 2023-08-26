@@ -1,5 +1,5 @@
 import { Circ, gsap } from "gsap";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { Outlet } from "react-router";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useDispatch } from "react-redux";
@@ -21,8 +21,6 @@ const DefaultLayout = () => {
     }
   }
   initiateTheme();
-
-  const scope = useRef(null);
 
   useEffect(() => {
     const animateUpElement = document.querySelector(".animateUp");
@@ -48,7 +46,7 @@ const DefaultLayout = () => {
             duration: 0,
           });
       }
-    }, scope);
+    });
 
     return () => {
       ctx.revert();
@@ -65,13 +63,13 @@ const DefaultLayout = () => {
   }, [dispatch]);
 
   return (
-    <div ref={scope}>
+    <>
       <LoadBehaviour />
       <ScrollBar />
       <Navbar />
       <NavMenu />
       <Outlet />
-    </div>
+    </>
   );
 };
 

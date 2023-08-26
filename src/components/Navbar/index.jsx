@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Facebook, Github, Linkedin, Sun } from "../../assets/icons/";
+import { Sun } from "../../assets/icons/";
 import { motion } from "framer-motion";
 import { toggleTheme } from "../../redux/slices/themeSlice";
 import { toggleNavMenu } from "../../redux/slices/navMenuSlice";
+import SocialLinks from "../SocialLinks";
 const Navbar = () => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   const navVisible = useSelector((state) => state.navMenu.visible);
@@ -52,53 +53,7 @@ const Navbar = () => {
           } w-full h-[.1em] absolute left-0 rounded-md transition-all duration-200`}
         ></span>
       </motion.div>
-      <div className="flex items-center gap-5">
-        <motion.a
-          aria-label="Go to my Github"
-          href="https://github.com/urboifox"
-          target="_blank"
-          whileTap={{ scale: 0.9 }}
-          className="w-5 aspect-square link group"
-        >
-          <Github
-            className={`${
-              darkTheme
-                ? "fill-dimmed group-hover:fill-light max-md:group-hover:fill-dimmed"
-                : "fill-darkDimmed group-hover:fill-dark max-md:group-hover:fill-darkDimmed"
-            } w-full h-full transition-colors delay-0 duration-500`}
-          />
-        </motion.a>
-        <motion.a
-          aria-label="Go to my Facebook"
-          href="https://www.facebook.com/profile.php?id=100008910966277"
-          target="_blank"
-          whileTap={{ scale: 0.9 }}
-          className={`${
-            darkTheme
-              ? "fill-dimmed hover:fill-light max-md:hover:fill-dimmed"
-              : "fill-darkDimmed hover:fill-dark max-md:hover:fill-darkDimmed"
-          } w-5 aspect-square link`}
-        >
-          <Facebook
-            className={`w-full h-full transition-colors duration-500`}
-          />
-        </motion.a>
-        <motion.a
-          aria-label="Go to my Linkedin"
-          href="https://www.linkedin.com/in/urboifox/"
-          target="_blank"
-          whileTap={{ scale: 0.9 }}
-          className="w-5 aspect-square link group"
-        >
-          <Linkedin
-            className={`${
-              darkTheme
-                ? "fill-dimmed group-hover:fill-light max-md:group-hover:fill-dimmed"
-                : "fill-darkDimmed group-hover:fill-dark max-md:group-hover:fill-darkDimmed"
-            } w-full h-full transition-colors delay-0 duration-500`}
-          />
-        </motion.a>
-      </div>
+      <SocialLinks />
       <motion.div
         onClick={() => handleTheme()}
         whileTap={{ scale: 0.9 }}

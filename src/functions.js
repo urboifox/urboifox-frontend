@@ -37,41 +37,41 @@ export function handleTagsAnimation(e, direction) {
 }
 
 // gsap functions
-export function gsapSelected(sectionRef, screenWidth) {
-  gsap.to(sectionRef.current, {
-    x: "0",
-    duration: 0.00000000001,
-    scrollTrigger: {
-      trigger: sectionRef.current,
-      start: "-10% bottom",
-    },
-  });
-  const tl = gsap.timeline();
-  tl.fromTo(
-    sectionRef.current,
-    { x: "0" },
-    {
-      x: screenWidth > 767 ? "-50%" : "0",
-      ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        scrub: 1,
-        start: "45% 80%",
-        end: "10% 60%",
-      },
-    }
-  ).fromTo(
-    sectionRef.current,
-    { x: screenWidth > 767 ? "-50%" : "0" },
-    {
-      x: "0",
-      ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        scrub: 1,
-        start: "80% 80%",
-        end: "40% 60%",
-      },
-    }
-  );
-}
+// export function gsapSelected(sectionRef, screenWidth) {
+//   gsap.to(sectionRef.current, {
+//     x: "0",
+//     duration: 0.00000000001,
+//     scrollTrigger: {
+//       trigger: sectionRef.current,
+//       start: "-10% bottom",
+//     },
+//   });
+//   const tl = gsap.timeline();
+//   tl.fromTo(
+//     sectionRef.current,
+//     { x: "0" },
+//     {
+//       x: screenWidth > 767 ? "-50%" : "0",
+//       ease: "none",
+//       scrollTrigger: {
+//         trigger: sectionRef.current,
+//         scrub: 1,
+//         start: "45% 80%",
+//         end: "10% 60%",
+//       },
+//     }
+//   ).fromTo(
+//     sectionRef.current,
+//     { x: screenWidth > 767 ? "-50%" : "0" },
+//     {
+//       x: "0",
+//       ease: "none",
+//       scrollTrigger: {
+//         trigger: sectionRef.current,
+//         scrub: 1,
+//         start: "80% 80%",
+//         end: "40% 60%",
+//       },
+//     }
+//   );
+// }

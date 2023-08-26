@@ -8,11 +8,17 @@ const Skills = () => {
   const screenWidth = useSelector((state) => state.screen.width);
   const scope = useRef(null);
   const slider = useRef(null);
+  const cardWidth = 288;
+  const gap = 20;
+  const numberOfCards = skills?.length;
+
+  const totalWidth = (cardWidth + gap) * numberOfCards;
+  const xPosition = totalWidth - slider.current?.clientWidth;
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(slider.current, {
-        x: screenWidth > 767 ? `-${288 * skills?.length - 1000}px` : 0,
+        x: screenWidth > 767 ? `-${xPosition}px` : 0,
         ease: "none",
         scrollTrigger: {
           trigger: scope.current,
@@ -26,7 +32,7 @@ const Skills = () => {
     return () => {
       ctx.revert();
     };
-  }, [skills, screenWidth]);
+  }, [xPosition, screenWidth]);
 
   return (
     <div className="mt-20 lg:mt-40" ref={scope}>

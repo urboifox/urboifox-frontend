@@ -15,8 +15,10 @@ import Skills from "./Skills";
 import LoadBehaviour from "./LoadBehaviour";
 import Work from "./Work";
 import SkillCard from "./SkillCard";
+import SocialLinks from "./SocialLinks";
 export {
   Skills,
+  SocialLinks,
   SkillCard,
   Work,
   LoadBehaviour,

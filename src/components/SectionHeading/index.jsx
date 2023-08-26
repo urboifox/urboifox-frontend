@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 const SectionHeading = ({ text, className }) => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   const el = useRef(null);
+  const scope = useRef(null);
   const screenWidth = useSelector((state) => state.screen.width);
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -23,7 +24,7 @@ const SectionHeading = ({ text, className }) => {
           },
         }
       );
-    }, el);
+    }, scope);
 
     return () => {
       ctx.revert();
@@ -31,12 +32,14 @@ const SectionHeading = ({ text, className }) => {
   }, [screenWidth, text]);
   return (
     <div
-      ref={el}
+      ref={scope}
       className={`sectionHeading fadeIn ${
         darkTheme ? "text-light" : "text-dark"
       } block md:self-start max-w-[80rem] tracking-wide w-full mx-auto font-main font-thin  px-5 text-2xl md:text-5xl lg:text-5xl capitalize ${className}`}
     >
-      <h2>{text}</h2>
+      <h2 ref={el} className="w-max">
+        {text}
+      </h2>
     </div>
   );
 };
