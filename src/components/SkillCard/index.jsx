@@ -1,10 +1,37 @@
+import { gsap } from "gsap";
+import { useLayoutEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 
 /* eslint-disable react/prop-types */
 const SkillCard = ({ skill }) => {
+  const card = useRef(null);
   const darkTheme = useSelector((state) => state.theme.darkTheme);
+  const screenWidth = useSelector((state) => state.screen.width);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        card.current,
+        { opacity: 0, x: screenWidth > 767 ? 0 : -100 },
+        {
+          opacity: 1,
+          x: 0,
+          scrollTrigger: {
+            trigger: card.current,
+            start: "top 90%",
+            end: "top 60%",
+            scrub: 1,
+          },
+        }
+      );
+    }, card);
+
+    return () => ctx.revert();
+  }, [screenWidth]);
+
   return (
     <div
+      ref={card}
       className={`${
         darkTheme
           ? "text-light from-[#131313] to-[#191919]"

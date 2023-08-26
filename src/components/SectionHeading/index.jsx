@@ -5,20 +5,20 @@ import { gsap } from "gsap";
 const SectionHeading = ({ text, className }) => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   const el = useRef(null);
-  const bigScreen = useSelector((state) => state.screen.width);
+  const screenWidth = useSelector((state) => state.screen.width);
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el.current,
         { x: 0, opacity: 0 },
         {
-          x: bigScreen > 767 ? 100 : 20,
+          x: screenWidth > 767 ? 100 : 20,
           opacity: 1,
           ease: "none",
           scrollTrigger: {
             trigger: el.current,
             start: "top bottom",
-            end: bigScreen > 767 ? "bottom center" : "bottom 0",
+            end: screenWidth > 767 ? "bottom 0" : "bottom center",
             scrub: 1,
           },
         }
@@ -28,7 +28,7 @@ const SectionHeading = ({ text, className }) => {
     return () => {
       ctx.revert();
     };
-  }, [bigScreen, text]);
+  }, [screenWidth, text]);
   return (
     <div
       ref={el}

@@ -11,24 +11,24 @@ import { Link } from "react-router-dom";
 
 const SelectedWork = () => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
-  const bigScreen = useSelector((state) => state.screen.width);
+  const screenWidth = useSelector((state) => state.screen.width);
   const elements = useSelector((state) => state.websiteData.data.selected_work);
   const sectionRef = useRef(null);
   const dispatch = useDispatch();
   const scope = useRef(null);
   window.onresize = () => {
-    dispatch(changeScreenWidth(window.innerWidth));
+    dispatch(changeScreenWidth(document.body.clientWidth));
   };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsapSelected(sectionRef, bigScreen);
+      gsapSelected(sectionRef, screenWidth);
     }, scope);
 
     return () => {
       ctx.revert();
     };
-  }, [bigScreen]);
+  }, [screenWidth]);
   return (
     <>
       <div

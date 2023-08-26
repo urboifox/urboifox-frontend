@@ -7,7 +7,7 @@ import "./style.scss";
 
 const Heading = () => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
-  const bigScreen = useSelector((state) => state.screen.width);
+  const screenWidth = useSelector((state) => state.screen.width);
   const openTag = useRef(null);
   const closeTag = useRef(null);
   const scope = useRef(null);
@@ -32,7 +32,7 @@ const Heading = () => {
 
       const offsetX = Math.cos(angle) * maxDistance;
       const offsetY = Math.sin(angle) * maxDistance;
-      if (bigScreen > 767) {
+      if (screenWidth > 767) {
         oElement?.animate(
           {
             transform: `translate(${offsetX}px, ${offsetY}px)`,
@@ -51,13 +51,13 @@ const Heading = () => {
     return () => {
       document.removeEventListener("mousemove", (e) => handleMouseMove(e));
     };
-  }, [bigScreen]);
+  }, [screenWidth]);
   useEffect(() => {
     const ctx = gsap.context(() => {
       const headingTl = gsap.timeline();
 
       headingTl.to("h1", {
-        y: bigScreen > 1536 ? 100 : 50,
+        y: screenWidth > 1536 ? 100 : 50,
         ease: "none",
         scrollTrigger: {
           trigger: "h1",
@@ -72,7 +72,7 @@ const Heading = () => {
     return () => {
       ctx.revert();
     };
-  }, [bigScreen]);
+  }, [screenWidth]);
   return (
     <div ref={scope} className="wrapper headingContainer font-main">
       <h1

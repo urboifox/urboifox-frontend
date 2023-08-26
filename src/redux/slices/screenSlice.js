@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  width: window.innerWidth,
+  width: document.body.clientWidth,
 };
 
 const screenSlice = createSlice({

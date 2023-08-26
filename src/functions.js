@@ -37,7 +37,7 @@ export function handleTagsAnimation(e, direction) {
 }
 
 // gsap functions
-export function gsapSelected(sectionRef, bigScreen) {
+export function gsapSelected(sectionRef, screenWidth) {
   gsap.to(sectionRef.current, {
     x: "0",
     duration: 0.00000000001,
@@ -51,7 +51,7 @@ export function gsapSelected(sectionRef, bigScreen) {
     sectionRef.current,
     { x: "0" },
     {
-      x: bigScreen > 767 ? "-50%" : "0",
+      x: screenWidth > 767 ? "-50%" : "0",
       ease: "none",
       scrollTrigger: {
         trigger: sectionRef.current,
@@ -62,7 +62,7 @@ export function gsapSelected(sectionRef, bigScreen) {
     }
   ).fromTo(
     sectionRef.current,
-    { x: bigScreen > 767 ? "-50%" : "0" },
+    { x: screenWidth > 767 ? "-50%" : "0" },
     {
       x: "0",
       ease: "none",
