@@ -12,13 +12,13 @@ const SectionHeading = ({ text, className }) => {
         el.current,
         { x: 0, opacity: 0 },
         {
-          x: 100,
+          x: bigScreen > 767 ? 100 : 20,
           opacity: 1,
           ease: "none",
           scrollTrigger: {
             trigger: el.current,
             start: "top bottom",
-            end: "bottom 0",
+            end: "bottom center",
             scrub: 1,
           },
         }
@@ -28,7 +28,7 @@ const SectionHeading = ({ text, className }) => {
     return () => {
       ctx.revert();
     };
-  }, [bigScreen]);
+  }, [bigScreen, text]);
   return (
     <div
       ref={el}

@@ -75,16 +75,3 @@ export function gsapSelected(sectionRef, bigScreen) {
     }
   );
 }
-
-// export function gsapFadeIn(element) {
-//   const opacityTl = gsap.timeline();
-//   opacityTl.from(element.current, {
-//     opacity: 0,
-//     duration: 2,
-//     scrollTrigger: {
-//       trigger: element.current,
-//       start: "bottom 90%",
-//       scrub: 1,
-//     },
-//   });
-// }
