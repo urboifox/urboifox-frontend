@@ -11,9 +11,10 @@ const SectionHeading = ({ text, className }) => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el.current,
-        { x: 0 },
+        { x: 0, opacity: 0 },
         {
           x: 100,
+          opacity: 1,
           ease: "none",
           scrollTrigger: {
             trigger: el.current,
@@ -23,7 +24,6 @@ const SectionHeading = ({ text, className }) => {
           },
         }
       );
-      gsapFadeIn(el);
     }, el);
 
     return () => {
