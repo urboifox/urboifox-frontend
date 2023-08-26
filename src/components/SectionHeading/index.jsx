@@ -13,7 +13,7 @@ const SectionHeading = ({ text, className }) => {
         el.current,
         { x: 0 },
         {
-          x: bigScreen > 767 ? 100 : 0,
+          x: 100,
           ease: "none",
           scrollTrigger: {
             trigger: el.current,
