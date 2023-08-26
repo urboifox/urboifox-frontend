@@ -19,7 +19,7 @@ const Skills = () => {
           start: "140% bottom",
           end: "140%  top",
           scrub: 1,
-          pin: true,
+          pin: bigScreen > 767 ? true : false,
         },
       });
     }, scope);
