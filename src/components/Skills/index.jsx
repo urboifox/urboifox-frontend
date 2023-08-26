@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { SkillCard, PrimaryButton, SectionHeading } from "../";
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 const Skills = () => {
@@ -9,10 +9,10 @@ const Skills = () => {
   const scope = useRef(null);
   const slider = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(slider.current, {
-        x: bigScreen ? `-${288 * skills?.length - 1000}px` : 0,
+        x: bigScreen > 767 ? `-${288 * skills?.length - 1000}px` : 0,
         ease: "none",
         scrollTrigger: {
           trigger: scope.current,
@@ -30,8 +30,8 @@ const Skills = () => {
 
   return (
     <div className="mt-20 lg:mt-40" ref={scope}>
-      <SectionHeading className={`mb-16`} text={"Tech Stack"} />
-      <div className="cont md:px-48 mx-auto">
+      <SectionHeading className={`mb-14`} text={"Tech Stack"} />
+      <div className="cont md:px-48 mx-auto max-md:px-4">
         <div className="md:overflow-hidden">
           <div className="flex flex-col md:flex-row gap-5" ref={slider}>
             {skills?.map((skill) => {

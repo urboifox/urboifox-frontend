@@ -15,7 +15,7 @@ const PrimaryButton = ({ text }) => {
           darkTheme
             ? "text-white border-white before:bg-light hover:text-dark hover:border-light"
             : "text-dark border-dark before:bg-dark hover:text-light hover:border-dark"
-        } cursor-none py-4 px-12 uppercase border-[1px] font-extralight transition-all text-xl duration-300 relative hover:before:origin-left hover:before:scale-x-100 primary-btn`}
+        } cursor-none text-lg py-4 px-12 uppercase border-[1px] font-extralight transition-all md:text-xl duration-300 relative hover:before:origin-left hover:before:scale-x-100 primary-btn`}
       >
         {text}
       </button>

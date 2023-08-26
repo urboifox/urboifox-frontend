@@ -36,10 +36,10 @@ const SelectedWork = () => {
         id="selected"
         className="mt-20 lg:mt-96 py-16 flex flex-col items-center relative cont mx-auto"
       >
-        <SectionHeading text={"Selected work"} />
+        <SectionHeading className={`mb-20`} text={"Selected work"} />
         <motion.div
           ref={sectionRef}
-          className="min-h-[2180px] w-max mb-32 max-w-full flex items-center flex-col gap-20 md:gap-40 lg:gap-60"
+          className="md:min-h-[2180px] w-max mb-32 max-w-full flex items-center flex-col gap-20 md:gap-40 lg:gap-60"
         >
           {elements
             ? elements?.map((element, i) => {
@@ -79,7 +79,7 @@ const SelectedWork = () => {
                 );
               })
             : (
-                <div className="min-h-[2180px]">
+                <div className="md:min-h-[2180px]">
                   {Array(3)
                     .fill(0)
                     .map((_, i) => {
@@ -94,7 +94,7 @@ const SelectedWork = () => {
                     })}
                 </div>
               ) || (
-                <div className="min-h-[2180px]">
+                <div className="md:min-h-[2180px]">
                   {Array(3)
                     .fill(0)
                     .map((_, i) => {
