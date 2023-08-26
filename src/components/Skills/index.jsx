@@ -40,7 +40,7 @@ const Skills = () => {
           </div>
         </div>
         <div className="mt-20 mx-auto w-max">
-          <a href={`/public/Mohamed Ashraf - Frontend Developer.pdf`} download>
+          <a href={`/Mohamed Ashraf - Frontend Developer.pdf`} download>
             <PrimaryButton text={`Download CV`} />
           </a>
         </div>
