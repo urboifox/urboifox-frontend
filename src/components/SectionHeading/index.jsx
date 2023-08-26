@@ -18,7 +18,7 @@ const SectionHeading = ({ text, className }) => {
           scrollTrigger: {
             trigger: el.current,
             start: "top bottom",
-            end: "bottom center",
+            end: bigScreen > 767 ? "bottom center" : "bottom 0",
             scrub: 1,
           },
         }
