@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
-import { gsapFadeIn } from "../../functions";
 import { gsap } from "gsap";
 /* eslint-disable react/prop-types */
 const SectionHeading = ({ text, className }) => {
