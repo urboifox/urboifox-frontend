@@ -14,16 +14,13 @@ const Skills = () => {
       gsap.to(slider.current, {
         x: bigScreen > 767 ? `-${288 * skills?.length - 1000}px` : 0,
         ease: "none",
-        scrollTrigger:
-          bigScreen > 767
-            ? {
-                trigger: scope.current,
-                start: "140% bottom",
-                end: "140%  top",
-                scrub: 1,
-                pin: true,
-              }
-            : null,
+        scrollTrigger: {
+          trigger: scope.current,
+          start: "140% bottom",
+          end: "140%  top",
+          scrub: 1,
+          pin: true,
+        },
       });
     }, scope);
     return () => {

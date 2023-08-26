@@ -24,7 +24,7 @@ const SectionHeading = ({ text, className }) => {
         }
       );
       gsapFadeIn(el);
-    });
+    }, el);
 
     return () => {
       ctx.revert();
