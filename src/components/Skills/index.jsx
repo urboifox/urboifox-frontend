@@ -38,7 +38,7 @@ const Skills = () => {
     <div className="mt-20 lg:mt-40" ref={scope}>
       <SectionHeading className={`mb-14`} text={"Tech Stack"} />
       <div className="cont md:px-48 mx-auto max-md:px-4">
-        <div className="md:overflow-hidden">
+        <div className="md:overflow-hidden p-5">
           <div
             className="flex flex-col md:flex-row gap-5 max-md:translate-x-0"
             ref={slider}
