@@ -1,7 +1,7 @@
 .primary-btn {
   &::before {
     content: "";
-    @apply scale-x-0 origin-right absolute top-0 left-0 w-full h-full -z-10;
+    @apply scale-x-0 origin-right absolute top-0 left-0 md:w-full h-full -z-10;
   }
   &::before {
     transition: transform 400ms;
