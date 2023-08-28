@@ -9,7 +9,7 @@ import { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 function App() {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
-  document.body.style.backgroundColor = darkTheme ? "#111" : "#ddd";
+  document.body.style.backgroundColor = darkTheme ? "#020202" : "#ddd";
   document.body.style.transition = darkTheme ? "300ms" : "300ms";
 
   function raf(time) {
