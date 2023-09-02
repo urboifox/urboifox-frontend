@@ -4,10 +4,28 @@ import { motion } from "framer-motion";
 import { toggleTheme } from "../../redux/slices/themeSlice";
 import { toggleNavMenu } from "../../redux/slices/navMenuSlice";
 import SocialLinks from "../SocialLinks";
+import { useEffect, useState } from "react";
 const Navbar = () => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   const navVisible = useSelector((state) => state.navMenu.visible);
   const dispatch = useDispatch();
+
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const visible = prevScrollPos > currentScrollPos;
+
+      setPrevScrollPos(currentScrollPos);
+      setVisible(visible);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
   const handleTheme = () => {
     dispatch(toggleTheme());
   };
@@ -16,7 +34,11 @@ const Navbar = () => {
     dispatch(toggleNavMenu());
   };
   return (
-    <div className="cont mx-auto z-[70] px-5 md:px-10 flex items-center justify-between text-light absolute -translate-x-1/2 top-0 left-1/2 w-full h-20">
+    <div
+      className={`cont transition-all duration-1000 mx-auto z-[70] px-5 md:px-10 flex items-center justify-between text-light sticky top-0 left-0 w-full h-20
+    ${visible ? "" : "-translate-y-[100%]"}
+    `}
+    >
       <motion.div
         whileTap={{ scale: 0.9 }}
         className="link w-8 aspect-square group relative"

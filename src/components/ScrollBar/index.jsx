@@ -23,12 +23,13 @@ const ScrollBar = () => {
     }%`;
   }
   useEffect(() => {
+    scrollbar.current.style.height = `0`;
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [location]);
+  }, [location.pathname]);
 
   return (
     <div

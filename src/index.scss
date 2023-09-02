@@ -59,3 +59,37 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
+
+// custome animations
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes floating {
+  from {
+    transform: translate(0, 0px);
+    -webkit-transform: translate(0, 0px);
+    -moz-transform: translate(0, 0px);
+    -ms-transform: translate(0, 0px);
+    -o-transform: translate(0, 0px);
+  }
+  65% {
+    transform: translate(0, 15px);
+    -webkit-transform: translate(0, 15px);
+    -moz-transform: translate(0, 15px);
+    -ms-transform: translate(0, 15px);
+    -o-transform: translate(0, 15px);
+  }
+  to {
+    transform: translate(0, -0px);
+    -webkit-transform: translate(0, -0px);
+    -moz-transform: translate(0, -0px);
+    -ms-transform: translate(0, -0px);
+    -o-transform: translate(0, -0px);
+  }
+}

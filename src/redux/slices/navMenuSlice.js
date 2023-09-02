@@ -11,8 +11,11 @@ const navMenuSlice = createSlice({
     toggleNavMenu: (state) => {
       state.visible = !state.visible;
     },
+    setNavMenu: (state, action) => {
+      state.visible = action.payload;
+    },
   },
 });
 
-export const { toggleNavMenu } = navMenuSlice.actions;
+export const { toggleNavMenu, setNavMenu } = navMenuSlice.actions;
 export default navMenuSlice;

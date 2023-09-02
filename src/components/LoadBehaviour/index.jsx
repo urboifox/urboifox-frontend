@@ -15,7 +15,7 @@ const LoadBehaviour = () => {
     window.scrollTo(0, 0);
     lenis.start();
     ScrollTrigger.refresh();
-  }, [location]);
+  }, [location.pathname]);
 
   return null;
 };

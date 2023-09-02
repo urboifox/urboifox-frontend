@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./style.scss";
 import { AnimatePresence, motion } from "framer-motion";
-import { toggleNavMenu } from "../../redux/slices/navMenuSlice";
+import { setNavMenu, toggleNavMenu } from "../../redux/slices/navMenuSlice";
 import { lenis } from "../../lenis";
 import { useEffect, useRef } from "react";
 import { animateText } from "../../functions";
@@ -16,6 +16,26 @@ const NavMenu = () => {
   const handleToggleMenu = () => {
     dispatch(toggleNavMenu());
   };
+  const handleSetMenu = (val) => {
+    dispatch(setNavMenu(val));
+  };
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === "m" || e.key === "M") {
+        e.preventDefault();
+        handleToggleMenu();
+      } else if (e.key === "Escape" || e.key === "Esc") {
+        e.preventDefault();
+        handleSetMenu(false);
+      }
+    };
+    window.addEventListener("keyup", handleKeyPress);
+
+    return () => {
+      window.removeEventListener("keyup", handleKeyPress);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     menuVisible ? (lenis.isStopped = true) : (lenis.isStopped = false);
@@ -36,7 +56,6 @@ const NavMenu = () => {
         {menuVisible && (
           <>
             <motion.div
-              onClick={() => handleToggleMenu()}
               key={"blur"}
               initial={{ opacity: 0 }}
               animate={{
@@ -48,7 +67,10 @@ const NavMenu = () => {
               exit={{ opacity: 0 }}
               className="fixed w-full h-full backdrop-blur-md min-w-[100vw] min-h-[100vh] z-30 top-0 left-0"
             ></motion.div>
-            <div className="cont w-full fixed h-screen left-1/2 -translate-x-1/2 top-0 z-50">
+            <div
+              onClick={() => handleSetMenu(false)}
+              className="cont w-full fixed h-screen left-1/2 -translate-x-1/2 top-0 z-50"
+            >
               <motion.div
                 key={"menu"}
                 className={`${
@@ -68,7 +90,7 @@ const NavMenu = () => {
                             ? "/"
                             : itemText.toLowerCase()
                         }
-                        onClick={() => handleToggleMenu()}
+                        onClick={() => handleSetMenu(false)}
                       >
                         <motion.li
                           initial={{ x: -200, opacity: 0 }}
