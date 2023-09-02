@@ -3,15 +3,18 @@ import { Sun } from "../../assets/icons/";
 import { motion } from "framer-motion";
 import { toggleTheme } from "../../redux/slices/themeSlice";
 import { toggleNavMenu } from "../../redux/slices/navMenuSlice";
+import {
+  setNavbarVisible,
+  setPrevScrollPos,
+} from "../../redux/slices/navbarSlice";
 import SocialLinks from "../SocialLinks";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 const Navbar = () => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   const navVisible = useSelector((state) => state.navMenu.visible);
+  const visible = useSelector((state) => state.navbar.visible);
+  const prevScrollPos = useSelector((state) => state.navbar.prevScrollPos);
   const dispatch = useDispatch();
-
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,7 +22,7 @@ const Navbar = () => {
       const visible = prevScrollPos > currentScrollPos;
 
       setPrevScrollPos(currentScrollPos);
-      setVisible(visible);
+      setNavbarVisible(visible);
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
