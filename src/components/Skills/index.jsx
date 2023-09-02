@@ -10,12 +10,12 @@ const Skills = () => {
   const slider = useRef(null);
   const cardWidth = 288;
   const gap = 20;
-  const numberOfCards = skills?.length;
-
-  const totalWidth = (cardWidth + gap) * numberOfCards;
-  const xPosition = totalWidth - slider.current?.clientWidth;
 
   useLayoutEffect(() => {
+    const numberOfCards = skills?.length;
+    const totalWidth = (cardWidth + gap) * numberOfCards;
+    const sliderWidth = slider.current?.clientWidth;
+    const xPosition = totalWidth - sliderWidth;
     const ctx = gsap.context(() => {
       gsap.to(slider.current, {
         x: screenWidth > 767 ? `-${xPosition}px` : 0,
@@ -32,7 +32,7 @@ const Skills = () => {
     return () => {
       ctx.revert();
     };
-  }, [xPosition, screenWidth]);
+  }, [screenWidth, skills?.length]);
 
   return (
     <div className="mt-20 lg:mt-40" ref={scope}>

@@ -2,7 +2,7 @@ const About = () => {
   return (
     <>
       <div className="wrapper">
-        <div className="animateUp">About</div>
+        <h1 className="animateUp text-white text-4xl mt-40">About Page</h1>
       </div>
     </>
   );

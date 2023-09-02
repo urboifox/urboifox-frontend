@@ -9,9 +9,10 @@ import { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 function App() {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
-  document.body.style.backgroundColor = darkTheme ? "#020202" : "#ddd";
-  document.body.style.transition = darkTheme ? "300ms" : "300ms";
-
+  if (darkTheme !== null) {
+    document.body.style.backgroundColor = darkTheme ? "#0a0a0a" : "#ddd";
+    document.body.style.transition = darkTheme ? "300ms" : "300ms";
+  }
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);
@@ -24,7 +25,6 @@ function App() {
       <SkeletonTheme baseColor="#141414" highlightColor="#444">
         <Cursor />
         <RouterProvider router={myRouter} />
-        <div className="h-[100vh]"></div>
       </SkeletonTheme>
     </>
   );

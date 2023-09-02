@@ -24,11 +24,12 @@ const ScrollBar = () => {
   }
   useEffect(() => {
     handleScroll();
-    document.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      document.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [location]);
+
   return (
     <div
       ref={scrollbar}

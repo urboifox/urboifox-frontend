@@ -3,10 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-// vars
-$dark-color: #020202;
-$light-color: #ffffff;
-$dimmed-color: #ffffff80;
+$bg-color: #0a0a0a;
 
 * {
   padding: 0;
@@ -24,8 +21,8 @@ $dimmed-color: #ffffff80;
 }
 
 body {
+  background-color: $bg-color;
   font-size: 16px;
-  background-color: $dark-color;
   user-select: none;
   font-family: "Montserrat", sans-serif;
   cursor: none;

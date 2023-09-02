@@ -16,10 +16,12 @@ import LoadBehaviour from "./LoadBehaviour";
 import Work from "./Work";
 import SkillCard from "./SkillCard";
 import SocialLinks from "./SocialLinks";
+import RouterChanger from "./RouterChanger";
 export {
   Skills,
   SocialLinks,
   SkillCard,
+  RouterChanger,
   Work,
   LoadBehaviour,
   PrimaryButton,

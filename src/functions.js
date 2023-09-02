@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 // animate text function
 export function animateText(element, duration) {
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const letters = "%!AZLOQ{#$}?MPOQ@%!%#!WASCAR#@$RDWQE";
   const elementText = element.innerText;
   element.onmouseover = (e) => {
     let inter = 0;

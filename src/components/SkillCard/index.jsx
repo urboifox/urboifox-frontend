@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 /* eslint-disable react/prop-types */
 const SkillCard = ({ skill }) => {
@@ -12,7 +12,7 @@ const SkillCard = ({ skill }) => {
     card.current.style.borderColor = `${color}`;
   }, [color]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         card.current,
@@ -48,6 +48,7 @@ const SkillCard = ({ skill }) => {
           className="max-w-full w-full object-contain"
           src={skill.img}
           alt={skill.name}
+          loading="lazy"
         />
       </div>
       <div
