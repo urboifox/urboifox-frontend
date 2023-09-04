@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./style.scss";
 import { AnimatePresence, motion } from "framer-motion";
-import { setNavMenu, toggleNavMenu } from "../../redux/slices/navMenuSlice";
+import { setNavMenu } from "../../redux/slices/navMenuSlice";
 import { lenis } from "../../lenis";
 import { useEffect, useRef } from "react";
 import { animateText } from "../../functions";
@@ -13,29 +13,9 @@ const NavMenu = () => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   const dispatch = useDispatch();
   const listItems = ["Home", "About", "Work", "Contact"];
-  const handleToggleMenu = () => {
-    dispatch(toggleNavMenu());
-  };
   const handleSetMenu = (val) => {
     dispatch(setNavMenu(val));
   };
-  useEffect(() => {
-    const handleKeyPress = (e) => {
-      if (e.key === "m" || e.key === "M") {
-        e.preventDefault();
-        handleToggleMenu();
-      } else if (e.key === "Escape" || e.key === "Esc") {
-        e.preventDefault();
-        handleSetMenu(false);
-      }
-    };
-    window.addEventListener("keyup", handleKeyPress);
-
-    return () => {
-      window.removeEventListener("keyup", handleKeyPress);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     menuVisible ? (lenis.isStopped = true) : (lenis.isStopped = false);

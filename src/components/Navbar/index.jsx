@@ -2,19 +2,47 @@ import { useDispatch, useSelector } from "react-redux";
 import { Sun } from "../../assets/icons/";
 import { motion } from "framer-motion";
 import { toggleTheme } from "../../redux/slices/themeSlice";
-import { toggleNavMenu } from "../../redux/slices/navMenuSlice";
+import { setNavMenu, toggleNavMenu } from "../../redux/slices/navMenuSlice";
 import {
   setNavbarVisible,
   setPrevScrollPos,
 } from "../../redux/slices/navbarSlice";
 import SocialLinks from "../SocialLinks";
 import { useEffect } from "react";
+import { lenis } from "../../lenis";
 const Navbar = () => {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   const navVisible = useSelector((state) => state.navMenu.visible);
   const visible = useSelector((state) => state.navbar.visible);
   const prevScrollPos = useSelector((state) => state.navbar.prevScrollPos);
   const dispatch = useDispatch();
+
+  const handleToggleMenu = () => {
+    dispatch(toggleNavMenu());
+  };
+
+  const handleSetMenu = (val) => {
+    dispatch(setNavMenu(val));
+  };
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === "m" || e.key === "M") {
+        lenis.stop();
+        e.preventDefault();
+        handleToggleMenu();
+        dispatch(setNavbarVisible(true));
+      } else if (e.key === "Escape" || e.key === "Esc") {
+        e.preventDefault();
+        handleSetMenu(false);
+      }
+    };
+    window.addEventListener("keyup", handleKeyPress);
+
+    return () => {
+      window.removeEventListener("keyup", handleKeyPress);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +66,7 @@ const Navbar = () => {
   };
   return (
     <div
-      className={`cont transition-all duration-1000 mx-auto z-[70] px-5 md:px-10 flex items-center justify-between text-light sticky top-0 left-0 w-full h-20
+      className={`cont transition-all duration-1000 mx-auto z-[70] px-5 md:px-10 flex items-center justify-between text-light fixed top-0 left-0 w-full h-20
     ${visible ? "" : "-translate-y-[100%]"}
     `}
     >
