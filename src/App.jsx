@@ -13,12 +13,22 @@ import { setLoading } from "./redux/slices/loadingSlice";
 import { initiateData } from "./redux/slices/websiteDataSlice";
 import axios from "axios";
 function App() {
+  const root = document.documentElement;
   const loading = useSelector((state) => state.load.loading);
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   const dispatch = useDispatch();
   if (darkTheme !== null) {
     document.body.style.backgroundColor = darkTheme ? "#0a0a0a" : "#ddd";
     document.body.style.transition = darkTheme ? "300ms" : "300ms";
+    if (darkTheme) {
+      root.style.setProperty("--bg-color", "#0a0a0a");
+      root.style.setProperty("--main-color", "#ffffff");
+      root.style.setProperty("--main-color-dimmed", "#ffffff80");
+    } else {
+      root.style.setProperty("--bg-color", "#ddd");
+      root.style.setProperty("--main-color", "#0a0a0a");
+      root.style.setProperty("--main-color-dimmed", "#0a0a0a80");
+    }
   }
   function raf(time) {
     lenis.raf(time);

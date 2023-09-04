@@ -18,8 +18,16 @@ import SkillCard from "./SkillCard";
 import SocialLinks from "./SocialLinks";
 import RouterChanger from "./RouterChanger";
 import Loading from "./Loading";
+import SkillsPage from "./SkillsPage";
+import EducationPage from "./EducationPage";
+import ExperiencePage from "./ExperiencePage";
+import ConnectPage from "./ConnectPage";
 export {
   Skills,
+  ConnectPage,
+  ExperiencePage,
+  EducationPage,
+  SkillsPage,
   Loading,
   SocialLinks,
   SkillCard,

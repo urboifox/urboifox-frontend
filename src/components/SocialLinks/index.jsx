@@ -18,7 +18,7 @@ const SocialLinks = () => {
             darkTheme
               ? "fill-dimmed group-hover:fill-light max-md:group-hover:fill-dimmed"
               : "fill-darkDimmed group-hover:fill-dark max-md:group-hover:fill-darkDimmed"
-          } w-full h-full transition-colors delay-0 duration-500`}
+          } w-full h-full transition-colors delay-0 duration-300`}
         />
       </motion.a>
       <motion.a

@@ -3,7 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
-$bg-color: #0a0a0a;
+:root {
+  --bg-color: #0a0a0a;
+  --main-color: #ffffff;
+  --main-color-dimmed: #ffffff80;
+}
 
 * {
   padding: 0;
@@ -21,7 +25,7 @@ $bg-color: #0a0a0a;
 }
 
 body {
-  background-color: $bg-color;
+  background-color: var(--bg-color);
   font-size: 16px;
   user-select: none;
   font-family: "Montserrat", sans-serif;

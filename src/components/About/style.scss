@@ -1,0 +1,8 @@
+.aboutGrid {
+  @apply max-sm:p-4 grid w-96 gap-5;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+
+  & > div {
+    @apply text-xs md:text-base aspect-square border tracking-wide uppercase transition-all md:hover:scale-105 duration-500 border-[var(--main-color-dimmed)] hover:border-[var(--main-color)] text-[var(--main-color)] md:text-[var(--main-color-dimmed)] md:hover:text-[var(--main-color)] flex items-center justify-center;
+  }
+}
