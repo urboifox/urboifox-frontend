@@ -27,7 +27,7 @@ export function handleTagsAnimation(e, direction) {
     .to(e, {
       x: direction,
       duration: 0.8,
-      delay: 1,
+      delay: 1.5,
     })
     .to(e, {
       x: 0,

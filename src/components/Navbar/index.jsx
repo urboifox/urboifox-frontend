@@ -18,17 +18,17 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
+      const currentScrollPos = window.scrollY;
       const visible = prevScrollPos > currentScrollPos;
 
-      setPrevScrollPos(currentScrollPos);
-      setNavbarVisible(visible);
+      dispatch(setPrevScrollPos(currentScrollPos));
+      dispatch(setNavbarVisible(visible));
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPos]);
+  }, [prevScrollPos, dispatch]);
   const handleTheme = () => {
     dispatch(toggleTheme());
   };

@@ -4,6 +4,7 @@ import navMenuSlice from "./slices/navMenuSlice";
 import websiteDataSlice from "./slices/websiteDataSlice";
 import screenSlice from "./slices/screenSlice";
 import navbarSlice from "./slices/navbarSlice";
+import loadingSlice from "./slices/loadingSlice";
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     websiteData: websiteDataSlice.reducer,
     navbar: navbarSlice.reducer,
     screen: screenSlice.reducer,
+    load: loadingSlice.reducer,
   },
 });
 

@@ -11,10 +11,10 @@ export default {
         primary: {
           100: "#CC0000",
         },
-        dark: "#111",
+        dark: "#0a0a0a",
         light: "#ffffff",
         dimmed: "#ffffff80",
-        darkDimmed: "#11111180",
+        darkDimmed: "#0a0a0a80",
         gradient: {
           100: "#24C6DC",
           200: "#514A9D",

@@ -4,8 +4,6 @@ import { Outlet } from "react-router";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useDispatch } from "react-redux";
 import { setTheme } from "../../redux/slices/themeSlice";
-import axios from "axios";
-import { initiateData } from "../../redux/slices/websiteDataSlice";
 import { ScrollBar, Navbar, NavMenu, LoadBehaviour } from "../";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,6 +32,7 @@ const DefaultLayout = () => {
           })
           .from(".animateUp", 1, {
             y: "100%",
+            delay: 0.5,
             ease: Circ.Out,
             scrollTrigger: {
               trigger: ".animateUp",
@@ -42,7 +41,7 @@ const DefaultLayout = () => {
           })
           .to(".wrapper", {
             overflow: "unset",
-            delay: 1,
+            delay: 1.5,
             duration: 0,
           });
       }
@@ -52,15 +51,6 @@ const DefaultLayout = () => {
       ctx.revert();
     };
   }, []);
-
-  // get api data
-  useEffect(() => {
-    const handleSetData = (data) => {
-      dispatch(initiateData(data));
-    };
-    const res = axios.get("https://api.npoint.io/8170167729955bc6815a");
-    res.then((res) => handleSetData(res.data));
-  }, [dispatch]);
 
   return (
     <>

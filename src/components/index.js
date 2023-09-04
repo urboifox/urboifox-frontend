@@ -17,8 +17,10 @@ import Work from "./Work";
 import SkillCard from "./SkillCard";
 import SocialLinks from "./SocialLinks";
 import RouterChanger from "./RouterChanger";
+import Loading from "./Loading";
 export {
   Skills,
+  Loading,
   SocialLinks,
   SkillCard,
   RouterChanger,
