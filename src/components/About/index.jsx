@@ -29,10 +29,10 @@ const About = () => {
       <div className="aboutGrid relative">
         <Link
           to={"/"}
-          className={`link md:hover:scale-105 border-[var(--main-color-dimmed)] md:hover:border-[var(--main-color)] hover:text-[var(--main-color)] transition-all duration-300 text-[var(--main-color-dimmed)] bg-[var(--bg-color)] absolute w-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  z-20 rounded-full flex items-center justify-center group aspect-square border`}
+          className={`link md:hover:scale-105 border-[var(--main-color-dimmed)] md:hover:border-[var(--main-color)] hover:text-[var(--main-color)] transition-all duration-300 text-[var(--main-color-dimmed)] bg-[var(--bg-color)] absolute w-16 md:w-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  z-20 rounded-full flex items-center justify-center group aspect-square border`}
         >
           <HomeIcon
-            className={`stroke-[var(--main-color-dimmed)] md:group-hover:stroke-[var(--main-color)] transition-colors duration-300 w-16`}
+            className={`stroke-[var(--main-color-dimmed)] md:group-hover:stroke-[var(--main-color)] transition-colors duration-300 w-14 md:w-16`}
           />
         </Link>
         {items.map((item, i) => {
