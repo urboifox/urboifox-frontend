@@ -5,7 +5,6 @@ import websiteDataSlice from "./slices/websiteDataSlice";
 import screenSlice from "./slices/screenSlice";
 import navbarSlice from "./slices/navbarSlice";
 import loadingSlice from "./slices/loadingSlice";
-import aboutSlice from "./slices/aboutSlice";
 
 const store = configureStore({
   reducer: {
@@ -15,7 +14,6 @@ const store = configureStore({
     navbar: navbarSlice.reducer,
     screen: screenSlice.reducer,
     load: loadingSlice.reducer,
-    about: aboutSlice.reducer,
   },
 });
 

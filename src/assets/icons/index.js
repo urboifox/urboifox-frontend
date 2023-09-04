@@ -3,4 +3,5 @@ import Sun from "./Sun";
 import Github from "./Github";
 import Linkedin from "./Linkedin";
 import Facebook from "./Facebook";
-export { ChevronBottom, Facebook, Linkedin, Github, Sun };
+import HomeIcon from "./HomeIcon";
+export { ChevronBottom, Facebook, Linkedin, Github, Sun, HomeIcon };

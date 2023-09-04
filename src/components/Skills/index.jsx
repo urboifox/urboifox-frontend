@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { SkillCard, PrimaryButton, SectionHeading } from "../";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { Link } from "react-router-dom";
 
 const Skills = () => {
   const skills = useSelector((state) => state.websiteData.data.skills);
@@ -49,9 +50,9 @@ const Skills = () => {
           </div>
         </div>
         <div className="mt-20 mx-auto w-max">
-          <a href={`/Mohamed Ashraf - Frontend Developer.pdf`} download>
-            <PrimaryButton text={`Download CV`} />
-          </a>
+          <Link to={"/about"}>
+            <PrimaryButton text={`More Info`} />
+          </Link>
         </div>
       </div>
     </div>

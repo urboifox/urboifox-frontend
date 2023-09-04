@@ -1,32 +1,40 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import "./style.scss";
 import { AnimatePresence, motion } from "framer-motion";
-import { Fragment } from "react";
-import { setSelectedItem } from "../../redux/slices/aboutSlice";
+import { Fragment, useState } from "react";
 import { SkillsPage, ExperiencePage, EducationPage, ConnectPage } from "../";
+import { HomeIcon } from "../../assets/icons";
+import { Link } from "react-router-dom";
 const items = ["Skills", "Education", "Experience", "Connect"];
 const position = [
-  "top-0 left-0",
-  "top-0 right-0",
-  "bottom-0 left-0",
-  "bottom-0 right-0",
+  "top-4 md:top-0 left-4 md:left-0",
+  "top-4 md:top-0 right-4 md:right-0",
+  "bottom-4 md:bottom-0 left-4 md:left-0",
+  "bottom-4 md:bottom-0 right-4 md:right-0",
 ];
 
 const About = () => {
-  const selected = useSelector((state) => state.about.selected);
+  const [selected, setSelected] = useState(null);
   const darkTheme = useSelector((state) => state.theme.darkTheme);
-  const dispatch = useDispatch();
   const handleClick = (val) => {
-    dispatch(setSelectedItem(val));
+    setSelected(val);
   };
 
   return (
     <div
       className={`${
         darkTheme ? "text-white" : "text-dark"
-      } flex items-center justify-center w-full h-screen`}
+      } flex items-center justify-center w-full h-screen overflow-x-hidden`}
     >
       <div className="aboutGrid relative">
+        <Link
+          to={"/"}
+          className={`link md:hover:scale-105 border-[var(--main-color-dimmed)] md:hover:border-[var(--main-color)] hover:text-[var(--main-color)] transition-all duration-300 text-[var(--main-color-dimmed)] bg-[var(--bg-color)] absolute w-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  z-20 rounded-full flex items-center justify-center group aspect-square border`}
+        >
+          <HomeIcon
+            className={`stroke-[var(--main-color-dimmed)] md:group-hover:stroke-[var(--main-color)] transition-colors duration-300 w-16`}
+          />
+        </Link>
         {items.map((item, i) => {
           return (
             <Fragment key={i}>
@@ -45,13 +53,7 @@ const About = () => {
                     transition={{
                       duration: 0.5,
                     }}
-                    className={`${
-                      darkTheme
-                        ? "bg-dark border-light"
-                        : "bg-[var(--bg-color)] border-dark"
-                    } ${
-                      position[i]
-                    } border bg-dark z-20 absolute aspect-square w-[47%] scale-105`}
+                    className={`${position[i]} border bg-[var(--bg-color)] border-[var(--main-color)] z-20 absolute aspect-square w-[40%] md:w-[47%] scale-100`}
                   ></motion.span>
                 )}
               </AnimatePresence>

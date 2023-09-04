@@ -43,9 +43,9 @@ const SkillCard = ({ skill }) => {
       } 
       border-dimmed border transition-colors duration-500 link flex gap-3 bg-gradient-to-tr items-center justify-center min-w-full md:min-w-[18rem] rounded-md py-6 md:py-10`}
     >
-      <div className="w-6 md:w-7">
+      <div>
         <img
-          className="max-w-full w-full object-contain"
+          className="w-6 md:w-7 object-contain"
           src={skill.img}
           alt={skill.name}
           loading="lazy"
