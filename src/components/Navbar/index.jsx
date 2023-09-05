@@ -64,6 +64,7 @@ const Navbar = () => {
   const handleNavToggle = () => {
     dispatch(toggleNavMenu());
   };
+
   return (
     <div
       className={`cont transition-all duration-1000 mx-auto z-[70] px-5 md:px-10 flex items-center justify-between text-light fixed  -translate-x-1/2 top-0 left-1/2 w-full h-20
