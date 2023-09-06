@@ -1,0 +1,66 @@
+{
+  "selected_work": [
+    {
+      "id": 0,
+      "title": "Sneakers Online Shop",
+      "img": "https://urboifox.vercel.app/imgs/selected_work/sneakers.webp"
+    },
+    {
+      "id": 1,
+      "title": "Space Discovery",
+      "img": "https://urboifox.vercel.app/imgs/selected_work/space.webp"
+    },
+    {
+      "id": 2,
+      "title": "Alex Marines",
+      "img": "https://urboifox.vercel.app/imgs/selected_work/alex.webp"
+    }
+  ],
+  "skills": [
+    {
+      "id": 0,
+      "name": "React js",
+      "img": "https://urboifox.vercel.app/imgs/skills/react.webp"
+    },
+    {
+      "id": 1,
+      "name": "Redux",
+      "img": "https://urboifox.vercel.app/imgs/skills/redux.webp"
+    },
+    {
+      "id": 2,
+      "name": "Next js",
+      "img": "https://urboifox.vercel.app/imgs/skills/nextjs.webp"
+    },
+    {
+      "id": 3,
+      "name": "SCSS",
+      "img": "https://urboifox.vercel.app/imgs/skills/scss.webp"
+    },
+    {
+      "id": 4,
+      "name": "Git",
+      "img": "https://urboifox.vercel.app/imgs/skills/git.webp"
+    },
+    {
+      "id": 5,
+      "name": "Tailwind css",
+      "img": "https://urboifox.vercel.app/imgs/skills/tailwind.webp"
+    },
+    {
+      "id": 6,
+      "name": "Vite",
+      "img": "https://urboifox.vercel.app/imgs/skills/vite.webp"
+    },
+    {
+      "id": 7,
+      "name": "TypeScript",
+      "img": "https://urboifox.vercel.app/imgs/skills/typescript.webp"
+    },
+    {
+      "id": 8,
+      "name": "GSAP",
+      "img": "https://urboifox.vercel.app/imgs/skills/gsap.webp"
+    }
+  ]
+}

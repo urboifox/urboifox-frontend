@@ -18,6 +18,7 @@ const Home = () => {
       </div>
       <SelectedWork />
       <Skills />
+      <div className="h-[50vh]"></div>
     </>
   );
 };

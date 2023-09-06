@@ -45,11 +45,11 @@ const NavMenu = () => {
                 },
               }}
               exit={{ opacity: 0 }}
-              className="fixed w-full h-full backdrop-blur-md min-w-[100vw] min-h-[100vh] z-30 top-0 left-0"
+              className="fixed w-full h-full backdrop-blur-md min-w-[100vw] min-h-[100vh] z-[69] top-0 left-0"
             ></motion.div>
             <div
               onClick={() => handleSetMenu(false)}
-              className="cont w-full fixed h-screen left-1/2 -translate-x-1/2 top-0 z-50"
+              className="cont w-full fixed h-screen left-1/2 -translate-x-1/2 top-0 z-[70]"
             >
               <motion.div
                 key={"menu"}

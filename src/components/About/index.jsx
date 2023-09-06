@@ -101,8 +101,8 @@ const About = () => {
         })}
       </div>
 
-      <div className="fixed w-full flex justify-end cont left-1/2 bottom-10 z-30 pr-10 -translate-x-1/2">
-        <div className="flex gap-4 opacity-50 transition-opacity duration-500 hover:opacity-100">
+      <div className="fixed w-full flex justify-center md:justify-end cont left-1/2 bottom-10 z-30 md:pr-10 -translate-x-1/2">
+        <div className="flex gap-4 opacity-50 transition-opacity duration-500 md:hover:opacity-100">
           {items.map((item, i) => {
             return (
               <Fragment key={i}>
@@ -112,7 +112,7 @@ const About = () => {
                     selected === i
                       ? "bg-[var(--sec-color)] text-[var(--bg-color)]"
                       : "bg-[var(--bg-color)] text-[var(--sec-color)]"
-                  } aboutBoxB link text-[10px] aspect-square w-20 border border-[var(--main-color-dimmed)] tracking-wide uppercase flex transition-colors duration-500 items-center justify-center`}
+                  } aboutBoxB link text-[8px] md:text-[10px] aspect-square w-16 md:w-20 border border-[var(--main-color-dimmed)] tracking-wide uppercase flex transition-colors duration-500 items-center justify-center`}
                 >
                   {item}
                 </motion.div>
@@ -137,7 +137,7 @@ const About = () => {
                   }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-[var(--bg-color)] relative z-20 max-w-full w-screen cont mx-auto"
+                  className="bg-[var(--bg-color)] transition-colors duration-300 relative z-20 max-w-full w-screen cont mx-auto"
                 >
                   {selected === 0 ? (
                     <SkillsPage />
