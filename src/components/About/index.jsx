@@ -1,26 +1,28 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./style.scss";
 import { AnimatePresence, motion } from "framer-motion";
-import { Fragment, useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import { Circ, gsap } from "gsap";
 import { SkillsPage, ExperiencePage, EducationPage, ConnectPage } from "../";
+import { setSelected, setWasNull } from "../../redux/slices/aboutSlice";
 const items = ["Skills", "Education", "Experience", "Connect"];
 
 const About = () => {
-  const [selected, setSelected] = useState(null);
-  const [wasNull, setWasNull] = useState(false);
+  const selected = useSelector((state) => state.about.selected);
+  const wasNull = useSelector((state) => state.about.wasNull);
+  const dispatch = useDispatch();
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   const h2 = useRef(null);
   const scope = useRef(null);
   const handleClick = (val) => {
     if (selected === null && typeof val === "number") {
-      setWasNull(true);
-      setSelected(val);
+      dispatch(setWasNull(true));
+      dispatch(setSelected(val));
     } else if (val === null) {
-      setWasNull(false);
-      setSelected(val);
+      dispatch(setWasNull(false));
+      dispatch(setSelected(val));
     } else {
-      setSelected(val);
+      dispatch(setSelected(val));
     }
   };
 
@@ -110,7 +112,7 @@ const About = () => {
       </div>
 
       <div className="fixed w-full flex justify-center md:justify-end cont left-1/2 bottom-10 z-30 md:pr-10 -translate-x-1/2">
-        <div className="flex gap-4 opacity-50 transition-opacity duration-500 md:hover:opacity-100">
+        <div className="flex gap-2 md:gap-4 opacity-50 transition-opacity duration-500 md:hover:opacity-100">
           {items.map((item, i) => {
             return (
               <Fragment key={i}>
@@ -120,7 +122,7 @@ const About = () => {
                     selected === i
                       ? "bg-[var(--sec-color)] text-[var(--bg-color)]"
                       : "bg-[var(--bg-color)] text-[var(--sec-color)]"
-                  } aboutBoxB link text-[8px] md:text-[10px] aspect-square w-16 md:w-20 border border-[var(--main-color-dimmed)] tracking-wide uppercase flex transition-colors duration-500 items-center justify-center`}
+                  } aboutBoxB link text-[7px] sm:text-[10px] aspect-square w-14 sm:w-20 border border-[var(--main-color-dimmed)] tracking-wide uppercase flex transition-colors duration-500 items-center justify-center`}
                 >
                   {item}
                 </motion.div>
@@ -131,7 +133,8 @@ const About = () => {
       </div>
       {items.map((_, i) => {
         return (
-          <AnimatePresence key={i} mode="popLayout">
+          // mode="popLayout"
+          <AnimatePresence key={i}>
             {selected === i && (
               <motion.div
                 key={`item-${i}`}
@@ -144,7 +147,7 @@ const About = () => {
                 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className=" relative z-20 cont mx-auto"
+                className=" relative px-5 md:px-10 z-20 cont mx-auto"
               >
                 {selected === 0 ? (
                   <SkillsPage />

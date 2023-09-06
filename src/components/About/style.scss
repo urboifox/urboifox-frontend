@@ -1,4 +1,4 @@
 .aboutGrid {
-  @apply max-sm:p-4 grid w-96 gap-5 relative max-w-full;
+  @apply max-sm:p-4 grid w-96 gap-3 sm:gap-5 relative max-w-full;
   grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
 }

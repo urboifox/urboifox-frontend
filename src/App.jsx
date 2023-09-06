@@ -24,11 +24,13 @@ function App() {
       root.style.setProperty("--bg-color", "#0a0a0a");
       root.style.setProperty("--main-color", "#ffffff");
       root.style.setProperty("--sec-color", "#fff");
+      root.style.setProperty("--light-color", "#333");
       root.style.setProperty("--main-color-dimmed", "#ffffff80");
     } else {
       root.style.setProperty("--bg-color", "#ddd");
       root.style.setProperty("--main-color", "#0a0a0a");
       root.style.setProperty("--sec-color", "#0a0a0a");
+      root.style.setProperty("--light-color", "#999");
       root.style.setProperty("--main-color-dimmed", "#0a0a0a80");
     }
   }

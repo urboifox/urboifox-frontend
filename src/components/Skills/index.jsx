@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { Link } from "react-router-dom";
 
 const Skills = () => {
-  const skills = useSelector((state) => state.websiteData.data.skills);
+  const skills = useSelector((state) => state.websiteData.data.home_skills);
   const screenWidth = useSelector((state) => state.screen.width);
   const scope = useRef(null);
   const slider = useRef(null);

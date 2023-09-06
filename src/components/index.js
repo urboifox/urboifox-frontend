@@ -22,8 +22,10 @@ import SkillsPage from "./SkillsPage";
 import EducationPage from "./EducationPage";
 import ExperiencePage from "./ExperiencePage";
 import ConnectPage from "./ConnectPage";
+import SkillGridCard from "./SkillGridCard";
 export {
   Skills,
+  SkillGridCard,
   ConnectPage,
   ExperiencePage,
   EducationPage,

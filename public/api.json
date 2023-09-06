@@ -3,64 +3,176 @@
     {
       "id": 0,
       "title": "Sneakers Online Shop",
-      "img": "https://urboifox.vercel.app/imgs/selected_work/sneakers.webp"
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019884/fox/sneakers_q0fk0j.webp"
     },
     {
       "id": 1,
       "title": "Space Discovery",
-      "img": "https://urboifox.vercel.app/imgs/selected_work/space.webp"
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019887/fox/space_juagqd.webp"
     },
     {
       "id": 2,
       "title": "Alex Marines",
-      "img": "https://urboifox.vercel.app/imgs/selected_work/alex.webp"
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019885/fox/alex_eczisv.webp"
+    }
+  ],
+  "home_skills": [
+    {
+      "id": 0,
+      "name": "React js",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_100/v1694019880/fox/react_yixmip.webp"
+    },
+    {
+      "id": 1,
+      "name": "Redux",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_100/v1694019881/fox/redux_bnay06.webp"
+    },
+    {
+      "id": 2,
+      "name": "Next js",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_100/v1694019881/fox/nextjs_dgiwkj.webp"
+    },
+    {
+      "id": 3,
+      "name": "SCSS",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_100/v1694019882/fox/scss_w2wzw7.webp"
+    },
+    {
+      "id": 4,
+      "name": "Git",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_100/v1694019881/fox/git_owfqjc.webp"
+    },
+    {
+      "id": 5,
+      "name": "Tailwind css",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_100/v1694019884/fox/tailwind_qirs8i.webp"
+    },
+    {
+      "id": 6,
+      "name": "TypeScript",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_100/v1694019886/fox/typescript_lfaoqt.webp"
+    },
+    {
+      "id": 8,
+      "name": "GSAP",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_100/v1694019883/fox/gsap_kyr2xe.webp"
     }
   ],
   "skills": [
     {
       "id": 0,
-      "name": "React js",
-      "img": "https://urboifox.vercel.app/imgs/skills/react.webp"
+      "name": "HTML",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694021408/fox/html_e04dc6.webp"
     },
     {
       "id": 1,
-      "name": "Redux",
-      "img": "https://urboifox.vercel.app/imgs/skills/redux.webp"
+      "name": "CSS",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694021409/fox/css_fvrdie.webp"
     },
     {
       "id": 2,
-      "name": "Next js",
-      "img": "https://urboifox.vercel.app/imgs/skills/nextjs.webp"
+      "name": "JavaScript",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694021409/fox/javascript_mjnlco.webp"
     },
     {
       "id": 3,
-      "name": "SCSS",
-      "img": "https://urboifox.vercel.app/imgs/skills/scss.webp"
+      "name": "Vim",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694021722/fox/vim_gygmfn.webp"
     },
     {
       "id": 4,
-      "name": "Git",
-      "img": "https://urboifox.vercel.app/imgs/skills/git.webp"
+      "name": "React js",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694019880/fox/react_yixmip.webp"
     },
     {
       "id": 5,
-      "name": "Tailwind css",
-      "img": "https://urboifox.vercel.app/imgs/skills/tailwind.webp"
+      "name": "Redux",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694019881/fox/redux_bnay06.webp"
     },
     {
       "id": 6,
-      "name": "Vite",
-      "img": "https://urboifox.vercel.app/imgs/skills/vite.webp"
+      "name": "Next js",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694019881/fox/nextjs_dgiwkj.webp"
     },
     {
       "id": 7,
-      "name": "TypeScript",
-      "img": "https://urboifox.vercel.app/imgs/skills/typescript.webp"
+      "name": "SCSS",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694019882/fox/scss_w2wzw7.webp"
     },
     {
       "id": 8,
+      "name": "Git",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694019881/fox/git_owfqjc.webp"
+    },
+    {
+      "id": 9,
+      "name": "Tailwind css",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694019884/fox/tailwind_qirs8i.webp"
+    },
+    {
+      "id": 10,
+      "name": "Vite",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694019885/fox/vite_mrtnrb.webp"
+    },
+    {
+      "id": 11,
+      "name": "TypeScript",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694019886/fox/typescript_lfaoqt.webp"
+    },
+    {
+      "id": 12,
       "name": "GSAP",
-      "img": "https://urboifox.vercel.app/imgs/skills/gsap.webp"
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694019883/fox/gsap_kyr2xe.webp"
+    },
+    {
+      "id": 13,
+      "name": "Linux",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694021722/fox/linux_hz9znn.webp"
+    },
+    {
+      "id": 14,
+      "name": "Webpack",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694021722/fox/webpack_kvtrcg.webp"
+    },
+    {
+      "id": 15,
+      "name": "Mongo DB",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694021722/fox/mongodb_xjlkyk.webp"
+    },
+    {
+      "id": 16,
+      "name": "C++",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694021722/fox/cpp_k8onnu.webp"
+    },
+    {
+      "id": 17,
+      "name": "Figma",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694021410/fox/figma_kno0b1.webp"
+    },
+    {
+      "id": 18,
+      "name": "Adobe Photoshop",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694021428/fox/photoshop_v49oqa.webp"
+    },
+    {
+      "id": 19,
+      "name": "Adobe Illustrator",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694021410/fox/illustrator_gvyduw.webp"
+    },
+    {
+      "id": 20,
+      "name": "Bootstrap",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694022782/fox/bootstrap_vcgzqx.webp"
+    },
+    {
+      "id": 21,
+      "name": "Framer Motion",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694023190/fox/framer-motion_p3akrs.webp"
+    },
+    {
+      "id": 22,
+      "name": "React Spring",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694023298/fox/react-spring_foncom.webp"
     }
   ]
 }
