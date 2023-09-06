@@ -34,6 +34,7 @@ const ScrollBar = () => {
   return (
     <div
       ref={scrollbar}
+      id="scrollbar"
       className={`${
         darkTheme ? "bg-light" : "bg-darkDimmed"
       } fixed w-1 h-0 top-0 right-0 z-[9999999999] max-md:hidden transition-colors duration-300`}

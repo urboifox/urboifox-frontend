@@ -14,19 +14,24 @@ const About = () => {
   const scope = useRef(null);
   const handleClick = (val) => {
     if (selected === null && typeof val === "number") {
-      setSelected(val);
       setWasNull(true);
-    } else if (val === null) {
       setSelected(val);
+    } else if (val === null) {
       setWasNull(false);
+      setSelected(val);
     } else {
       setSelected(val);
     }
   };
 
   useEffect(() => {
+    const scrollbar = document.getElementById("scrollbar");
+    scrollbar.style.height = `0`;
+  }, [selected, wasNull]);
+
+  useEffect(() => {
     const ctx = gsap.context(() => {
-      // const tl = gsap.timeline();
+      // when NO box is selected
       if (!wasNull) {
         gsap.from(h2.current, {
           opacity: 0,
@@ -39,8 +44,8 @@ const About = () => {
           {
             x: 0,
             y: 0,
-            ease: Circ.easeOut,
             opacity: 1,
+            ease: Circ.easeOut,
             stagger: 0.2,
             delay: 0.5,
           }
@@ -48,8 +53,11 @@ const About = () => {
         gsap.to(".aboutBoxB", {
           y: 200,
           opacity: 0,
+          duration: 0,
         });
       }
+
+      // when a box is selected
       if (wasNull) {
         gsap.to(".aboutBox", {
           opacity: 0,
@@ -123,35 +131,35 @@ const About = () => {
       </div>
       {items.map((_, i) => {
         return (
-          <Fragment key={i}>
-            <AnimatePresence>
-              {selected === i && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: 1,
-                    transition: {
-                      delay: 0.7,
-                      duration: 0.3,
-                    },
-                  }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-[var(--bg-color)] transition-colors duration-300 relative z-20 max-w-full w-screen cont mx-auto"
-                >
-                  {selected === 0 ? (
-                    <SkillsPage />
-                  ) : selected === 1 ? (
-                    <EducationPage />
-                  ) : selected === 2 ? (
-                    <ExperiencePage />
-                  ) : selected === 3 ? (
-                    <ConnectPage />
-                  ) : null}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </Fragment>
+          <AnimatePresence key={i} mode="popLayout">
+            {selected === i && (
+              <motion.div
+                key={`item-${i}`}
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: {
+                    delay: 0.7,
+                  },
+                }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className=" relative z-20 cont mx-auto"
+              >
+                {selected === 0 ? (
+                  <SkillsPage />
+                ) : selected === 1 ? (
+                  <EducationPage />
+                ) : selected === 2 ? (
+                  <ExperiencePage />
+                ) : selected === 3 ? (
+                  <ConnectPage />
+                ) : (
+                  <></>
+                )}
+              </motion.div>
+            )}
+          </AnimatePresence>
         );
       })}
       <h2
