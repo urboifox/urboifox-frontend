@@ -23,8 +23,10 @@ import EducationPage from "./EducationPage";
 import ExperiencePage from "./ExperiencePage";
 import ConnectPage from "./ConnectPage";
 import SkillGridCard from "./SkillGridCard";
+import TimeLineItem from "./TimeLineItem";
 export {
   Skills,
+  TimeLineItem,
   SkillGridCard,
   ConnectPage,
   ExperiencePage,

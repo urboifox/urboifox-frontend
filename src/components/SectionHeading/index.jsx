@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { gsap } from "gsap";
 /* eslint-disable react/prop-types */
 const SectionHeading = ({ text, className }) => {
-  const darkTheme = useSelector((state) => state.theme.darkTheme);
   const el = useRef(null);
   const scope = useRef(null);
   const screenWidth = useSelector((state) => state.screen.width);
@@ -33,9 +32,7 @@ const SectionHeading = ({ text, className }) => {
   return (
     <div
       ref={scope}
-      className={`sectionHeading fadeIn ${
-        darkTheme ? "text-light" : "text-dark"
-      } block md:self-start max-w-[80rem] tracking-wide w-full mx-auto font-main font-thin  px-5 text-2xl md:text-5xl lg:text-5xl capitalize ${className}`}
+      className={`sectionHeading fadeIn text-[var(--main-color)] block md:self-start max-w-[80rem] tracking-wide w-full mx-auto font-main font-thin  px-5 text-2xl md:text-5xl lg:text-5xl capitalize ${className}`}
     >
       <h2 ref={el} className="w-max">
         {text}

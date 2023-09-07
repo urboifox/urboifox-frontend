@@ -5,6 +5,7 @@ import { Fragment, useEffect, useRef } from "react";
 import { Circ, gsap } from "gsap";
 import { SkillsPage, ExperiencePage, EducationPage, ConnectPage } from "../";
 import { setSelected, setWasNull } from "../../redux/slices/aboutSlice";
+import { lenis } from "../../lenis";
 const items = ["Skills", "Education", "Experience", "Connect"];
 
 const About = () => {
@@ -27,8 +28,16 @@ const About = () => {
   };
 
   useEffect(() => {
+    handleClick(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     const scrollbar = document.getElementById("scrollbar");
+    lenis.stop();
+    window.scrollTo(0, 0);
     scrollbar.style.height = `0`;
+    lenis.start();
   }, [selected, wasNull]);
 
   useEffect(() => {
@@ -39,6 +48,7 @@ const About = () => {
           opacity: 0,
           y: 30,
           duration: 1,
+          delay: 1,
         });
         gsap.fromTo(
           ".aboutBox",
@@ -134,7 +144,7 @@ const About = () => {
       {items.map((_, i) => {
         return (
           // mode="popLayout"
-          <AnimatePresence key={i}>
+          <AnimatePresence key={i} mode="wait">
             {selected === i && (
               <motion.div
                 key={`item-${i}`}
@@ -147,7 +157,7 @@ const About = () => {
                 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className=" relative px-5 md:px-10 z-20 cont mx-auto"
+                className="pt-40 relative px-5 md:px-10 z-20 cont mx-auto"
               >
                 {selected === 0 ? (
                   <SkillsPage />

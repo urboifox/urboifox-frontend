@@ -2,3 +2,26 @@
   @apply max-sm:p-4 grid w-96 gap-3 sm:gap-5 relative max-w-full;
   grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
 }
+.timeLineHolder {
+  @apply relative w-max flex flex-col gap-40 max-sm:pl-10;
+  &::before {
+    content: "";
+    @apply absolute w-px min-h-screen h-full bg-[var(--light-color)] -left-5 md:-left-10 max-sm:left-5;
+  }
+  .timeLine {
+    @apply mt-5;
+    span {
+      @apply text-sm md:text-base font-light text-[var(--main-color-dimmed)] block w-max mb-5 relative border transition-colors duration-300 hover:text-[var(--main-color)] border-[var(--light-color)] p-4;
+      &::before {
+        content: "";
+        @apply absolute top-1/2 -translate-y-1/2 -left-5 md:-left-10 w-5 md:w-10 h-px bg-[var(--light-color)];
+      }
+    }
+    h2 {
+      @apply font-light mb-3 text-base md:text-lg;
+    }
+    h3 {
+      @apply font-light text-xs text-dimmed;
+    }
+  }
+}

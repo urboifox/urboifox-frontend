@@ -174,5 +174,35 @@
       "name": "React Spring",
       "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_500/v1694023298/fox/react-spring_foncom.webp"
     }
-  ]
+  ],
+  "about": {
+    "education": [
+      {
+        "startDate": 2019,
+        "endDate": 2022,
+        "title": "High School Diploma",
+        "place": "Hussien Taha High School"
+      },
+      {
+        "startDate": 2022,
+        "endDate": 2026,
+        "title": "Bachelor of Commerce",
+        "place": "Faculty of commerce, Alexandria"
+      }
+    ],
+    "experience": [
+      {
+        "startDate": 2021,
+        "endDate": 2022,
+        "title": "Graphic Designer",
+        "place": "Pronto Uno Cafe"
+      },
+      {
+        "startDate": 2022,
+        "endDate": false,
+        "title": "Frontend Developer",
+        "place": "Freelancer"
+      }
+    ]
+  }
 }

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { SectionHeading, SkillGridCard } from "../";
+import { SkillGridCard } from "../";
 import { Fragment } from "react";
 import "./style.scss";
 import { ChevronBottom } from "../../assets/icons";
@@ -21,14 +21,18 @@ export default function SkillsPage() {
     }
   };
   return (
-    <div className="pt-40">
+    <>
       <div className="relative">
         <div className="link" onClick={() => handleClick(null)}>
           <ChevronBottom
             className={`absolute left-0 top-1/2 -translate-y-1/2 w-10 md:w-12 stroke-[var(--main-color)] rotate-90`}
           />
         </div>
-        <SectionHeading text={"SKills"} className={"mt-10"} />
+        <div
+          className={`ml-10 md:ml-20 sectionHeading fadeIn text-[var(--main-color-dimmed)] block md:self-start max-w-[80rem] tracking-wide w-full mx-auto font-main font-thin  px-5 text-2xl md:text-5xl lg:text-5xl capitalize`}
+        >
+          <h2 className="w-max">Skills</h2>
+        </div>
       </div>
       <div className="skillsGrid">
         {skills.map((skill) => {
@@ -45,6 +49,6 @@ export default function SkillsPage() {
           <span className="joint -bottom-px -right-px"></span>& Still Learning
         </div>
       </div>
-    </div>
+    </>
   );
 }
