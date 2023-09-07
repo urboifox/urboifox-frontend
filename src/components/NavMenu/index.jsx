@@ -6,15 +6,17 @@ import { lenis } from "../../lenis";
 import { useEffect, useRef } from "react";
 import { animateText } from "../../functions";
 import { Link } from "react-router-dom";
-
+import { listItems } from "../../constants";
+import { setSelected } from "../../redux/slices/aboutSlice";
 const NavMenu = () => {
   const list = useRef(null);
   const menuVisible = useSelector((state) => state.navMenu.visible);
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   const dispatch = useDispatch();
-  const listItems = ["Home", "About", "Work", "Contact"];
+
   const handleSetMenu = (val) => {
     dispatch(setNavMenu(val));
+    dispatch(setSelected(null));
   };
 
   useEffect(() => {
@@ -78,7 +80,6 @@ const NavMenu = () => {
                             x: 0,
                             opacity: 1,
                             transition: {
-                              // duration: 0.1,
                               delay: i * 0.1,
                               type: "spring",
                               stiffness: 80,

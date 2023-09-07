@@ -30,7 +30,7 @@ export default function SkillsPage() {
             </Fragment>
           );
         })}
-        <div className="animate-bg skillGridCard">
+        <div className="animate-bg skillGridCard text-center">
           <span className="joint -top-px -left-px"></span>
           <span className="joint -top-px -right-px"></span>
           <span className="joint -bottom-px -left-px"></span>

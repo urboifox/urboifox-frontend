@@ -39,7 +39,11 @@ export default function AboutDownBoxes() {
   return (
     <>
       {typeof selected === "number" && (
-        <div
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
           ref={scope}
           className="fixed w-full flex justify-center md:justify-end cont left-1/2 bottom-10 z-30 md:pr-10 -translate-x-1/2"
         >
@@ -66,7 +70,7 @@ export default function AboutDownBoxes() {
               );
             })}
           </div>
-        </div>
+        </motion.div>
       )}
     </>
   );
