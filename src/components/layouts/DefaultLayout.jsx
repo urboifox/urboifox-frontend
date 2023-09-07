@@ -1,24 +1,32 @@
 import { Circ, gsap } from "gsap";
 import { useEffect } from "react";
-import { Outlet } from "react-router";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useDispatch } from "react-redux";
 import { setTheme } from "../../redux/slices/themeSlice";
-import { ScrollBar, Navbar, NavMenu, LoadBehaviour } from "../";
+import { ScrollBar, Navbar, NavMenu, LoadBehaviour, AnimatedOutled } from "../";
+import { AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router";
+import { motion } from "framer-motion";
+import { routesAnimation } from "../../animations";
+import { AboutDownBoxes } from "../";
 gsap.registerPlugin(ScrollTrigger);
 
 const DefaultLayout = () => {
+  const animation = routesAnimation;
+  const location = useLocation();
   const dispatch = useDispatch();
-
   const localDarkTheme = localStorage.getItem("darkTheme");
-  function initiateTheme() {
-    if (localDarkTheme) {
-      dispatch(setTheme(JSON.parse(localDarkTheme)));
-    } else {
-      dispatch(setTheme(true));
+
+  useEffect(() => {
+    function initiateTheme() {
+      if (localDarkTheme) {
+        dispatch(setTheme(JSON.parse(localDarkTheme)));
+      } else {
+        dispatch(setTheme(true));
+      }
     }
-  }
-  initiateTheme();
+    initiateTheme();
+  }, [dispatch, localDarkTheme]);
 
   useEffect(() => {
     const animateUpElement = document.querySelector(".animateUp");
@@ -58,7 +66,18 @@ const DefaultLayout = () => {
       <ScrollBar />
       <Navbar />
       <NavMenu />
-      <Outlet />
+      <AboutDownBoxes />
+      <AnimatePresence mode="popLayout">
+        <motion.div
+          key={location.pathname}
+          variants={animation}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+        >
+          <AnimatedOutled />
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 };

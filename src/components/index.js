@@ -24,8 +24,12 @@ import ExperiencePage from "./ExperiencePage";
 import ConnectPage from "./ConnectPage";
 import SkillGridCard from "./SkillGridCard";
 import TimeLineItem from "./TimeLineItem";
+import AnimatedOutled from "./AnimatedOutlet";
+import AboutDownBoxes from "./AboutDownBoxes";
 export {
   Skills,
+  AboutDownBoxes,
+  AnimatedOutled,
   TimeLineItem,
   SkillGridCard,
   ConnectPage,

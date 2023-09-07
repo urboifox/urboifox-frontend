@@ -6,22 +6,34 @@
   @apply relative w-max flex flex-col gap-40 max-sm:pl-10;
   &::before {
     content: "";
-    @apply absolute w-px min-h-screen h-full bg-[var(--light-color)] -left-5 md:-left-10 max-sm:left-5;
+    @apply absolute w-px min-h-screen h-full bg-[var(--light-color)] -left-5 md:-left-10 max-sm:left-5 transition-colors duration-300;
   }
   .timeLine {
-    @apply mt-5;
+    @apply mt-5 transition-colors duration-300;
     span {
       @apply text-sm md:text-base font-light text-[var(--main-color-dimmed)] block w-max mb-5 relative border transition-colors duration-300 hover:text-[var(--main-color)] border-[var(--light-color)] p-4;
       &::before {
         content: "";
-        @apply absolute top-1/2 -translate-y-1/2 -left-5 md:-left-10 w-5 md:w-10 h-px bg-[var(--light-color)];
+        @apply absolute top-1/2 -translate-y-1/2 -left-5 md:-left-10 w-5 md:w-10 h-px bg-[var(--light-color)] transition-colors duration-300;
       }
     }
     h2 {
-      @apply font-light mb-3 text-base md:text-lg;
+      @apply font-light mb-3 text-base md:text-lg text-[var(--main-color)] transition-colors duration-300;
     }
     h3 {
-      @apply font-light text-xs text-dimmed;
+      @apply font-light text-xs text-[var(--main-color-dimmed)] transition-colors duration-300;
+    }
+  }
+}
+
+.aboutContainer {
+  @apply pt-40  mx-auto px-10;
+  .aboutHeading {
+    h2 {
+      @apply transition-colors duration-300;
+    }
+    svg {
+      @apply transition-colors duration-300;
     }
   }
 }

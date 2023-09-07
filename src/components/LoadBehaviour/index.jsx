@@ -6,14 +6,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const LoadBehaviour = () => {
   window.onbeforeunload = function () {
     lenis.stop();
-    window.scrollTo(0, 0);
-    lenis.start();
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      lenis.start();
+    }, 500);
   };
   const location = useLocation();
   useEffect(() => {
     lenis.stop();
-    window.scrollTo(0, 0);
-    lenis.start();
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+      lenis.start();
+    }, 500);
     ScrollTrigger.refresh();
   }, [location.pathname]);
 
