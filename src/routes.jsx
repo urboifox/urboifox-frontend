@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { DefaultLayout } from "./components/layouts";
 import {
   About,
-  ConnectPage,
+  InfoPage,
   EducationPage,
   ExperiencePage,
   Home,
@@ -37,8 +37,8 @@ const myRouter = createBrowserRouter([
         element: <ExperiencePage />,
       },
       {
-        path: "/about/connect",
-        element: <ConnectPage />,
+        path: "/about/info",
+        element: <InfoPage />,
       },
       {
         path: "/work",

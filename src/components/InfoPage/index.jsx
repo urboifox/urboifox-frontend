@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ChevronBottom } from "../../assets/icons";
 import { motion } from "framer-motion";
 
-export default function ConnectPage() {
+export default function InfoPage() {
   return (
     <motion.div className="aboutContainer cont">
       <div className="relative aboutHeading">
@@ -14,7 +14,7 @@ export default function ConnectPage() {
         <div
           className={`ml-10 md:ml-20 sectionHeading fadeIn text-[var(--main-color-dimmed)] block md:self-start max-w-[80rem] tracking-wide w-full mx-auto font-main font-thin  px-5 text-2xl md:text-5xl lg:text-5xl capitalize`}
         >
-          <h2 className="w-max">Connect</h2>
+          <h2 className="w-max">Info</h2>
         </div>
       </div>
     </motion.div>

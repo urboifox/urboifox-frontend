@@ -21,7 +21,7 @@ import Loading from "./Loading";
 import SkillsPage from "./SkillsPage";
 import EducationPage from "./EducationPage";
 import ExperiencePage from "./ExperiencePage";
-import ConnectPage from "./ConnectPage";
+import InfoPage from "./InfoPage";
 import SkillGridCard from "./SkillGridCard";
 import TimeLineItem from "./TimeLineItem";
 import AnimatedOutled from "./AnimatedOutlet";
@@ -32,7 +32,7 @@ export {
   AnimatedOutled,
   TimeLineItem,
   SkillGridCard,
-  ConnectPage,
+  InfoPage,
   ExperiencePage,
   EducationPage,
   SkillsPage,
