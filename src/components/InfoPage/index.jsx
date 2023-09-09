@@ -25,7 +25,7 @@ export default function InfoPage() {
           designing and UI/UX.
         </p>
         <p className="transition-colors duration-300 font-light md:max-w-4xl mb-12 text-sm md:text-base text-[var(--main-color-dimmed)] mt-5">
-          You can reach me on:{" "}
+          You can reach me at:{" "}
           <a
             href="mailto:mohamed.dev.egy@gmail.com"
             className="text-[var(--main-color)] transition-colors duration-300"
