@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Sun } from "../../assets/icons/";
-import { motion } from "framer-motion";
+import { ChevronBottom, Sun } from "../../assets/icons/";
+import { AnimatePresence, motion } from "framer-motion";
 import { toggleTheme } from "../../redux/slices/themeSlice";
 import { setNavMenu, toggleNavMenu } from "../../redux/slices/navMenuSlice";
 import {
@@ -10,8 +10,9 @@ import {
 import SocialLinks from "../SocialLinks";
 import { useEffect } from "react";
 import { lenis } from "../../lenis";
+import { Link } from "react-router-dom";
 const Navbar = () => {
-  const darkTheme = useSelector((state) => state.theme.darkTheme);
+  const selected = useSelector((state) => state.about.selected);
   const navVisible = useSelector((state) => state.navMenu.visible);
   const visible = useSelector((state) => state.navbar.visible);
   const prevScrollPos = useSelector((state) => state.navbar.prevScrollPos);
@@ -67,44 +68,59 @@ const Navbar = () => {
 
   return (
     <div
-      className={`cont transition-all duration-1000 mx-auto z-[70] px-5 md:px-10 flex items-center justify-between text-light fixed  -translate-x-1/2 top-0 left-1/2 w-full h-20
+      className={` cont transition-all duration-1000 mx-auto z-[70] px-5 md:px-10 flex items-center justify-between text-light fixed  -translate-x-1/2 top-0 left-1/2 w-full h-20
     ${visible ? "" : "-translate-y-[100%]"}
     `}
     >
+      <AnimatePresence>
+        {typeof selected === "number" && (
+          <motion.div
+            className="flex items-center z-[100] absolute left-10 top-1/2 -translate-y-1/2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 0.5 } }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 0.5,
+            }}
+          >
+            <Link to={"/about"}>
+              <ChevronBottom
+                className={`w-8 md:w-10 stroke-[var(--main-color)] rotate-90 transition-colors duration-300`}
+              />
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <motion.div
-        whileTap={{ scale: 0.9 }}
-        className="link w-8 aspect-square group relative"
+        className={`${
+          typeof selected === "number" ? "!translate-x-14" : ""
+        } link w-8 aspect-square group relative transition-all duration-1000`}
         onClick={() => handleNavToggle()}
       >
         <span
           className={`${
-            darkTheme
-              ? `${
-                  navVisible ? "bg-light" : "bg-dimmed group-hover:bg-light"
-                } max-md:bg-light`
-              : `${
-                  navVisible ? "bg-dark" : "bg-darkDimmed group-hover:bg-dark"
-                } max-md:bg-dark`
-          } ${
             navVisible
-              ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45"
-              : "top-[35%]"
-          } w-full h-[.1em] absolute left-0 rounded-md transition-all duration-200`}
+              ? "bg-[var(--main-color)]"
+              : "bg-[var(--main-color-dimmed)]"
+          }
+             ${
+               navVisible
+                 ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45"
+                 : "top-[35%]"
+             } w-full h-[.1em] absolute  md:group-hover:bg-[var(--main-color)] left-0 rounded-md transition-all duration-200`}
         ></span>
         <span
           className={`${
-            darkTheme
-              ? `${
-                  navVisible ? "bg-light" : "bg-dimmed group-hover:bg-light"
-                } max-md:bg-light`
-              : `${
-                  navVisible ? "bg-dark" : "bg-darkDimmed group-hover:bg-dark"
-                } max-md:bg-dark`
-          } ${
             navVisible
-              ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45"
-              : "bottom-[35%]"
-          } w-full h-[.1em] absolute left-0 rounded-md transition-all duration-200`}
+              ? "bg-[var(--main-color)]"
+              : "bg-[var(--main-color-dimmed)]"
+          }
+                 ${
+                   navVisible
+                     ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45"
+                     : "bottom-[35%]"
+                 } w-full h-[.1em] absolute md:group-hover:bg-[var(--main-color)] left-0 rounded-md transition-all duration-200`}
         ></span>
       </motion.div>
       <SocialLinks />
@@ -114,11 +130,7 @@ const Navbar = () => {
         className="link w-7 aspect-square"
       >
         <Sun
-          className={`${
-            darkTheme
-              ? "max-md:stroke-light stroke-dimmed md:hover:stroke-light"
-              : "max-md:stroke-dark stroke-darkDimmed md:hover:stroke-dark"
-          } transition-all duration-300 `}
+          className={`transition-all duration-300 stroke-[var(--main-color)] md:stroke-[var(--main-color-dimmed)] md:hover:stroke-[var(--main-color)]`}
         />
       </motion.div>
     </div>

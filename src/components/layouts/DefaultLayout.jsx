@@ -9,6 +9,8 @@ import { useLocation } from "react-router";
 import { motion } from "framer-motion";
 import { routesAnimation } from "../../animations";
 import { AboutDownBoxes } from "../";
+import { aboutPages } from "../../constants";
+import { setSelected } from "../../redux/slices/aboutSlice";
 gsap.registerPlugin(ScrollTrigger);
 
 const DefaultLayout = () => {
@@ -16,6 +18,20 @@ const DefaultLayout = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const localDarkTheme = localStorage.getItem("darkTheme");
+
+  useEffect(() => {
+    const currentLocation = location.pathname.slice(
+      location.pathname.lastIndexOf("/") + 1
+    );
+    if (aboutPages.join("").toLowerCase().includes(currentLocation)) {
+      for (let i = 0; i < aboutPages.length; i++) {
+        if (aboutPages[i].toLowerCase() === currentLocation) {
+          dispatch(setSelected(i));
+        }
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
 
   useEffect(() => {
     function initiateTheme() {

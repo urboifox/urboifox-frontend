@@ -5,7 +5,7 @@ import { Fragment, useEffect, useRef } from "react";
 import { Circ, gsap } from "gsap";
 import { Link } from "react-router-dom";
 import { setSelected } from "../../redux/slices/aboutSlice";
-import { items } from "../../constants";
+import { aboutPages } from "../../constants";
 const About = () => {
   // const selected = useSelector((state) => state.about.selected);
   const darkTheme = useSelector((state) => state.theme.darkTheme);
@@ -52,7 +52,7 @@ const About = () => {
       ref={scope}
     >
       <div className="aboutGrid fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
-        {items.map((item, i) => {
+        {aboutPages.map((item, i) => {
           return (
             <Fragment key={i}>
               <motion.div

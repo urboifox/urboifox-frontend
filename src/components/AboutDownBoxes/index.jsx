@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useRef } from "react";
-import { items } from "../../constants";
+import { aboutPages } from "../../constants";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -48,7 +48,7 @@ export default function AboutDownBoxes() {
           className="fixed w-full flex justify-center md:justify-end cont left-1/2 bottom-10 z-30 md:pr-10 -translate-x-1/2"
         >
           <div className="flex gap-2 md:gap-4 opacity-50 transition-opacity duration-500 md:hover:opacity-100">
-            {items.map((item, i) => {
+            {aboutPages.map((item, i) => {
               return (
                 <Fragment key={i}>
                   <motion.div

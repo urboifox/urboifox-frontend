@@ -16,6 +16,9 @@ const NavMenu = () => {
 
   const handleSetMenu = (val) => {
     dispatch(setNavMenu(val));
+  };
+  const handleSetMenuLink = (val) => {
+    dispatch(setNavMenu(val));
     dispatch(setSelected(null));
   };
 
@@ -72,7 +75,7 @@ const NavMenu = () => {
                             ? "/"
                             : itemText.toLowerCase()
                         }
-                        onClick={() => handleSetMenu(false)}
+                        onClick={() => handleSetMenuLink(false)}
                       >
                         <motion.li
                           initial={{ x: -200, opacity: 0 }}

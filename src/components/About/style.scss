@@ -27,7 +27,7 @@
 }
 
 .aboutContainer {
-  @apply pt-32 md:pt-40 mx-auto px-4 md:px-10 overflow-x-hidden;
+  @apply pt-32 mx-auto px-4 md:px-10 overflow-x-hidden;
   .aboutHeading {
     h2 {
       @apply transition-colors duration-300;
