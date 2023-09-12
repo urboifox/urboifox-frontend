@@ -1,3 +1,5 @@
+import { primaryColor } from "./src/constants";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
@@ -9,7 +11,7 @@ export default {
       },
       colors: {
         primary: {
-          100: "#E67E00",
+          100: primaryColor,
         },
         dark: "#0a0a0a",
         light: "#ffffff",

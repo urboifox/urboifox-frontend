@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import { primaryColor } from "../../constants";
 export default function Particlesjs() {
   const options = {
     background: {
@@ -33,7 +34,7 @@ export default function Particlesjs() {
     },
     particles: {
       color: {
-        value: "#E67E00",
+        value: primaryColor,
       },
       links: {
         color: "#555",
