@@ -18,8 +18,6 @@ function App() {
   const darkTheme = useSelector((state) => state.theme.darkTheme);
   const dispatch = useDispatch();
   if (darkTheme !== null) {
-    document.body.style.backgroundColor = darkTheme ? "#0a0a0a" : "#ddd";
-    document.body.style.transition = darkTheme ? "300ms" : "300ms";
     if (darkTheme) {
       root.style.setProperty("--bg-color", "#0a0a0a");
       root.style.setProperty("--main-color", "#ffffff");
@@ -27,7 +25,7 @@ function App() {
       root.style.setProperty("--light-color", "#333");
       root.style.setProperty("--main-color-dimmed", "#ffffff80");
     } else {
-      root.style.setProperty("--bg-color", "#f00");
+      root.style.setProperty("--bg-color", "#eee");
       root.style.setProperty("--main-color", "#0a0a0a");
       root.style.setProperty("--sec-color", "#0a0a0a");
       root.style.setProperty("--light-color", "#999");

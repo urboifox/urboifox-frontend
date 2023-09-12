@@ -33,6 +33,7 @@ body {
   font-family: "Montserrat", sans-serif;
   cursor: none;
   overflow-x: hidden;
+  @apply bg-[var(--bg-color)] transition-colors duration-300;
 }
 
 @media (min-width: 1280px) {

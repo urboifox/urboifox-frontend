@@ -1,4 +1,4 @@
 export const aboutPages = ["Skills", "Education", "Experience", "Info"];
 export const listItems = ["Home", "About", "Work", "Contact"];
 
-export const primaryColor = "#3498db";
+export const primaryColor = "#F29C00";
