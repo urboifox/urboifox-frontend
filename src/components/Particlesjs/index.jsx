@@ -33,7 +33,7 @@ export default function Particlesjs() {
     },
     particles: {
       color: {
-        value: "#A70000",
+        value: "#E67E00",
       },
       links: {
         color: "#555",

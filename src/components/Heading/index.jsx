@@ -109,7 +109,7 @@ const Heading = () => {
           x
         </motion.span>
         {` `}
-        <span ref={closeTag} className="tag !text-[#800000]">
+        <span ref={closeTag} className="tag">
           {" /"}
           <span className="tag ">{">"}</span>
         </span>
