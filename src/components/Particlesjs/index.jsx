@@ -49,7 +49,7 @@ export default function Particlesjs() {
         outModes: {
           default: "bounce",
         },
-        random: false,
+        random: true,
         speed: 1,
         straight: false,
       },
@@ -58,7 +58,7 @@ export default function Particlesjs() {
           enable: true,
           area: 800,
         },
-        value: 30,
+        value: 35,
       },
       opacity: {
         value: 0.5,
