@@ -100,27 +100,23 @@ const Navbar = () => {
       >
         <span
           className={`${
-            navVisible
-              ? "bg-[var(--main-color)]"
-              : "bg-[var(--main-color-dimmed)]"
+            navVisible ? "bg-primary-100" : "bg-[var(--main-color-dimmed)]"
           }
              ${
                navVisible
                  ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45"
                  : "top-[35%]"
-             } w-full h-[.1em] absolute  md:group-hover:bg-[var(--main-color)] left-0 rounded-md transition-all duration-200`}
+             } w-full h-[.1em] absolute link md:group-hover:bg-[var(--main-color)] left-0 rounded-md transition-all duration-200`}
         ></span>
         <span
           className={`${
-            navVisible
-              ? "bg-[var(--main-color)]"
-              : "bg-[var(--main-color-dimmed)]"
+            navVisible ? "bg-primary-100" : "bg-[var(--main-color-dimmed)]"
           }
                  ${
                    navVisible
                      ? "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45"
                      : "bottom-[35%]"
-                 } w-full h-[.1em] absolute md:group-hover:bg-[var(--main-color)] left-0 rounded-md transition-all duration-200`}
+                 } w-full h-[.1em] absolute link md:group-hover:bg-[var(--main-color)] left-0 rounded-md transition-all duration-200`}
         ></span>
       </motion.div>
       <SocialLinks />

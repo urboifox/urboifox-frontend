@@ -12,7 +12,7 @@ export default function Particlesjs() {
     interactivity: {
       events: {
         onClick: {
-          enable: true,
+          enable: false,
           mode: "push",
         },
         onHover: {
@@ -33,7 +33,7 @@ export default function Particlesjs() {
     },
     particles: {
       color: {
-        value: "#555",
+        value: "#A70000",
       },
       links: {
         color: "#555",

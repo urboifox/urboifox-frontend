@@ -26,3 +26,12 @@
     }
   }
 }
+
+.headingContainer h1 {
+  span.tag {
+    @apply text-primary-100 inline-flex transition-colors duration-500 font-thin tracking-tighter;
+  }
+  .headingText {
+    @apply text-[var(--main-color)];
+  }
+}

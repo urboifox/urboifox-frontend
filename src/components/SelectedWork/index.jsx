@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 
 const SelectedWork = () => {
-  const darkTheme = useSelector((state) => state.theme.darkTheme);
   const screenWidth = useSelector((state) => state.screen.width);
   const elements = useSelector((state) => state.websiteData.data.selected_work);
   const sectionRef = useRef(null);
@@ -83,20 +82,12 @@ const SelectedWork = () => {
                   className={`w-[100%] md:w-[80%] lg:w-[90%] hover:after:opacity-100 hover:before:opacity-100 max-w-[70rem] translate-x-0 selectedEl group aspect-video relative link shadow-sm`}
                 >
                   <div
-                    className={`${
-                      darkTheme
-                        ? "text-light md:text-dimmed group-hover:text-light"
-                        : "text-dark md:text-darkDimmed group-hover:text-dark"
-                    } text-sm md:text-xl lg:text-2xl uppercase transition-colors duration-500 absolute tracking-widest link z-50 max-md:-top-7  left-2 md:-bottom-4 font-extralight md:-left-8 md:-rotate-90 md:origin-left `}
+                    className={`text-[var(--main-color)] md:text-[var(--main-color-dimmed)] md:hover:text-[var(--main-color)] text-sm md:text-xl lg:text-2xl uppercase transition-colors duration-500 absolute tracking-widest link z-50 max-md:-top-7  left-2 md:-bottom-4 font-extralight md:-left-8 md:-rotate-90 md:origin-left `}
                   >
                     {element.title}
                   </div>
                   <div
-                    className={`${
-                      darkTheme
-                        ? "text-light md:text-dimmed group-hover:text-light"
-                        : "text-dark md:text-darkDimmed group-hover:text-dark"
-                    } text-sm md:text-xl lg:text-2xl uppercase transition-colors duration-500 absolute tracking-widest link z-50 max-md:-top-7  right-2 md:top-4 font-light md:-left-8 md:-rotate-90 md:origin-left `}
+                    className={`w-max text-[var(--main-color)] md:text-[var(--main-color-dimmed)] md:hover:text-[var(--main-color)] text-sm md:text-xl lg:text-2xl uppercase transition-colors duration-500 absolute tracking-widest link z-50 max-md:-top-7  right-2 md:top-4 font-light md:-left-8 md:-rotate-90 md:origin-left `}
                   >
                     {i + 1}
                   </div>

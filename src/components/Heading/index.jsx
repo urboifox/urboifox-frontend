@@ -76,20 +76,13 @@ const Heading = () => {
   return (
     <div ref={scope} className="wrapper headingContainer font-main">
       <h1
-        className={`${
-          darkTheme ? "text-dimmed" : "text-darkDimmed"
-        } animateUp m-0 lg:mainHeading link text-7xl md:text-8xl lg:text-9xl font-light`}
+        className={`animateUp m-0 lg:mainHeading link text-7xl md:text-8xl lg:text-9xl font-light`}
       >
-        <span
-          ref={openTag}
-          className="inline-flex transition-colors duration-500 tracking-tighter font-thin"
-        >
+        <span ref={openTag} className="tag">
           {"<"}
         </span>
         <motion.span
-          className={`${
-            darkTheme ? "text-light" : "text-dark"
-          } font-thin inline-block textAnimate tracking-tighter transition-colors duration-500`}
+          className={`headingText font-thin inline-block textAnimate tracking-tighter transition-colors duration-500`}
         >
           F
           <span className="theO">
@@ -104,9 +97,7 @@ const Heading = () => {
               ></span>
             </span>
             <span
-              className={`${
-                darkTheme ? "bg-light" : "bg-dark"
-              } theOSon2 max-md:!translate-x-0`}
+              className={`bg-[var(--main-color)] theOSon2 max-md:!translate-x-0`}
             >
               <span
                 className={`${!darkTheme ? "bg-light" : "bg-dark"}`}
@@ -118,11 +109,9 @@ const Heading = () => {
           x
         </motion.span>
         {` `}
-        <span
-          ref={closeTag}
-          className="inline-flex transition-colors duration-500 font-thin tracking-tighter"
-        >
-          {" />"}
+        <span ref={closeTag} className="tag !text-[#800000]">
+          {" /"}
+          <span className="tag ">{">"}</span>
         </span>
       </h1>
     </div>
