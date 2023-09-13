@@ -10,7 +10,8 @@ import Skeleton from "react-loading-skeleton";
 
 const SelectedWork = () => {
   const screenWidth = useSelector((state) => state.screen.width);
-  const elements = useSelector((state) => state.websiteData.data.selected_work);
+  const allWork = useSelector((state) => state.websiteData.data.work);
+  const elements = allWork?.slice(0, 3);
   const sectionRef = useRef(null);
   const dispatch = useDispatch();
   const scope = useRef(null);
@@ -77,7 +78,8 @@ const SelectedWork = () => {
           {elements ? (
             elements?.map((element, i) => {
               return (
-                <div
+                <Link
+                  to={`/work/${element.id}`}
                   key={element.id}
                   className={`w-[100%] md:w-[80%] lg:w-[90%] hover:after:opacity-100 hover:before:opacity-100 max-w-[70rem] translate-x-0 selectedEl group aspect-video relative link shadow-sm`}
                 >
@@ -100,7 +102,7 @@ const SelectedWork = () => {
                     loading="lazy"
                     alt={element.title}
                   />
-                </div>
+                </Link>
               );
             })
           ) : (

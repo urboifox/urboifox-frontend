@@ -9,6 +9,7 @@ import {
   NotFound,
   SkillsPage,
   Work,
+  ProjectPage,
 } from "./components";
 
 const myRouter = createBrowserRouter([
@@ -43,6 +44,10 @@ const myRouter = createBrowserRouter([
       {
         path: "/work",
         element: <Work />,
+      },
+      {
+        path: "/work/:id",
+        element: <ProjectPage />,
       },
       {
         path: "*",

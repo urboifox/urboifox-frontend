@@ -1,19 +1,34 @@
 {
-  "selected_work": [
-    {
-      "id": 0,
-      "title": "Sneakers Online Shop",
-      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019884/fox/sneakers_q0fk0j.webp"
-    },
+  "work": [
     {
       "id": 1,
-      "title": "Space Discovery",
-      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019887/fox/space_juagqd.webp"
+      "title": "Sneakers Online Shop",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019884/fox/sneakers_q0fk0j.webp",
+      "client": "-",
+      "date": "Aug 16 2023",
+      "repo": "https://github.com/urboifox/sneakers_store_react",
+      "link": "https://sneakers-a.netlify.app/",
+      "description": "Sneakers is an online sneakers shop with dummy data, created with react and redux toolkit. The main design scheme is from a challenge on frontendmentor.com but i took the theme and made a full website out of it."
     },
     {
       "id": 2,
+      "title": "Space Discovery",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019887/fox/space_juagqd.webp",
+      "client": "-",
+      "date": "Feb 17 2023",
+      "repo": "https://github.com/urboifox/space-tourism",
+      "link": "https://spacediscovery.netlify.app/",
+      "description": "A free+ challenge website on frontend mentor, made with vanilla javascript, but with custom page transition and a lot of DOM manipulation which is the most thing i love in javascript. A website full of functionalities, one of my favourites until now."
+    },
+    {
+      "id": 3,
       "title": "Alex Marines",
-      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019885/fox/alex_eczisv.webp"
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019885/fox/alex_eczisv.webp",
+      "client": "-",
+      "date": "Mar 19 2023",
+      "repo": "https://github.com/urboifox/marines-motors-website",
+      "link": "https://dev-stage.netlify.app/",
+      "description": "Created for a winches company, I kept the dummy data to put it in my portfolio instead of putting the version with real data. Simple one page website but with a working form and 100% responsiveness and functionality."
     }
   ],
   "home_skills": [

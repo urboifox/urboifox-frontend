@@ -4,4 +4,17 @@ import Github from "./Github";
 import Linkedin from "./Linkedin";
 import Facebook from "./Facebook";
 import HomeIcon from "./HomeIcon";
-export { ChevronBottom, Facebook, Linkedin, Github, Sun, HomeIcon };
+import Code from "./Code";
+import GoToLink from "./GoToLink";
+import ArrowRight from "./ArrowRight";
+export {
+  ChevronBottom,
+  ArrowRight,
+  GoToLink,
+  Code,
+  Facebook,
+  Linkedin,
+  Github,
+  Sun,
+  HomeIcon,
+};

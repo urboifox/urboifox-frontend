@@ -8,7 +8,7 @@ const Cursor = () => {
       color="255,255,255"
       outerAlpha={1}
       innerScale={1}
-      outerScale={2.5}
+      outerScale={3.5}
       trailingSpeed={10}
       clickables={["a", "button", ".link"]}
       outerStyle={{ mixBlendMode: "exclusion" }}
