@@ -57,7 +57,7 @@ const Heading = () => {
       const headingTl = gsap.timeline();
 
       headingTl.to("h1", {
-        y: screenWidth > 1536 ? 100 : 50,
+        y: screenWidth > 1440 ? 100 : 50,
         ease: "none",
         scrollTrigger: {
           trigger: "h1",
@@ -66,8 +66,8 @@ const Heading = () => {
           end: "150% top",
         },
       });
-      handleTagsAnimation(openTag.current, -30);
-      handleTagsAnimation(closeTag.current, 30);
+      handleTagsAnimation(openTag.current, -20);
+      handleTagsAnimation(closeTag.current, 20);
     }, scope);
     return () => {
       ctx.revert();
