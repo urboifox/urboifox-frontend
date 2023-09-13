@@ -36,7 +36,7 @@ const SkillCard = ({ skill }) => {
       <div>
         <img
           draggable={false}
-          className="w-6 md:w-7 object-contain"
+          className="w-7 object-contain"
           src={skill.img}
           alt={skill.name}
         />
