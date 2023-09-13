@@ -76,7 +76,7 @@ const Heading = () => {
   return (
     <div ref={scope} className="wrapper headingContainer font-main">
       <h1
-        className={`animateUp m-0 lg:mainHeading link text-7xl md:text-8xl lg:text-9xl font-light`}
+        className={`animateUp m-0 lg:mainHeading link text-7xl md:text-8xl lg:text-[10rem] font-light`}
       >
         <span ref={openTag} className="tag">
           {"<"}

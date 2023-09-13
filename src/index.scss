@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Wix+Madefor+Display:wght@400;500;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -99,4 +99,10 @@ html.lenis {
     -ms-transform: translate(0, -0px);
     -o-transform: translate(0, -0px);
   }
+}
+
+// custom
+#tsparticles {
+  z-index: -50;
+  position: fixed;
 }

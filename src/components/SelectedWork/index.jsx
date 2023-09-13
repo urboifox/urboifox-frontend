@@ -68,7 +68,7 @@ const SelectedWork = () => {
       <div
         ref={scope}
         id="selected"
-        className="mt-20 lg:mt-96 py-16 flex flex-col items-center relative cont mx-auto"
+        className="mt-10 md:mt-40 py-16 flex flex-col items-center relative cont mx-auto"
       >
         <SectionHeading className={`mb-20`} text={`Selected Work`} />
         <motion.div

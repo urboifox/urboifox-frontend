@@ -28,8 +28,12 @@ import AnimatedOutled from "./AnimatedOutlet";
 import AboutDownBoxes from "./AboutDownBoxes";
 import Particlesjs from "./Particlesjs";
 import ProjectPage from "./ProjectPage";
+import Contact from "./Contact";
+import TextSection from "./TextSection";
 export {
   Particlesjs,
+  TextSection,
+  Contact,
   ProjectPage,
   Skills,
   AboutDownBoxes,

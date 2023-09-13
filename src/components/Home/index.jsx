@@ -1,4 +1,11 @@
-import { ChevronButton, Heading, HomeText, SelectedWork, Skills } from "../";
+import {
+  ChevronButton,
+  Heading,
+  HomeText,
+  SelectedWork,
+  Skills,
+  TextSection,
+} from "../";
 
 const Home = () => {
   return (
@@ -10,6 +17,7 @@ const Home = () => {
           <ChevronButton />
         </div>
       </div>
+      <TextSection first={"I bring people"} second={"Ideas to life"} />
       <SelectedWork />
       <Skills />
       <div className="h-[50vh]"></div>

@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         main: ["Montserrat", "sans-serif"],
+        sec: ["Wix Madefor Display", "sans-serif"],
       },
       colors: {
         primary: {

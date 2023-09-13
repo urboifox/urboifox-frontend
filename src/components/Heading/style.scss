@@ -1,29 +1,33 @@
 .theO {
   @apply relative;
-  .theOSon {
-    @apply top-[49.8%] left-[33%] md:left-[28%];
+
+  .theOSon,
+  .theOSon2 {
+    @apply h-[.7rem] w-2 aspect-square lg:h-7 lg:w-[1.4rem] md:h-4 md:w-3 rounded-[100%] absolute;
+
+    span {
+      @apply w-1 h-1 md:h-2  md:w-2 lg:h-[.7rem] lg:w-[.7rem] max-md:-translate-x-1/2 max-md:-translate-y-1/2 rounded-full absolute;
+    }
   }
+
+  .theOSon {
+    @apply top-[49.3%] left-[33%] md:left-[25%];
+
+    span {
+      @apply md:left-[25%] md:top-[25%] top-[50%] left-[65%];
+    }
+  }
+
+  .theOSon2 {
+    @apply top-[49.3%] right-[20%] md:right-[14%];
+
+    span {
+      @apply md:top-[25%] top-[50%] left-[65%] md:left-[25%];
+    }
+  }
+
   & * {
     @apply transition-colors duration-300;
-  }
-  .theOSon,
-  .theOSon2 {
-    @apply h-[.7rem] w-2 aspect-square lg:h-5 lg:w-4 md:h-4 md:w-3 rounded-[100%] absolute;
-  }
-  .theOSon span {
-    @apply left-[70%];
-  }
-  .theOSon,
-  .theOSon2 {
-    span {
-      @apply w-1 h-1 md:w-2 md:h-2 max-md:-translate-x-1/2 max-md:-translate-y-1/2 top-[50%] md:top-[25%] md:left-[25%] rounded-full absolute;
-    }
-  }
-  .theOSon2 {
-    @apply top-[49.7%] right-[20%] md:right-[16%];
-    span {
-      @apply md:top-[28%] left-[75%] md:left-[26%];
-    }
   }
 }
 

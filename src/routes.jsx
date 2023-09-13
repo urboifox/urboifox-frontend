@@ -10,6 +10,7 @@ import {
   SkillsPage,
   Work,
   ProjectPage,
+  Contact,
 } from "./components";
 
 const myRouter = createBrowserRouter([
@@ -48,6 +49,10 @@ const myRouter = createBrowserRouter([
       {
         path: "/work/:id",
         element: <ProjectPage />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
       {
         path: "*",
