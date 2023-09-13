@@ -1,6 +1,6 @@
 .socialLinks {
   a {
-    @apply w-4 md:w-5 aspect-square;
+    @apply w-[13px] md:w-5 aspect-square;
     & > * {
       @apply w-full h-full transition-colors delay-0 duration-300;
     }

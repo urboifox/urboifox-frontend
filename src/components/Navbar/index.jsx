@@ -75,7 +75,7 @@ const Navbar = () => {
       <AnimatePresence>
         {typeof selected === "number" && (
           <motion.div
-            className="flex items-center z-[100] absolute left-10 top-1/2 -translate-y-1/2"
+            className="flex items-center z-[100] absolute left-2 md:left-10 top-1/2 -translate-y-1/2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { delay: 0.5 } }}
             exit={{ opacity: 0 }}
@@ -85,7 +85,7 @@ const Navbar = () => {
           >
             <Link to={"/about"}>
               <ChevronBottom
-                className={`w-8 md:w-10 stroke-[var(--main-color)] rotate-90 transition-colors duration-300`}
+                className={`w-7 md:w-10 stroke-[var(--main-color)] rotate-90 transition-colors duration-300`}
               />
             </Link>
           </motion.div>
@@ -94,8 +94,10 @@ const Navbar = () => {
 
       <motion.div
         className={`${
-          typeof selected === "number" ? "!translate-x-14" : ""
-        } link w-8 aspect-square group relative transition-all duration-1000`}
+          typeof selected === "number"
+            ? "!translate-x-6 md:!translate-x-14"
+            : ""
+        } link w-6 md:w-8 aspect-square group relative transition-all duration-1000`}
         onClick={() => handleNavToggle()}
       >
         <span
@@ -123,10 +125,10 @@ const Navbar = () => {
       <motion.div
         onClick={() => handleTheme()}
         whileTap={{ scale: 0.9 }}
-        className="link w-7 aspect-square"
+        className="link w-5 md:w-7 aspect-square"
       >
         <Sun
-          className={`transition-all duration-300 stroke-[var(--main-color)] md:stroke-[var(--main-color-dimmed)] md:hover:stroke-[var(--main-color)]`}
+          className={`transition-all duration-300 stroke-[var(--main-color-dimmed)] md:hover:stroke-[var(--main-color)]`}
         />
       </motion.div>
     </div>

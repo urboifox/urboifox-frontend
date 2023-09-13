@@ -56,7 +56,7 @@ export default function ProjectPage() {
         </Link>
       </div>
       <div className="link max-w-lg mb-10 group md:mb-20 px-4 md:px-10">
-        <p className="text-[var(--sec-color)] md:group-hover:text-[var(--main-color)] font-light text-sm md:text-lg tracking-wide leading-relaxed">
+        <p className="text-[var(--sec-color)] md:group-hover:text-[var(--main-color)] font-extralight text-sm md:text-lg tracking-wide leading-relaxed">
           {project?.description}
         </p>
       </div>
