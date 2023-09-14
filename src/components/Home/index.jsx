@@ -17,10 +17,20 @@ const Home = () => {
           <ChevronButton />
         </div>
       </div>
-      <TextSection first={"I bring people"} second={"Ideas to life"} />
+
+      <div className="mt-20 md:mt-32 lg:mt-96">
+        <TextSection first={"I bring people"} second={"Ideas to life"} />
+      </div>
       <SelectedWork />
+      <div className="mt-20 md:mt-32 mb-32">
+        <TextSection
+          first={"I'm constantly"}
+          second={"Expanding my"}
+          third={"Knowledge"}
+        />
+      </div>
       <Skills />
-      <div className="h-[50vh]"></div>
+      <div className="h-[100vh]"></div>
     </>
   );
 };

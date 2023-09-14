@@ -29,6 +29,76 @@
       "repo": "https://github.com/urboifox/marines-motors-website",
       "link": "https://dev-stage.netlify.app/",
       "description": "Created for a winches company, I kept the dummy data to put it in my portfolio instead of putting the version with real data. Simple one page website but with a working form and 100% responsiveness and functionality."
+    },
+    {
+      "id": 4,
+      "title": "Code Warrior",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019885/fox/alex_eczisv.webp",
+      "client": "-",
+      "date": "Apr 8 2023",
+      "repo": "https://github.com/urboifox/website-with-settings-box/",
+      "link": "https://code-warrior.netlify.app/",
+      "description": "Utilizing local storage and DOM manipulation, for me code warrior is a project that displays the possibilities of how a website with a settings box would be like if i make one. It has a minimal design, the main focus was on the functionality."
+    },
+    {
+      "id": 5,
+      "title": "Tenzies Game",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019885/fox/alex_eczisv.webp",
+      "client": "-",
+      "date": "May 5 2023",
+      "repo": "https://github.com/urboifox/tenzies",
+      "link": "https://tenziees.netlify.app/",
+      "description": "Inspired from the real tenzies game, Tenzies was my very first game to make as a web developer. I faced many problems but managed to walk through them and get it done, Looking forward to learn game development one day, since I think this one is pretty minimal compared to other games."
+    },
+    {
+      "id": 6,
+      "title": "Elzero Template 3",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019885/fox/alex_eczisv.webp",
+      "client": "-",
+      "date": "Apr 10 2023",
+      "repo": "https://github.com/urboifox/functional-template",
+      "link": "https://mohamed-template-3.netlify.app/",
+      "description": "With a small Javascript usage, this huge template is focused on responsiveness and mastering different CSS properties, the main design is from elzero.org. Planning in the future to add some functionalities and javascript to it."
+    },
+    {
+      "id": 7,
+      "title": "Multi Page Dashboard",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019885/fox/alex_eczisv.webp",
+      "client": "-",
+      "date": "Dec 1 2022",
+      "repo": "https://github.com/urboifox/Dashboard-template",
+      "link": "https://white-dashboard.netlify.app/",
+      "description": "No Javascript used, this project was focused on building a huge template in a short time, fully responsive with hand made animations and effects."
+    },
+    {
+      "id": 8,
+      "title": "Age Calculator",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019885/fox/alex_eczisv.webp",
+      "client": "-",
+      "date": "Apr 5 2023",
+      "repo": "https://github.com/urboifox/age-calculator",
+      "link": "https://m-age-calculator.netlify.app/",
+      "description": "Using Javascript Date methods, this small project's purpose is to calculate your age once you enter your birth date, with a count up animation when you click submit."
+    },
+    {
+      "id": 9,
+      "title": "Hacker Login Form",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019885/fox/alex_eczisv.webp",
+      "client": "-",
+      "date": "Feb 10 2023",
+      "repo": "https://github.com/urboifox/hacker_login_form",
+      "link": "https://hackerloginform.netlify.app/",
+      "description": "Using creative CSS methods, this form is one of my favourites so far, with cool hover effects when you move the cursor around."
+    },
+    {
+      "id": 10,
+      "title": "Kasper Template",
+      "img": "https://res.cloudinary.com/dffcyuanu/image/upload/w_1440/v1694019885/fox/alex_eczisv.webp",
+      "client": "-",
+      "date": "Mar 4 2022",
+      "repo": "https://github.com/urboifox/HTML-CSS-template-2",
+      "link": "https://template2-by-mido.netlify.app/",
+      "description": "Multiple sections website, fully responsive for mobile phones and tablets."
     }
   ],
   "home_skills": [
