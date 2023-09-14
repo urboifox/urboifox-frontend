@@ -1,0 +1,9 @@
+.slider {
+  @apply flex max-md:hidden overflow-x-hidden w-max gap-10;
+  & > div {
+    @apply w-96;
+    img {
+      @apply max-w-full h-full;
+    }
+  }
+}
