@@ -7,7 +7,7 @@ import gsap from "gsap";
 
 const Work = () => {
   const scope = useRef(null);
-  const loading = useSelector((state) => state.load.loading);
+  // const loading = useSelector((state) => state.load.loading);
   const sliderOne = useRef(null);
   const sliderTwo = useRef(null);
   const projects = useSelector((state) => state.websiteData.data.work);
@@ -15,21 +15,25 @@ const Work = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(sliderOne.current, {
-        x: "-20%",
-        y: "-10%",
+        x: "-30%",
+        y: "-20%",
         ease: "none",
         scrollTrigger: {
           trigger: sliderOne.current,
-          scrub: true,
+          scrub: 1,
+          start: "top bottom",
+          end: "bottom top",
         },
       });
       gsap.to(sliderTwo.current, {
-        x: "-20%",
-        y: "20%",
+        x: "-10%",
+        y: "50%",
         ease: "none",
         scrollTrigger: {
           trigger: sliderTwo.current,
-          scrub: true,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
         },
       });
     }, scope);
@@ -37,7 +41,7 @@ const Work = () => {
     return () => {
       ctx.revert();
     };
-  }, [loading]);
+  }, [sliderOne, sliderTwo]);
 
   return (
     <div
