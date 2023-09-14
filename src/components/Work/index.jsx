@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import "./style.scss";
 import { Link } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import TextSection from "../TextSection";
-import gsap from "gsap";
+import { nanoid } from "@reduxjs/toolkit";
 
 const Work = () => {
   const scope = useRef(null);
@@ -11,37 +11,38 @@ const Work = () => {
   const sliderOne = useRef(null);
   const sliderTwo = useRef(null);
   const projects = useSelector((state) => state.websiteData.data.work);
+  const doubleProjects = projects?.concat(...projects);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.to(sliderOne.current, {
-        x: "-30%",
-        y: "-20%",
-        ease: "none",
-        scrollTrigger: {
-          trigger: sliderOne.current,
-          scrub: 1,
-          start: "top bottom",
-          end: "bottom top",
-        },
-      });
-      gsap.to(sliderTwo.current, {
-        x: "-10%",
-        y: "50%",
-        ease: "none",
-        scrollTrigger: {
-          trigger: sliderTwo.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-        },
-      });
-    }, scope);
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  //     gsap.to(sliderOne.current, {
+  //       x: "-30%",
+  //       y: "-20%",
+  //       ease: "none",
+  //       scrollTrigger: {
+  //         trigger: sliderOne.current,
+  //         scrub: 1,
+  //         start: "top bottom",
+  //         end: "bottom top",
+  //       },
+  //     });
+  //     gsap.to(sliderTwo.current, {
+  //       x: "-10%",
+  //       y: "50%",
+  //       ease: "none",
+  //       scrollTrigger: {
+  //         trigger: sliderTwo.current,
+  //         start: "top bottom",
+  //         end: "bottom top",
+  //         scrub: 1,
+  //       },
+  //     });
+  //   }, scope);
 
-    return () => {
-      ctx.revert();
-    };
-  }, [sliderOne, sliderTwo]);
+  //   return () => {
+  //     ctx.revert();
+  //   };
+  // }, [sliderOne, sliderTwo]);
 
   return (
     <div
@@ -49,14 +50,14 @@ const Work = () => {
       ref={scope}
     >
       <div className="mb-20 md:mb-96">
-        <TextSection first={"Take a look"} second={"At my work"} />
+        <TextSection first={"Explore"} second={"My projects"} />
       </div>
-      <div>
-        <div className="mt-60">
-          <div ref={sliderOne} className="slider translate-y-10 rotate-6">
-            {projects?.map((project) => {
+      <div className="rotate-6">
+        <div className="mt-40">
+          <div ref={sliderOne} className="slider">
+            {doubleProjects?.map((project) => {
               return (
-                <div key={project.id}>
+                <div key={nanoid()} className="overflow-hidden rounded-lg">
                   <Link to={project.link} target="_blank">
                     <img src={project.img} alt={project.title} />
                   </Link>
@@ -65,14 +66,14 @@ const Work = () => {
             })}
           </div>
         </div>
-        <div className=" -mt-10">
+        <div className=" mt-10">
           <div
             ref={sliderTwo}
-            className="flex-row-reverse -translate-y-10 -translate-x-[40%] slider rotate-6 "
+            className="flex-row-reverse slider sliderReverse"
           >
-            {projects?.map((project) => {
+            {doubleProjects?.map((project) => {
               return (
-                <div key={project.id} className="overflow-hidden rounded-lg">
+                <div key={nanoid()} className="overflow-hidden rounded-lg">
                   <Link to={`/work/${project.id}}`}>
                     <img src={project.img} alt={project.title} />
                   </Link>
