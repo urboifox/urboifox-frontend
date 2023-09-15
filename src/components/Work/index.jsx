@@ -45,43 +45,56 @@ const Work = () => {
   // }, [sliderOne, sliderTwo]);
 
   return (
-    <div
-      className="pt-32 md:pt-40 cont mx-auto h-[500vh] overflow-hidden"
-      ref={scope}
-    >
-      <div className="mb-20 md:mb-96">
+    <div className="pt-32 md:pt-40 cont mx-auto overflow-hidden" ref={scope}>
+      <div className="mb-20 md:mb-40">
         <TextSection first={"Explore"} second={"My projects"} />
       </div>
-      <div className="rotate-6">
-        <div className="mt-40">
-          <div ref={sliderOne} className="slider">
-            {doubleProjects?.map((project) => {
-              return (
-                <div key={nanoid()} className="overflow-hidden rounded-lg">
-                  <Link to={project.link} target="_blank">
-                    <img src={project.img} alt={project.title} />
-                  </Link>
-                </div>
-              );
-            })}
+      <div className="mb-40">
+        <div className="rotate-6">
+          <div>
+            <div ref={sliderOne} className="slider">
+              {doubleProjects?.map((project) => {
+                return (
+                  <div key={nanoid()} className="overflow-hidden rounded-lg">
+                    <Link to={project.link} target="_blank">
+                      <img src={project.img} alt={project.title} />
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className=" mt-10">
+            <div
+              ref={sliderTwo}
+              className="flex-row-reverse slider sliderReverse"
+            >
+              {doubleProjects?.map((project) => {
+                return (
+                  <div key={nanoid()} className="overflow-hidden rounded-lg">
+                    <Link to={`/work/${project.id}}`}>
+                      <img src={project.img} alt={project.title} />
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
-        <div className=" mt-10">
-          <div
-            ref={sliderTwo}
-            className="flex-row-reverse slider sliderReverse"
-          >
-            {doubleProjects?.map((project) => {
-              return (
-                <div key={nanoid()} className="overflow-hidden rounded-lg">
-                  <Link to={`/work/${project.id}}`}>
-                    <img src={project.img} alt={project.title} />
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+      </div>
+      <div className="mb-20 flex flex-col gap-10">
+        {projects.map((project) => {
+          return (
+            <Link
+              key={project.id}
+              className="cursor-default h-fit relative z-10"
+              to={project.link}
+              target="_blank"
+            >
+              <TextSection first={project.title} />
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
