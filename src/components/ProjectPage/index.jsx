@@ -12,7 +12,7 @@ export default function ProjectPage() {
     allProjects?.find((e) => e.id === Number(id) + 1) || allProjects?.at(0);
 
   return (
-    <div className="projectPage flex flex-col items-center cont mx-auto pt-28 md:pt-32 relative">
+    <div className="projectPage md:mb-10 flex flex-col items-center cont mx-auto pt-28 md:pt-32 relative">
       <div className="flex flex-col md:flex-row justify-between md:items-center w-full px-4 md:px-10 md:mt-10 mb-10 md:mb-20">
         <div>
           <h1 className="mb-5 md:mb-10 md:max-w-4xl text-[var(--main-color)] link font-light capitalize text-3xl w-full md:text-8xl">
@@ -63,7 +63,7 @@ export default function ProjectPage() {
       <Link to={project?.link} target="_blank" className=" w-full relative">
         <img
           src={project?.img}
-          className="w-full max-h-screen"
+          className="w-full md:w-[80%] mx-auto max-h-screen"
           alt={project?.title}
         />
       </Link>
