@@ -57,7 +57,7 @@ const Heading = () => {
       const headingTl = gsap.timeline();
 
       headingTl.to("h1", {
-        y: screenWidth > 1440 ? 100 : 50,
+        y: 20,
         ease: "none",
         scrollTrigger: {
           trigger: "h1",
@@ -75,8 +75,11 @@ const Heading = () => {
   }, [screenWidth]);
   return (
     <div ref={scope} className="wrapper headingContainer font-main">
+      <p className="uppercase text-[var(--main-color-dimmed)] max-md:mb-5 text-center tracking-widest text-lg font-light">
+        Hey, I<span className="text-primary-100">&apos;</span>m
+      </p>
       <h1
-        className={`animateUp m-0 lg:mainHeading link text-7xl md:text-8xl lg:text-[10rem] font-light`}
+        className={`flex justify-center m-0 lg:mainHeading link text-7xl md:text-8xl lg:text-[10rem] font-light`}
       >
         <span ref={openTag} className="tag">
           {"<"}
@@ -109,11 +112,21 @@ const Heading = () => {
           x
         </motion.span>
         {` `}
-        <span ref={closeTag} className="tag">
-          {" /"}
-          <span className="tag ">{">"}</span>
+        <span ref={closeTag} className="ml-2 md:ml-6 tag">
+          {" />"}
         </span>
       </h1>
+      {/* <p className=" mx-auto max-w-lg font-light text-xs max-md:leading-5 max-md:px-4 md:text-sm text-[var(--sec-color)] mt-10 tracking-wider text-center">
+        I&apos;m a{" "}
+        <span className="text-[var(--main-color)] font-light">
+          Frontend developer
+        </span>{" "}
+        with a relentless drive for excellence, skilled in creating and
+        maintaining functional and responsive web applications and websites.
+      </p>
+      <Link to={"/contact"} className="mt-10 flex items-center justify-center">
+        <PrimaryButton text={"Contact Me"} />
+      </Link> */}
     </div>
   );
 };

@@ -2,6 +2,7 @@ import {
   ChevronButton,
   Heading,
   HomeText,
+  // HomeText,
   SelectedWork,
   Skills,
   TextSection,

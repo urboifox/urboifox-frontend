@@ -1,55 +1,34 @@
 import { useSelector } from "react-redux";
 import "./style.scss";
 import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import TextSection from "../TextSection";
 import { nanoid } from "@reduxjs/toolkit";
 
 const Work = () => {
   const scope = useRef(null);
-  // const loading = useSelector((state) => state.load.loading);
   const sliderOne = useRef(null);
   const sliderTwo = useRef(null);
   const projects = useSelector((state) => state.websiteData.data.work);
   const doubleProjects = projects?.concat(...projects);
 
-  // useEffect(() => {
-  //   const ctx = gsap.context(() => {
-  //     gsap.to(sliderOne.current, {
-  //       x: "-30%",
-  //       y: "-20%",
-  //       ease: "none",
-  //       scrollTrigger: {
-  //         trigger: sliderOne.current,
-  //         scrub: 1,
-  //         start: "top bottom",
-  //         end: "bottom top",
-  //       },
-  //     });
-  //     gsap.to(sliderTwo.current, {
-  //       x: "-10%",
-  //       y: "50%",
-  //       ease: "none",
-  //       scrollTrigger: {
-  //         trigger: sliderTwo.current,
-  //         start: "top bottom",
-  //         end: "bottom top",
-  //         scrub: 1,
-  //       },
-  //     });
-  //   }, scope);
-
-  //   return () => {
-  //     ctx.revert();
-  //   };
-  // }, [sliderOne, sliderTwo]);
+  useEffect(() => {
+    const imgs = document.querySelectorAll(".hover-reveal");
+    document.addEventListener("mousemove", (event) => {
+      const { clientX, clientY } = event;
+      imgs?.forEach((img) => {
+        img.style.left = `${clientX + 40}px`;
+        img.style.top = `${clientY + 20}px`;
+      });
+    });
+  }, [projects]);
 
   return (
     <div className="pt-32 md:pt-40 cont mx-auto overflow-hidden" ref={scope}>
       <div className="mb-20 md:mb-40">
         <TextSection first={"Explore"} second={"My projects"} />
       </div>
-      <div className="mb-40">
+      <div className="mb-10 md:mb-40">
         <div className="rotate-6">
           <div>
             <div ref={sliderOne} className="slider">
@@ -82,17 +61,29 @@ const Work = () => {
           </div>
         </div>
       </div>
-      <div className="mb-20 flex flex-col gap-10">
-        {projects.map((project) => {
+      <div className="px-4 mb-20 flex flex-col gap-5">
+        {projects?.map((project) => {
           return (
-            <Link
-              key={project.id}
-              className="cursor-default h-fit relative z-10"
-              to={project.link}
-              target="_blank"
-            >
-              <TextSection first={project.title} />
-            </Link>
+            <div key={project.id}>
+              <Link
+                className="cursor-default peer h-fit relative z-10"
+                to={project.link}
+                target="_blank"
+              >
+                <p className="text-[var(--main-color-dimmed)] hover:text-[var(--main-color)] transition-colors duration-500 font-light text-xl md:text-6xl">
+                  <span className="text-[var(--main-color-dimmed)]">
+                    {project.id}.
+                  </span>{" "}
+                  {project.title}
+                </p>
+              </Link>
+              <div className="pointer-events-none hover-reveal opacity-0 transition-opacity duration-200  md:peer-hover:opacity-100 fixed w-80 h-44 left-1/2 top-1/2 z-50">
+                <div
+                  className="hover-reveal-img h-full w-full relative"
+                  style={{ backgroundImage: `url(${[project.img]})` }}
+                ></div>
+              </div>
+            </div>
           );
         })}
       </div>

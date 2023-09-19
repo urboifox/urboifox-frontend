@@ -10,6 +10,7 @@ $card-width: 26.5rem;
     }
   }
 }
+
 .slider {
   animation: scroll $animation-time linear infinite;
   -webkit-animation: scroll $animation-time linear infinite;
@@ -21,6 +22,12 @@ $card-width: 26.5rem;
   animation: scrollReverse $animation-time linear infinite;
   -webkit-animation: scrollReverse $animation-time linear infinite;
 }
+
+.hover-reveal-img {
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
