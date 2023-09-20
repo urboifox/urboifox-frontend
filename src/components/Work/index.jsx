@@ -61,23 +61,23 @@ const Work = () => {
           </div>
         </div>
       </div>
-      <div className="px-4 mb-20 flex flex-col gap-5">
+      <div className="px-4 md:px-10 mb-20 flex flex-col gap-5">
         {projects?.map((project) => {
           return (
             <div key={project.id}>
               <Link
-                className="cursor-default peer h-fit relative z-10"
+                className="cursor-default peer h-fit relative z-10 flex w-fit"
                 to={project.link}
                 target="_blank"
               >
-                <p className="text-[var(--main-color-dimmed)] hover:text-[var(--main-color)] transition-colors duration-500 font-light text-xl md:text-6xl">
+                <p className="text-[var(--main-color-dimmed)] w-fit hover:text-[var(--main-color)] transition-colors duration-500 font-light text-xl md:text-6xl">
                   <span className="text-[var(--main-color-dimmed)]">
                     {project.id}.
                   </span>{" "}
                   {project.title}
                 </p>
               </Link>
-              <div className="pointer-events-none hover-reveal opacity-0 transition-opacity duration-200  md:peer-hover:opacity-100 fixed w-80 h-44 left-1/2 top-1/2 z-50">
+              <div className="pointer-events-none hover-reveal opacity-0 transition-opacity duration-300  md:peer-hover:opacity-100 fixed w-80 h-44 left-1/2 top-1/2 z-50">
                 <div
                   className="hover-reveal-img h-full w-full relative"
                   style={{ backgroundImage: `url(${[project.img]})` }}
