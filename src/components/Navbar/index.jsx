@@ -122,7 +122,7 @@ const Navbar = () => {
         whileTap={{ scale: 0.9 }}
         className="link w-5 md:w-8 aspect-square"
       >
-        <Link to={"mailto:mohamed.dev.egy@gmail.com"}>
+        <Link to={"mailto:mohamed.dev.egy@gmail.com"} aria-label="email me">
           <Mail
             className={`transition-all duration-300 stroke-[var(--main-color-dimmed)] md:hover:stroke-[var(--main-color)]`}
           />

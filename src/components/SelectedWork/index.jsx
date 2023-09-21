@@ -97,9 +97,10 @@ const SelectedWork = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1, transition: { duration: 0.5 } }}
                     draggable={false}
-                    className="w-full object-cover h-full transition-transform saturate-[1.2] duration-500"
+                    width={1200}
+                    height={560}
+                    className="w-full h-full max-w-full object-contain transition-transform saturate-[1.2] duration-500"
                     src={element.img}
-                    loading="lazy"
                     alt={element.title}
                   />
                 </Link>
