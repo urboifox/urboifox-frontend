@@ -51,7 +51,7 @@ const Skills = () => {
         </div>
         <div className="mt-20 mx-auto w-max">
           <Link to={"/about"}>
-            <PrimaryButton text={`More Info`} />
+            <PrimaryButton text={`More About Me`} />
           </Link>
         </div>
       </div>
