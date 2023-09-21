@@ -1,6 +1,6 @@
 .textSection h2 {
   & > div {
-    @apply transition-all hover:before:h-full duration-500 hover:text-[var(--bg-color)] opacity-50 hover:opacity-100 relative;
+    @apply transition-all hover:before:h-full duration-500 hover:text-[var(--bg-color)] relative;
     &::before {
       content: "";
       @apply absolute w-screen transition-all duration-500 h-0 -z-10 bg-[var(--main-color)] bottom-0 -left-4 md:-left-10;
