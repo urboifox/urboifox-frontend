@@ -78,6 +78,7 @@ const Heading = () => {
         Hey, I<span className="text-primary-100">&apos;</span>m
       </p>
       <h1
+        aria-label="Fox"
         className={`flex justify-center m-0 lg:mainHeading link text-7xl md:text-8xl lg:text-[10rem] font-light`}
       >
         <span ref={openTag} className="tag">
