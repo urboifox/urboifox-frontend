@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "./style.scss";
 import { motion } from "framer-motion";
 import { Fragment, useEffect, useRef } from "react";
@@ -8,7 +8,6 @@ import { setSelected } from "../../redux/slices/aboutSlice";
 import { aboutPages } from "../../constants";
 const About = () => {
   // const selected = useSelector((state) => state.about.selected);
-  const darkTheme = useSelector((state) => state.theme.darkTheme);
   const dispatch = useDispatch();
   const scope = useRef(null);
 
@@ -46,9 +45,7 @@ const About = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className={`${
-        darkTheme ? "text-white" : "text-dark"
-      } cont mx-auto relative overflow-x-hidden`}
+      className={`text-light cont mx-auto relative overflow-x-hidden`}
       ref={scope}
     >
       <div className="aboutGrid fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
@@ -61,7 +58,7 @@ const About = () => {
                 <Link
                   aria-label="About me page link"
                   onClick={() => dispatch(setSelected(i))}
-                  className="w-full h-full flex items-center justify-center"
+                  className="w-full font-light h-full flex items-center justify-center"
                   to={`/about/${item.toLowerCase()}`}
                 >
                   {item}
@@ -78,14 +75,18 @@ const About = () => {
           y: 30,
           x: "-50%",
         }}
-        animate={{ opacity: 1, y: 0, transition: { delay: 1, duration: 1 } }}
+        animate={{
+          opacity: 1,
+          x: "-50%",
+          y: 0,
+          transition: { delay: 1, duration: 1 },
+        }}
         exit={{
           opacity: 0,
           y: 30,
+          x: "-50%",
         }}
-        className={`${
-          darkTheme ? "text-dimmed" : "text-darkDimmed"
-        } fixed -z-10 bottom-10 transition-colors duration-300 uppercase text-xl lg:text-2xl w-max font-light left-1/2 `}
+        className={`text-dimmed fixed -z-10 bottom-10 transition-colors duration-300 uppercase text-xl lg:text-2xl w-max font-light left-1/2 `}
       >
         Get To Know Me
       </motion.h2>

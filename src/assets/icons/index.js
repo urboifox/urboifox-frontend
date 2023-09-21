@@ -7,6 +7,7 @@ import HomeIcon from "./HomeIcon";
 import Code from "./Code";
 import GoToLink from "./GoToLink";
 import ArrowRight from "./ArrowRight";
+import Mail from "./Mail";
 export {
   ChevronBottom,
   ArrowRight,
@@ -17,4 +18,5 @@ export {
   Github,
   Sun,
   HomeIcon,
+  Mail,
 };

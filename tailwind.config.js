@@ -6,22 +6,15 @@ export default {
 
   theme: {
     extend: {
-      fontFamily: {
-        main: ["Montserrat", "sans-serif"],
-        sec: ["Wix Madefor Display", "sans-serif"],
-      },
       colors: {
         primary: {
           100: primaryColor,
         },
+        bg: "#000000",
         dark: "#0a0a0a",
         light: "#ffffff",
         dimmed: "#ffffff80",
         darkDimmed: "#0a0a0a80",
-        gradient: {
-          100: "#24C6DC",
-          200: "#514A9D",
-        },
       },
     },
   },

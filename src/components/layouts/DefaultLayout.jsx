@@ -2,7 +2,6 @@ import { Circ, gsap } from "gsap";
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useDispatch } from "react-redux";
-import { setTheme } from "../../redux/slices/themeSlice";
 import { ScrollBar, Navbar, NavMenu, LoadBehaviour, AnimatedOutled } from "../";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router";
@@ -17,7 +16,6 @@ const DefaultLayout = () => {
   const animation = routesAnimation;
   const location = useLocation();
   const dispatch = useDispatch();
-  const localDarkTheme = localStorage.getItem("darkTheme");
 
   useEffect(() => {
     const currentLocation = location.pathname.slice(
@@ -32,17 +30,6 @@ const DefaultLayout = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
-
-  useEffect(() => {
-    function initiateTheme() {
-      if (localDarkTheme) {
-        dispatch(setTheme(JSON.parse(localDarkTheme)));
-      } else {
-        dispatch(setTheme(true));
-      }
-    }
-    initiateTheme();
-  }, [dispatch, localDarkTheme]);
 
   useEffect(() => {
     const animateUpElement = document.querySelector(".animateUp");

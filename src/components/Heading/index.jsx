@@ -6,7 +6,6 @@ import { handleTagsAnimation } from "../../functions";
 import "./style.scss";
 
 const Heading = () => {
-  const darkTheme = useSelector((state) => state.theme.darkTheme);
   const screenWidth = useSelector((state) => state.screen.width);
   const openTag = useRef(null);
   const closeTag = useRef(null);
@@ -89,23 +88,11 @@ const Heading = () => {
         >
           F
           <span className="theO">
-            <span
-              className={`${
-                darkTheme ? "bg-light" : "bg-dark"
-              } theOSon max-md:!translate-x-0`}
-            >
-              <span
-                className={`${!darkTheme ? "bg-light" : "bg-dark"}`}
-                ref={theO}
-              ></span>
+            <span className={`bg-light theOSon max-md:!translate-x-0`}>
+              <span className={`bg-dark`} ref={theO}></span>
             </span>
-            <span
-              className={`bg-[var(--main-color)] theOSon2 max-md:!translate-x-0`}
-            >
-              <span
-                className={`${!darkTheme ? "bg-light" : "bg-dark"}`}
-                ref={theO2}
-              ></span>
+            <span className={`bg-light theOSon2 max-md:!translate-x-0`}>
+              <span className={`bg-dark`} ref={theO2}></span>
             </span>
             o
           </span>

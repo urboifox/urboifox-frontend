@@ -16,25 +16,9 @@ import { primaryColor } from "./constants";
 function App() {
   const root = document.documentElement;
   const loading = useSelector((state) => state.load.loading);
-  const darkTheme = useSelector((state) => state.theme.darkTheme);
   const dispatch = useDispatch();
   root.style.setProperty("--primary-color", primaryColor);
 
-  if (darkTheme !== null) {
-    if (darkTheme) {
-      root.style.setProperty("--bg-color", "#0a0a0a");
-      root.style.setProperty("--main-color", "#ffffff");
-      root.style.setProperty("--sec-color", "#bbb");
-      root.style.setProperty("--light-color", "#333");
-      root.style.setProperty("--main-color-dimmed", "#ffffff80");
-    } else {
-      root.style.setProperty("--bg-color", "#eee");
-      root.style.setProperty("--main-color", "#0a0a0a");
-      root.style.setProperty("--sec-color", "#777");
-      root.style.setProperty("--light-color", "#999");
-      root.style.setProperty("--main-color-dimmed", "#0a0a0a80");
-    }
-  }
   function raf(time) {
     lenis.raf(time);
     requestAnimationFrame(raf);

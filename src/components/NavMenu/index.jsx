@@ -11,7 +11,6 @@ import { setSelected } from "../../redux/slices/aboutSlice";
 const NavMenu = () => {
   const list = useRef(null);
   const menuVisible = useSelector((state) => state.navMenu.visible);
-  const darkTheme = useSelector((state) => state.theme.darkTheme);
   const dispatch = useDispatch();
 
   const handleSetMenu = (val) => {
@@ -58,9 +57,7 @@ const NavMenu = () => {
             >
               <motion.div
                 key={"menu"}
-                className={`${
-                  darkTheme ? "text-light " : " text-dark"
-                } left-0 h-full absolute flex items-center transition-colors duration-300 top-0 w-[70%] md:w-1/2 lg:w-1/3 tracking-widest font-extralight`}
+                className={`text-light left-0 h-full absolute flex items-center transition-colors duration-300 top-0 w-[70%] md:w-1/2 lg:w-1/3 tracking-widest font-extralight`}
               >
                 <ul
                   ref={list}
@@ -96,9 +93,7 @@ const NavMenu = () => {
                               duration: 0.1,
                             },
                           }}
-                          className={`${
-                            darkTheme ? "before:bg-light" : "before:bg-dark"
-                          } link`}
+                          className={`before:bg-light link`}
                         >
                           {itemText}
                         </motion.li>

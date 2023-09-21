@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { ChevronBottom, Sun } from "../../assets/icons/";
+import { ChevronBottom, Mail } from "../../assets/icons/";
 import { AnimatePresence, motion } from "framer-motion";
-import { toggleTheme } from "../../redux/slices/themeSlice";
 import { setNavMenu, toggleNavMenu } from "../../redux/slices/navMenuSlice";
 import {
   setNavbarVisible,
@@ -58,9 +57,6 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollPos, dispatch]);
-  const handleTheme = () => {
-    dispatch(toggleTheme());
-  };
 
   const handleNavToggle = () => {
     dispatch(toggleNavMenu());
@@ -123,13 +119,14 @@ const Navbar = () => {
       </motion.div>
       <SocialLinks />
       <motion.div
-        onClick={() => handleTheme()}
         whileTap={{ scale: 0.9 }}
-        className="link w-5 md:w-7 aspect-square"
+        className="link w-5 md:w-8 aspect-square"
       >
-        <Sun
-          className={`transition-all duration-300 stroke-[var(--main-color-dimmed)] md:hover:stroke-[var(--main-color)]`}
-        />
+        <Link to={"mailto:mohamed.dev.egy@gmail.com"}>
+          <Mail
+            className={`transition-all duration-300 stroke-[var(--main-color-dimmed)] md:hover:stroke-[var(--main-color)]`}
+          />
+        </Link>
       </motion.div>
     </div>
   );

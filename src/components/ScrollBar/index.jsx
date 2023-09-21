@@ -1,10 +1,8 @@
 import { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
 
 const ScrollBar = () => {
   const scrollbar = useRef(null);
-  const darkTheme = useSelector((state) => state.theme.darkTheme);
   const location = useLocation();
   function handleScroll() {
     const body = document.body;
@@ -35,9 +33,7 @@ const ScrollBar = () => {
     <div
       ref={scrollbar}
       id="scrollbar"
-      className={`${
-        darkTheme ? "bg-light" : "bg-darkDimmed"
-      } fixed w-1 h-0 top-0 right-0 z-[9999999999] max-md:hidden transition-colors duration-300`}
+      className={`bg-light fixed w-1 h-0 top-0 right-0 z-[9999999999] max-md:hidden transition-colors duration-300`}
     ></div>
   );
 };

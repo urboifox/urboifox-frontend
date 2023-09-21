@@ -10,7 +10,7 @@ const navbarSlice = createSlice({
   initialState,
   reducers: {
     setNavbarVisible: (state, action) => {
-      state.visible = action.payload;
+      state.visible = window.scrollY > 150 ? action.payload : true;
     },
     setPrevScrollPos: (state, action) => {
       state.prevScrollPos = action.payload;

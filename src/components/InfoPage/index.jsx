@@ -1,9 +1,13 @@
-import { motion } from "framer-motion";
 import { PrimaryButton } from "../";
 
 export default function InfoPage() {
+  const birthDate = new Date("2004-02-15");
+  const currentDate = new Date();
+  const ageInMilliseconds = currentDate - birthDate;
+  const age = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25));
+
   return (
-    <motion.div className="aboutContainer cont">
+    <div className="aboutContainer cont">
       <div className="relative aboutHeading">
         <div
           className={`sectionHeading fadeIn text-[var(--main-color-dimmed)] block md:self-start max-w-[80rem] tracking-wide w-full font-main font-thin  px-5 text-2xl md:text-5xl lg:text-5xl capitalize`}
@@ -15,14 +19,16 @@ export default function InfoPage() {
         <h1 className="transition-colors duration-300 text-[var(--main-color)] text-xl md:text-3xl xl:text-5xl font-light mb-5 ">
           Mohamed Ashraf
         </h1>
-        <p className="transition-colors duration-300 font-light md:max-w-4xl text-sm md:text-base text-[var(--main-color-dimmed)]">
-          I&apos;m a web developer based in Egypt with a relentless drive for
-          excellence, skilled in creating and maintaining functional and
-          responsive web applications and websites. Proficient in the latest web
-          technologies and frameworks, continuously expanding my skill set to
-          stay at the forefront of the industry.
-          <br /> With previous designing background, I also worked on graphic
-          designing and UI/UX.
+        <p className="hover:text-light link transition-colors duration-300 font-light md:max-w-4xl text-sm md:text-base text-[var(--main-color-dimmed)]">
+          I&apos;m a <span className="text-light">{age}</span> years old
+          <span className="text-light"> Frontend developer </span> based in
+          <span className="text-light"> Egypt </span>
+          with a relentless drive for excellence, skilled in creating and
+          maintaining functional and responsive web applications and websites.
+          Proficient in the{" "}
+          <span className="text-light">latest web technologies</span> and
+          frameworks, continuously expanding my skill set to stay at the
+          forefront of the industry.
         </p>
         <p className="transition-colors duration-300 font-light md:max-w-4xl mb-12 text-sm md:text-base text-[var(--main-color-dimmed)] mt-5">
           You can reach me at:{" "}
@@ -34,9 +40,9 @@ export default function InfoPage() {
           </a>
         </p>
         <a href="/Mohamed Ashraf - Frontend Developer.pdf" download={true}>
-          <PrimaryButton text={"Download CV"} />
+          <PrimaryButton noScale={true} text={"Download CV"} />
         </a>
       </div>
-    </motion.div>
+    </div>
   );
 }
