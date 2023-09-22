@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 const Skills = () => {
   const skills = useSelector((state) => state.websiteData.data.home_skills);
-  const screenWidth = useSelector((state) => state.screen.width);
   const scope = useRef(null);
   const slider = useRef(null);
   const cardWidth = 288;
@@ -19,21 +18,21 @@ const Skills = () => {
     const xPosition = totalWidth - sliderWidth;
     const ctx = gsap.context(() => {
       gsap.to(slider.current, {
-        x: screenWidth > 767 ? `-${xPosition}px` : 0,
+        x: window.innerWidth > 767 ? `-${xPosition}px` : 0,
         ease: "none",
         scrollTrigger: {
           trigger: scope.current,
           start: "140% bottom",
           end: "140%  top",
           scrub: 1,
-          pin: screenWidth > 767,
+          pin: window.innerWidth > 767,
         },
       });
     }, scope);
     return () => {
       ctx.revert();
     };
-  }, [screenWidth, skills?.length]);
+  }, [skills?.length]);
 
   return (
     <div className="mt-20 lg:mt-40" ref={scope}>

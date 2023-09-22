@@ -1,23 +1,17 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import "./style.scss";
-import { changeScreenWidth } from "../../redux/slices/screenSlice";
 import { PrimaryButton, SectionHeading } from "../";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 
 const SelectedWork = () => {
-  const screenWidth = useSelector((state) => state.screen.width);
   const allWork = useSelector((state) => state.websiteData.data.work);
   const elements = allWork?.slice(0, 3);
   const sectionRef = useRef(null);
-  const dispatch = useDispatch();
   const scope = useRef(null);
-  window.onresize = () => {
-    dispatch(changeScreenWidth(document.body.clientWidth));
-  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -34,7 +28,7 @@ const SelectedWork = () => {
         sectionRef.current,
         { x: "0" },
         {
-          x: screenWidth > 767 ? "-50%" : "0",
+          x: window.innerWidth > 767 ? "-50%" : "0",
           ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -45,7 +39,7 @@ const SelectedWork = () => {
         }
       ).fromTo(
         sectionRef.current,
-        { x: screenWidth > 767 ? "-50%" : "0" },
+        { x: window.innerWidth > 767 ? "-50%" : "0" },
         {
           x: "0",
           ease: "none",
@@ -62,7 +56,7 @@ const SelectedWork = () => {
     return () => {
       ctx.revert();
     };
-  }, [screenWidth]);
+  }, []);
   return (
     <>
       <div

@@ -1,24 +1,24 @@
 import { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
+
 import { gsap } from "gsap";
 /* eslint-disable react/prop-types */
 const SectionHeading = ({ text, className }) => {
   const el = useRef(null);
   const scope = useRef(null);
-  const screenWidth = useSelector((state) => state.screen.width);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         el.current,
         { x: 0, opacity: 0 },
         {
-          x: screenWidth > 767 ? 100 : 20,
+          x: window.innerWidth > 767 ? 100 : 20,
           opacity: 1,
           ease: "none",
           scrollTrigger: {
             trigger: el.current,
             start: "top bottom",
-            end: screenWidth > 767 ? "bottom 0" : "bottom center",
+            end: window.innerWidth > 767 ? "bottom 0" : "bottom center",
             scrub: 1,
           },
         }
@@ -28,7 +28,7 @@ const SectionHeading = ({ text, className }) => {
     return () => {
       ctx.revert();
     };
-  }, [screenWidth, text]);
+  }, [text]);
   return (
     <div
       ref={scope}

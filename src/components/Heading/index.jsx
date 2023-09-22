@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
 import { handleTagsAnimation } from "../../functions";
 import "./style.scss";
 
 const Heading = () => {
-  const screenWidth = useSelector((state) => state.screen.width);
   const openTag = useRef(null);
   const closeTag = useRef(null);
   const scope = useRef(null);
@@ -31,7 +29,7 @@ const Heading = () => {
 
       const offsetX = Math.cos(angle) * maxDistance;
       const offsetY = Math.sin(angle) * maxDistance;
-      if (screenWidth > 767) {
+      if (window.innerWidth > 767) {
         oElement?.animate(
           {
             transform: `translate(${offsetX}px, ${offsetY}px)`,
@@ -50,7 +48,7 @@ const Heading = () => {
     return () => {
       document.removeEventListener("mousemove", (e) => handleMouseMove(e));
     };
-  }, [screenWidth]);
+  }, []);
   useEffect(() => {
     const ctx = gsap.context(() => {
       const headingTl = gsap.timeline();
@@ -71,7 +69,7 @@ const Heading = () => {
     return () => {
       ctx.revert();
     };
-  }, [screenWidth]);
+  }, []);
   return (
     <div ref={scope} className="wrapper headingContainer font-main">
       <p className="uppercase text-[var(--main-color-dimmed)] max-md:mb-5 text-center tracking-widest text-lg font-light">

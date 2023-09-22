@@ -37,7 +37,7 @@ export function handleTagsAnimation(e, direction) {
 }
 
 // gsap functions
-// export function gsapSelected(sectionRef, screenWidth) {
+// export function gsapSelected(sectionRef, window.innerWidth) {
 //   gsap.to(sectionRef.current, {
 //     x: "0",
 //     duration: 0.00000000001,
@@ -51,7 +51,7 @@ export function handleTagsAnimation(e, direction) {
 //     sectionRef.current,
 //     { x: "0" },
 //     {
-//       x: screenWidth > 767 ? "-50%" : "0",
+//       x: window.innerWidth > 767 ? "-50%" : "0",
 //       ease: "none",
 //       scrollTrigger: {
 //         trigger: sectionRef.current,
@@ -62,7 +62,7 @@ export function handleTagsAnimation(e, direction) {
 //     }
 //   ).fromTo(
 //     sectionRef.current,
-//     { x: screenWidth > 767 ? "-50%" : "0" },
+//     { x: window.innerWidth > 767 ? "-50%" : "0" },
 //     {
 //       x: "0",
 //       ease: "none",

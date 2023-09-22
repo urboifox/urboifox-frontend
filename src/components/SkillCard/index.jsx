@@ -1,16 +1,14 @@
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
 /* eslint-disable react/prop-types */
 const SkillCard = ({ skill }) => {
   const card = useRef(null);
-  const screenWidth = useSelector((state) => state.screen.width);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         card.current,
-        { opacity: 0, x: screenWidth > 767 ? 0 : -100 },
+        { opacity: 0, x: window.innerWidth > 767 ? 0 : -100 },
         {
           opacity: 1,
           x: 0,
@@ -25,7 +23,7 @@ const SkillCard = ({ skill }) => {
     }, card);
 
     return () => ctx.revert();
-  }, [screenWidth]);
+  }, []);
 
   return (
     <div
