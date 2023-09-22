@@ -4,7 +4,7 @@ import { Cursor, Loading, Particlesjs } from "./components";
 import { RouterProvider } from "react-router";
 import myRouter from "./routes";
 import { useDispatch, useSelector } from "react-redux";
-import { lenis } from "./lenis";
+
 import { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { AnimatePresence } from "framer-motion";
@@ -13,18 +13,12 @@ import { setLoading } from "./redux/slices/loadingSlice";
 import { initiateData } from "./redux/slices/websiteDataSlice";
 import axios from "axios";
 import { primaryColor } from "./constants";
+
 function App() {
   const root = document.documentElement;
   const loading = useSelector((state) => state.load.loading);
   const dispatch = useDispatch();
   root.style.setProperty("--primary-color", primaryColor);
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
 
   // get api data
   useEffect(() => {

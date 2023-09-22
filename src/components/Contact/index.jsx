@@ -1,3 +1,3 @@
 export default function Contact() {
-  return <div>Contact</div>;
+  return <div className="h-[200vh]">Contact</div>;
 }

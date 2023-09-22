@@ -8,10 +8,11 @@ import {
 } from "../../redux/slices/navbarSlice";
 import SocialLinks from "../SocialLinks";
 import { useEffect } from "react";
-import { lenis } from "../../lenis";
 import { Link } from "react-router-dom";
+import { useLenis } from "@studio-freight/react-lenis";
 const Navbar = () => {
   const selected = useSelector((state) => state.about.selected);
+  const lenis = useLenis();
   const navVisible = useSelector((state) => state.navMenu.visible);
   const visible = useSelector((state) => state.navbar.visible);
   const prevScrollPos = useSelector((state) => state.navbar.prevScrollPos);
@@ -27,7 +28,6 @@ const Navbar = () => {
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key === "m" || e.key === "M") {
-        lenis.stop();
         e.preventDefault();
         handleToggleMenu();
         dispatch(setNavbarVisible(true));
@@ -50,13 +50,21 @@ const Navbar = () => {
       const visible = prevScrollPos > currentScrollPos;
 
       dispatch(setPrevScrollPos(currentScrollPos));
-      dispatch(setNavbarVisible(visible));
+      if (navVisible) {
+        dispatch(setNavbarVisible(true));
+      } else {
+        dispatch(setNavbarVisible(visible));
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPos, dispatch]);
+  }, [prevScrollPos, dispatch, navVisible]);
+
+  useEffect(() => {
+    navVisible ? lenis?.stop() : lenis?.start();
+  }, [navVisible, lenis]);
 
   const handleNavToggle = () => {
     dispatch(toggleNavMenu());
@@ -79,7 +87,7 @@ const Navbar = () => {
               duration: 0.5,
             }}
           >
-            <Link title="Go back to about page" to={"/about"}>
+            <Link to={"/about"}>
               <ChevronBottom
                 className={`w-7 md:w-10 stroke-[var(--main-color)] rotate-90 transition-colors duration-300`}
               />
@@ -122,11 +130,7 @@ const Navbar = () => {
         whileTap={{ scale: 0.9 }}
         className="link w-5 md:w-8 aspect-square"
       >
-        <Link
-          title="email me"
-          to={"mailto:mohamed.dev.egy@gmail.com"}
-          aria-label="email me"
-        >
+        <Link to={"mailto:mohamed.dev.egy@gmail.com"} aria-label="email me">
           <Mail
             className={`transition-all duration-300 stroke-[var(--main-color-dimmed)] md:hover:stroke-[var(--main-color)]`}
           />

@@ -44,26 +44,26 @@ body {
     max-width: 1536px;
   }
 }
-// lenis required css
-html.lenis {
-  height: auto;
-}
+// // lenis required css
+// html.lenis {
+//   height: auto;
+// }
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-}
+// .lenis.lenis-smooth {
+//   scroll-behavior: auto;
+// }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
+// .lenis.lenis-smooth [data-lenis-prevent] {
+//   overscroll-behavior: contain;
+// }
 
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
+// .lenis.lenis-stopped {
+//   overflow: hidden;
+// }
 
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
-}
+// .lenis.lenis-scrolling iframe {
+//   pointer-events: none;
+// }
 
 // custome animations
 .floating {

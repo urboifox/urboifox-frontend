@@ -5,7 +5,6 @@ const SocialLinks = () => {
   return (
     <div className="flex items-center gap-5 socialLinks">
       <motion.a
-        title="Go to my Github"
         aria-label="Go to my Github"
         href="https://github.com/urboifox"
         target="_blank"
@@ -18,7 +17,6 @@ const SocialLinks = () => {
       </motion.a>
       <motion.a
         aria-label="Go to my Facebook"
-        title="Go to my Facebook"
         href="https://www.facebook.com/profile.php?id=100008910966277"
         target="_blank"
         whileTap={{ scale: 0.9 }}
@@ -28,7 +26,6 @@ const SocialLinks = () => {
       </motion.a>
       <motion.a
         aria-label="Go to my Linkedin"
-        title="Go to my Linkedin"
         href="https://www.linkedin.com/in/urboifox/"
         target="_blank"
         whileTap={{ scale: 0.9 }}

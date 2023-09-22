@@ -38,11 +38,7 @@ const Work = () => {
               {doubleProjects?.map((project) => {
                 return (
                   <div key={nanoid()} className="overflow-hidden rounded-lg">
-                    <Link
-                      title={`Go to ${project.title} website`}
-                      to={project.link}
-                      target="_blank"
-                    >
+                    <Link to={project.link} target="_blank">
                       <img src={project.img} alt={project.title} />
                     </Link>
                   </div>
@@ -58,11 +54,7 @@ const Work = () => {
               {doubleProjects?.map((project) => {
                 return (
                   <div key={nanoid()} className="overflow-hidden rounded-lg">
-                    <Link
-                      title={`Go to ${project.title} website`}
-                      to={project.link}
-                      target="_blank"
-                    >
+                    <Link to={project.link} target="_blank">
                       <img src={project.img} alt={project.title} />
                     </Link>
                   </div>
@@ -77,7 +69,6 @@ const Work = () => {
           return (
             <div key={project.id}>
               <Link
-                title={`Go to ${project.title} project page`}
                 className="cursor-default peer h-fit relative z-10 flex w-fit"
                 to={`/work/${project.id}`}
               >

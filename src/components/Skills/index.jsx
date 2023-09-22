@@ -49,7 +49,7 @@ const Skills = () => {
           </div>
         </div>
         <div className="mt-20 mx-auto w-max">
-          <Link title="Go to about page" to={"/about"}>
+          <Link to={"/about"}>
             <PrimaryButton text={`More About Me`} />
           </Link>
         </div>

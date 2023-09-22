@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import "./style.scss";
 import { AnimatePresence, motion } from "framer-motion";
 import { setNavMenu } from "../../redux/slices/navMenuSlice";
-import { lenis } from "../../lenis";
 import { useEffect, useRef } from "react";
 import { animateText } from "../../functions";
 import { Link } from "react-router-dom";
@@ -21,9 +20,9 @@ const NavMenu = () => {
     dispatch(setSelected(null));
   };
 
-  useEffect(() => {
-    menuVisible ? (lenis.isStopped = true) : (lenis.isStopped = false);
-  }, [menuVisible]);
+  // useEffect(() => {
+  //   menuVisible ? (lenis.isStopped = true) : (lenis.isStopped = false);
+  // }, [menuVisible]);
 
   useEffect(() => {
     const menuLinks = list.current
@@ -66,7 +65,6 @@ const NavMenu = () => {
                   {listItems.map((itemText, i) => {
                     return (
                       <Link
-                        title={`Go to ${itemText} page`}
                         key={i}
                         to={
                           itemText.toLowerCase() === "home"

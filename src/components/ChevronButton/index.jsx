@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { ChevronBottom } from "../../assets/icons/";
 import { motion } from "framer-motion";
-import { lenis } from "../../lenis";
+import { useLenis } from "@studio-freight/react-lenis";
 
 const ScrollBottom = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const lenis = useLenis();
   const handleClick = () => {
     lenis.scrollTo("#selected");
   };
