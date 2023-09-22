@@ -16,38 +16,28 @@ const SelectedWork = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(sectionRef.current, {
-        x: "0",
-        duration: 0.00000000001,
+        translateX: "-50%",
+        ease: "none",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "-10% bottom",
+          scrub: 1,
+          start: "45% 50%",
+          end: "46% 55%",
+          markers: true,
         },
       });
-      const tl = gsap.timeline();
-      tl.fromTo(
+      gsap.fromTo(
         sectionRef.current,
-        { x: "0" },
+        { translateX: "-50%" },
         {
-          x: window.innerWidth > 767 ? "-50%" : "0",
+          translateX: 0,
           ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
             scrub: 1,
-            start: "45% 80%",
-            end: "10% 60%",
-          },
-        }
-      ).fromTo(
-        sectionRef.current,
-        { x: window.innerWidth > 767 ? "-50%" : "0" },
-        {
-          x: "0",
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            scrub: 1,
-            start: "80% 80%",
-            end: "40% 60%",
+            start: "80% 60%",
+            end: "81% 55%",
+            markers: true,
           },
         }
       );
@@ -62,7 +52,7 @@ const SelectedWork = () => {
       <div
         ref={scope}
         id="selected"
-        className="mt-10 md:mt-40 py-16 flex flex-col items-center relative cont mx-auto"
+        className="mt-10 md:mt-40  py-16 flex flex-col items-center relative cont mx-auto"
       >
         <SectionHeading className={`mb-20`} text={`Selected Work`} />
         <motion.div
