@@ -5,19 +5,12 @@ const ScrollBar = () => {
   const scrollbar = useRef(null);
   const location = useLocation();
   function handleScroll() {
-    const body = document.body;
-    const html = document.documentElement;
-
-    const height = Math.max(
-      body.scrollHeight,
-      body.offsetHeight,
-      html.clientHeight,
-      html.scrollHeight,
-      html.offsetHeight
-    );
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
 
     scrollbar.current.style.height = `${
-      (Math.ceil(window.scrollY) / (height - 707)) * 100
+      (Math.ceil(window.scrollY) / height) * 100
     }%`;
   }
   useEffect(() => {
