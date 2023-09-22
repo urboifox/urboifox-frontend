@@ -51,7 +51,7 @@ const Work = () => {
               {doubleProjects?.map((project) => {
                 return (
                   <div key={nanoid()} className="overflow-hidden rounded-lg">
-                    <Link to={project.link}>
+                    <Link to={project.link} target="_blank">
                       <img src={project.img} alt={project.title} />
                     </Link>
                   </div>
@@ -67,7 +67,7 @@ const Work = () => {
             <div key={project.id}>
               <Link
                 className="cursor-default peer h-fit relative z-10 flex w-fit"
-                to={`/work/${project.id}}`}
+                to={`/work/${project.id}`}
               >
                 <p className="text-[var(--main-color-dimmed)] w-fit hover:text-[var(--main-color)] transition-colors duration-500 font-light text-xl md:text-6xl">
                   <span className="text-[var(--main-color-dimmed)]">
