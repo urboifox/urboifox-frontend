@@ -24,11 +24,14 @@ const Work = () => {
   }, [projects]);
 
   return (
-    <div className="pt-32 md:pt-40 cont mx-auto overflow-hidden" ref={scope}>
-      <div className="mb-20 md:mb-40">
-        <TextSection first={"Explore"} second={"My projects"} />
+    <div className="pt-32 md:pt-40" ref={scope}>
+      <div className="mb-20">
+        <TextSection>
+          <span>Explore</span>
+          <span>My projects</span>
+        </TextSection>
       </div>
-      <div className="mb-10 md:mb-40">
+      <div className="cont mx-auto mb-10 md:mb-40 overflow-hidden py-24">
         <div className="rotate-6">
           <div>
             <div ref={sliderOne} className="slider">
@@ -69,7 +72,7 @@ const Work = () => {
           </div>
         </div>
       </div>
-      <div className="px-4 md:px-10 mb-20 flex flex-col gap-5">
+      <div className="cont mx-auto px-4 md:px-10 mb-20 flex flex-col gap-5">
         {projects?.map((project) => {
           return (
             <div key={project.id}>

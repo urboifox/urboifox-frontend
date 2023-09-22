@@ -20,15 +20,18 @@ const Home = () => {
       </div>
 
       <div className="mt-20 md:mt-32 lg:mt-96">
-        <TextSection first={"I bring people"} second={"Ideas to life"} />
+        <TextSection>
+          <span>I bring people</span>
+          <span>Ideas to life</span>
+        </TextSection>
       </div>
       <SelectedWork />
       <div className="mt-20 md:mt-32 mb-32">
-        <TextSection
-          first={"I'm constantly"}
-          second={"Expanding my"}
-          third={"Knowledge"}
-        />
+        <TextSection>
+          <span>I&apos;m constantly</span>
+          <span>Expanding my</span>
+          <span>Knowledge</span>
+        </TextSection>
       </div>
       <Skills />
       <div className="h-[100vh]"></div>
