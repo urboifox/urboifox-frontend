@@ -13,12 +13,6 @@ const About = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // gsap.from(h2.current, {
-      //   opacity: 0,
-      //   y: 30,
-      //   duration: 1,
-      //   delay: 1,
-      // });
       gsap.fromTo(
         ".aboutBox",
         { x: 300, y: 200, opacity: 0 },
@@ -68,28 +62,6 @@ const About = () => {
           );
         })}
       </div>
-
-      <motion.h2
-        initial={{
-          opacity: 0,
-          y: 30,
-          x: "-50%",
-        }}
-        animate={{
-          opacity: 1,
-          x: "-50%",
-          y: 0,
-          transition: { delay: 1, duration: 1 },
-        }}
-        exit={{
-          opacity: 0,
-          y: 30,
-          x: "-50%",
-        }}
-        className={`text-dimmed fixed -z-10 bottom-10 transition-colors duration-300 uppercase text-xl lg:text-2xl w-max font-light left-1/2 `}
-      >
-        Get To Know Me
-      </motion.h2>
     </motion.div>
   );
 };
