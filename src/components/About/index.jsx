@@ -50,6 +50,7 @@ const About = () => {
                 className={`aboutBox link text-xs md:text-base aspect-square border border-[var(--main-color-dimmed)] md:hover:border-[var(--main-color)] tracking-wide uppercase text-[var(--main-color-dimmed)] md:hover:text-[var(--main-color)] flex transition-colors duration-500 items-center justify-center`}
               >
                 <Link
+                  title={`Go to ${item} page`}
                   aria-label="About me page link"
                   onClick={() => dispatch(setSelected(i))}
                   className="w-full font-light h-full flex items-center justify-center"

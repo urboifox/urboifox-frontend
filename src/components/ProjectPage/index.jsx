@@ -29,7 +29,11 @@ export default function ProjectPage() {
             </div>
           </div>
           <div className="flex items-center mt-5 gap-3">
-            <Link to={project?.repo} target="_blank">
+            <Link
+              title={`Go to ${project?.title} website`}
+              to={project?.repo}
+              target="_blank"
+            >
               <Code
                 className={`w-9 transition-color duration-500 stroke-primary-100 md:hover:stroke-[var(--main-color)]`}
               />
@@ -41,7 +45,11 @@ export default function ProjectPage() {
             </Link>
           </div>
         </div>
-        <Link to={`/work/${nextProject?.id}`} className="rightCol group">
+        <Link
+          title={`Go to next project`}
+          to={`/work/${nextProject?.id}`}
+          className="rightCol group"
+        >
           <div>
             <h2 className="flex items-center gap-5">
               Next Project{" "}
@@ -60,7 +68,12 @@ export default function ProjectPage() {
           {project?.description}
         </p>
       </div>
-      <Link to={project?.link} target="_blank" className=" w-full relative">
+      <Link
+        to={project?.link}
+        title={`Go to ${project?.title}`}
+        target="_blank"
+        className=" w-full relative"
+      >
         <img
           src={project?.img}
           className="w-full md:w-[80%] mx-auto max-h-screen"

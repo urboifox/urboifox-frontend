@@ -102,17 +102,6 @@ const Heading = () => {
           {" />"}
         </span>
       </h1>
-      {/* <p className=" mx-auto max-w-lg font-light text-xs max-md:leading-5 max-md:px-4 md:text-sm text-[var(--sec-color)] mt-10 tracking-wider text-center">
-        I&apos;m a{" "}
-        <span className="text-[var(--main-color)] font-light">
-          Frontend developer
-        </span>{" "}
-        with a relentless drive for excellence, skilled in creating and
-        maintaining functional and responsive web applications and websites.
-      </p>
-      <Link to={"/contact"} className="mt-10 flex items-center justify-center">
-        <PrimaryButton text={"Contact Me"} />
-      </Link> */}
     </div>
   );
 };

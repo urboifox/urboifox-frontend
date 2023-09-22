@@ -59,6 +59,7 @@ export default function AboutDownBoxes() {
                     } aboutBoxB link text-[7px] sm:text-[10px] aspect-square w-14 sm:w-20 border border-[var(--main-color-dimmed)] tracking-wide uppercase flex transition-colors duration-500 items-center justify-center`}
                   >
                     <Link
+                      title={`Go to ${item} page`}
                       onClick={() => dispatch(setSelected(i))}
                       className="w-full h-full flex items-center justify-center"
                       to={`/about/${item.toLowerCase()}`}

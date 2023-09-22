@@ -66,6 +66,7 @@ const NavMenu = () => {
                   {listItems.map((itemText, i) => {
                     return (
                       <Link
+                        title={`Go to ${itemText} page`}
                         key={i}
                         to={
                           itemText.toLowerCase() === "home"

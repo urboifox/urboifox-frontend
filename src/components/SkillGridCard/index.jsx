@@ -10,9 +10,10 @@ export default function SkillGridCard({ skill }) {
       </div>
       <div className="w-full transition-colors duration-300 border border-transparent md:hover:border-[var(--main-color-dimmed)] h-full absolute  flex items-center justify-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <img
+          title={skill.name}
           draggable={false}
           src={skill.img}
-          alt={skill.name}
+          alt={`${skill.name} logo`}
           className="w-1/3 md:group-hover:opacity-0 transition-opacity duration-300"
         />
       </div>

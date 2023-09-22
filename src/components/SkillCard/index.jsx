@@ -33,10 +33,11 @@ const SkillCard = ({ skill }) => {
     >
       <div>
         <img
+          title={skill.name}
           draggable={false}
           className="w-8 h-8 object-contain"
           src={skill.img}
-          alt={skill.name}
+          alt={`${skill.name} logo`}
         />
       </div>
       <div

@@ -69,6 +69,7 @@ const SelectedWork = () => {
             elements?.map((element, i) => {
               return (
                 <Link
+                  title={`visit project page for project ${i}`}
                   to={`/work/${element.id}`}
                   key={element.id}
                   className={`w-[100%] md:w-[80%] lg:w-[90%] hover:after:opacity-100 hover:before:opacity-100 max-w-[70rem] translate-x-0 selectedEl group aspect-video relative link shadow-sm`}
@@ -84,6 +85,7 @@ const SelectedWork = () => {
                     {i + 1}
                   </div>
                   <motion.img
+                    title={element.title}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1, transition: { duration: 0.5 } }}
                     draggable={false}
@@ -110,7 +112,7 @@ const SelectedWork = () => {
             </>
           )}
         </motion.div>
-        <Link to={`/work`} draggable={false}>
+        <Link title="Go to work page" to={`/work`} draggable={false}>
           <PrimaryButton text={`More Work`} />
         </Link>
       </div>

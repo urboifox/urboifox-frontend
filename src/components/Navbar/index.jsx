@@ -79,7 +79,7 @@ const Navbar = () => {
               duration: 0.5,
             }}
           >
-            <Link to={"/about"}>
+            <Link title="Go back to about page" to={"/about"}>
               <ChevronBottom
                 className={`w-7 md:w-10 stroke-[var(--main-color)] rotate-90 transition-colors duration-300`}
               />
@@ -122,7 +122,11 @@ const Navbar = () => {
         whileTap={{ scale: 0.9 }}
         className="link w-5 md:w-8 aspect-square"
       >
-        <Link to={"mailto:mohamed.dev.egy@gmail.com"} aria-label="email me">
+        <Link
+          title="email me"
+          to={"mailto:mohamed.dev.egy@gmail.com"}
+          aria-label="email me"
+        >
           <Mail
             className={`transition-all duration-300 stroke-[var(--main-color-dimmed)] md:hover:stroke-[var(--main-color)]`}
           />
