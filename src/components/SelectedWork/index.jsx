@@ -15,38 +15,40 @@ const SelectedWork = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.to(sectionRef.current, {
-        x: "0",
-        duration: 0.00000000001,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "-5% bottom",
-        },
-      });
-      gsap.to(sectionRef.current, {
-        translateX: "-50%",
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          scrub: 1,
-          start: "45% 50%",
-          end: "46% 55%",
-        },
-      });
-      gsap.fromTo(
-        sectionRef.current,
-        { translateX: "-50%" },
-        {
-          translateX: 0,
+      if (window.innerWidth > 767) {
+        gsap.to(sectionRef.current, {
+          x: "0",
+          duration: 0.00000000001,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "-5% bottom",
+          },
+        });
+        gsap.to(sectionRef.current, {
+          translateX: "-50%",
           ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
             scrub: 1,
-            start: "80% 60%",
-            end: "81% 55%",
+            start: "35% 50%",
+            end: "36% 55%",
           },
-        }
-      );
+        });
+        gsap.fromTo(
+          sectionRef.current,
+          { translateX: "-50%" },
+          {
+            translateX: 0,
+            ease: "none",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              scrub: 1,
+              start: "75% 60%",
+              end: "76% 55%",
+            },
+          }
+        );
+      }
     }, scope);
 
     return () => {

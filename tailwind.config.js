@@ -11,7 +11,7 @@ export default {
           100: primaryColor,
         },
         bg: "#000000",
-        dark: "#0a0a0a",
+        dark: "#000000",
         light: "#ffffff",
         dimmed: "#ffffff80",
         darkDimmed: "#0a0a0a80",

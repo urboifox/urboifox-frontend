@@ -26,9 +26,6 @@ function App() {
 
   requestAnimationFrame(raf);
 
-  useEffect(() => {
-    dispatch(setLoading(false));
-  }, [dispatch]);
   // get api data
   useEffect(() => {
     const handleSetData = (data) => {
@@ -36,7 +33,10 @@ function App() {
     };
     try {
       const res = axios.get("https://api.npoint.io/8170167729955bc6815a");
-      res.then((res) => handleSetData(res.data));
+      res.then((res) => {
+        handleSetData(res.data);
+        dispatch(setLoading(false));
+      });
     } catch (error) {
       console.log(`error fetching data: ${error}`);
     }
