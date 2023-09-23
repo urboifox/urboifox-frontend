@@ -1,27 +1,25 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLenis } from "@studio-freight/react-lenis";
 
 const LoadBehaviour = () => {
   const location = useLocation();
 
-  const lenis = useLenis(() => {
-    console.log(lenis);
-  }, [location.pathname]);
+  const lenis = useLenis();
 
-  window.onbeforeunload = function () {
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 500);
-  };
+  // window.onbeforeunload = function () {
+  //   setTimeout(() => {
+  //     window.scrollTo(0, 0);
+  //   }, 500);
+  // };
 
   useEffect(() => {
+    lenis?.stop();
     setTimeout(() => {
       window.scrollTo(0, 0);
-      ScrollTrigger.refresh();
+      lenis?.start();
     }, 500);
-  }, [location.pathname]);
+  }, [location.pathname, lenis]);
 
   return null;
 };

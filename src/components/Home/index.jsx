@@ -33,7 +33,8 @@ const Home = () => {
         </TextSection>
       </div>
       <Skills />
-      <div className="h-[100vh]"></div>
+      {/* making more space for the skills slider horizontal scroll */}
+      <div className="h-[50vh]"></div>
     </>
   );
 };
