@@ -20,10 +20,6 @@ const NavMenu = () => {
     dispatch(setSelected(null));
   };
 
-  // useEffect(() => {
-  //   menuVisible ? (lenis.isStopped = true) : (lenis.isStopped = false);
-  // }, [menuVisible]);
-
   useEffect(() => {
     const menuLinks = list.current
       ? [...list.current.querySelectorAll("li")]

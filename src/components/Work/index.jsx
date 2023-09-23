@@ -24,7 +24,7 @@ const Work = () => {
   }, [projects]);
 
   return (
-    <div className="pt-32 md:pt-40" ref={scope}>
+    <div className="min-h-screen pt-32 md:pt-40" ref={scope}>
       <div className="mb-20">
         <TextSection>
           <span>Explore</span>

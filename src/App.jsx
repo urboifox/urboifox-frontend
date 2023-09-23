@@ -13,6 +13,7 @@ import { setLoading } from "./redux/slices/loadingSlice";
 import { initiateData } from "./redux/slices/websiteDataSlice";
 import axios from "axios";
 import { primaryColor } from "./constants";
+import { ReactLenis } from "@studio-freight/react-lenis";
 
 function App() {
   const root = document.documentElement;
@@ -44,7 +45,9 @@ function App() {
       <Particlesjs />
       <SkeletonTheme baseColor="#141414" highlightColor="#444">
         <Cursor />
-        <RouterProvider router={myRouter} />
+        <ReactLenis root options={{ duration: 2 }}>
+          <RouterProvider router={myRouter} />
+        </ReactLenis>
       </SkeletonTheme>
     </>
   );

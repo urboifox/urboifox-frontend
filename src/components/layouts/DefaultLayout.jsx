@@ -10,13 +10,11 @@ import { routesAnimation } from "../../animations";
 import { AboutDownBoxes } from "../";
 import { aboutPages } from "../../constants";
 import { setSelected } from "../../redux/slices/aboutSlice";
-import { ReactLenis } from "@studio-freight/react-lenis";
-import { useRef } from "react";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const DefaultLayout = () => {
   const animation = routesAnimation;
-  const lenisRef = useRef();
   const location = useLocation();
   const dispatch = useDispatch();
 
@@ -66,38 +64,24 @@ const DefaultLayout = () => {
     };
   }, []);
 
-  useEffect(() => {
-    function update(time) {
-      lenisRef.current?.raf(time * 1000);
-    }
-
-    gsap.ticker.add(update);
-
-    return () => {
-      gsap.ticker.remove(update);
-    };
-  });
-
   return (
     <>
-      <ReactLenis ref={lenisRef} autoraf={false} root options={{ duration: 2 }}>
-        <LoadBehaviour />
-        <ScrollBar />
-        <Navbar />
-        <NavMenu />
-        <AboutDownBoxes />
-        <AnimatePresence mode="popLayout">
-          <motion.div
-            key={location.pathname}
-            variants={animation}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
-            <AnimatedOutled />
-          </motion.div>
-        </AnimatePresence>
-      </ReactLenis>
+      <LoadBehaviour />
+      <ScrollBar />
+      <Navbar />
+      <NavMenu />
+      <AboutDownBoxes />
+      <AnimatePresence mode="popLayout">
+        <motion.div
+          key={location.pathname}
+          variants={animation}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+        >
+          <AnimatedOutled />
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 };
