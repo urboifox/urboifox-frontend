@@ -88,7 +88,7 @@ const DefaultLayout = () => {
   return (
     <>
       <MainElements />
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         <motion.div
           key={location.pathname}
           variants={animation}

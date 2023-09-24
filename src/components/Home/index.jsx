@@ -25,6 +25,7 @@ const Home = () => {
         </TextSection>
       </div>
       <SelectedWork />
+
       <div className="mt-20 md:mt-32 mb-32">
         <TextSection>
           <span>I&apos;m constantly</span>
