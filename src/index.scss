@@ -25,13 +25,19 @@
   background-color: transparent;
 }
 
+::selection {
+  color: var(--main-color-dimmed);
+  background-color: #333;
+}
 body {
   background-color: var(--bg-color);
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   cursor: none;
   overflow-x: hidden;
-  @apply bg-[var(--bg-color)] text-[var(--main-color)] transition-colors duration-300;
+  user-select: none;
+  @apply bg-[var(--bg-color)] text-[var(--main-color)]
+    transition-colors duration-300;
 }
 
 @media (min-width: 1280px) {
@@ -78,7 +84,9 @@ body {
     -o-transform: translate(0, -0px);
   }
 }
-
+.wrapper {
+  overflow: hidden;
+}
 // custom
 #tsparticles {
   z-index: -50;

@@ -1,0 +1,42 @@
+.contact {
+  input,
+  textarea {
+    @apply border border-[var(--light-color)] font-light px-5 transition-colors duration-300 text-base py-4 bg-transparent w-full;
+  }
+  textarea {
+    @apply h-full;
+  }
+  form > div {
+    @apply relative;
+    label {
+      @apply absolute z-20 top-4 transition-all text-[#ffffffa0] text-base duration-300 left-5 font-extralight;
+    }
+    &.active label {
+      @apply -top-4 text-[var(--main-color-dimmed)];
+    }
+    &.invalid input,
+    &.invalid textarea {
+      @apply border-red-700;
+    }
+    &::after {
+      content: "";
+      @apply absolute top-0 left-3 bg-[var(--bg-color)] h-[1px] w-0 transition-all duration-300;
+    }
+    &.active::after {
+      @apply w-32;
+    }
+  }
+
+  input:focus,
+  textarea:focus {
+    @apply outline-none border-dimmed;
+    & + label {
+      @apply -top-4 text-[var(--main-color-dimmed)];
+    }
+  }
+  .socialLinks {
+    a {
+      @apply w-5 md:w-8;
+    }
+  }
+}

@@ -8,8 +8,14 @@ import Code from "./Code";
 import GoToLink from "./GoToLink";
 import ArrowRight from "./ArrowRight";
 import Mail from "./Mail";
+import Instagram from "./Instagram";
+import Pin from "./Pin";
+import Download from "./Download";
 export {
   ChevronBottom,
+  Download,
+  Pin,
+  Instagram,
   ArrowRight,
   GoToLink,
   Code,

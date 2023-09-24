@@ -65,7 +65,7 @@ const DefaultLayout = () => {
           })
           .from(".animateUp", 1, {
             y: "100%",
-            delay: 0.5,
+            delay: 1,
             ease: Circ.Out,
             scrollTrigger: {
               trigger: ".animateUp",

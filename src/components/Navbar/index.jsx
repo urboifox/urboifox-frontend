@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { ChevronBottom, Mail } from "../../assets/icons/";
 import { AnimatePresence, motion } from "framer-motion";
-import { setNavMenu, toggleNavMenu } from "../../redux/slices/navMenuSlice";
+import { toggleNavMenu } from "../../redux/slices/navMenuSlice";
 import {
   setNavbarVisible,
   setPrevScrollPos,
@@ -22,18 +22,11 @@ const Navbar = () => {
     dispatch(toggleNavMenu());
   };
 
-  const handleSetMenu = (val) => {
-    dispatch(setNavMenu(val));
-  };
   useEffect(() => {
     const handleKeyPress = (e) => {
-      if (e.key === "m" || e.key === "M") {
+      if (e.key === "Escape" || e.key === "Esc") {
         e.preventDefault();
         handleToggleMenu();
-        dispatch(setNavbarVisible(true));
-      } else if (e.key === "Escape" || e.key === "Esc") {
-        e.preventDefault();
-        handleSetMenu(false);
       }
     };
     window.addEventListener("keyup", handleKeyPress);
@@ -97,12 +90,14 @@ const Navbar = () => {
       </AnimatePresence>
 
       <motion.div
+        aria-label="toggle navigation menu"
         className={`${
           typeof selected === "number"
             ? "!translate-x-6 md:!translate-x-14"
             : ""
         } link w-6 md:w-8 aspect-square group relative transition-all duration-1000`}
         onClick={() => handleNavToggle()}
+        tabIndex={1}
       >
         <span
           className={`${
@@ -127,6 +122,7 @@ const Navbar = () => {
       </motion.div>
       <SocialLinks />
       <motion.div
+        tabIndex={-1}
         whileTap={{ scale: 0.9 }}
         className="link w-5 md:w-8 aspect-square"
       >
