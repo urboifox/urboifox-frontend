@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 import { useLenis } from "@studio-freight/react-lenis";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const LoadBehaviour = () => {
   const location = useLocation();
@@ -19,6 +20,7 @@ const LoadBehaviour = () => {
       window.scrollTo(0, 0);
       lenis?.start();
     }, 500);
+    ScrollTrigger.refresh();
   }, [location.pathname, lenis]);
 
   return null;
