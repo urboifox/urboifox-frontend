@@ -8,7 +8,7 @@ import {
 } from "../../redux/slices/navbarSlice";
 import SocialLinks from "../SocialLinks";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useLenis } from "@studio-freight/react-lenis";
 const Navbar = () => {
   const selected = useSelector((state) => state.about.selected);
@@ -17,6 +17,7 @@ const Navbar = () => {
   const visible = useSelector((state) => state.navbar.visible);
   const prevScrollPos = useSelector((state) => state.navbar.prevScrollPos);
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const handleToggleMenu = () => {
     dispatch(toggleNavMenu());
@@ -120,7 +121,17 @@ const Navbar = () => {
                  } w-full h-[.1em] absolute link md:group-hover:bg-[var(--main-color)] left-0 rounded-md transition-all duration-200`}
         ></span>
       </motion.div>
-      <SocialLinks />
+      <AnimatePresence>
+        {!location.pathname.includes("contact") && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <SocialLinks />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <motion.div
         tabIndex={-1}
         whileTap={{ scale: 0.9 }}

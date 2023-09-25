@@ -30,8 +30,10 @@ import Particlesjs from "./Particlesjs";
 import ProjectPage from "./ProjectPage";
 import Contact from "./Contact";
 import TextSection from "./TextSection";
+import ThankYouModal from "./ThankYouModal";
 export {
   Particlesjs,
+  ThankYouModal,
   TextSection,
   Contact,
   ProjectPage,

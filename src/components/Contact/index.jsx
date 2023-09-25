@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import "./style.scss";
 import {
@@ -11,6 +11,7 @@ import {
   Pin,
 } from "../../assets/icons";
 import { Link } from "react-router-dom";
+import ThankYouModal from "../ThankYouModal";
 export default function Contact() {
   const form = useRef(null);
   const initialData = {
@@ -24,6 +25,8 @@ export default function Contact() {
     message: false,
   };
 
+  const [loading, setLoading] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const [validInputs, setValidInputs] = useState(initialValidation);
   const [formIsValid, setFormIsValid] = useState(false);
   const [data, setData] = useState(initialData);
@@ -75,6 +78,7 @@ export default function Contact() {
   };
 
   const sendEmail = () => {
+    setLoading(true);
     emailjs
       .sendForm(
         "service_ox9qmkf",
@@ -97,6 +101,8 @@ export default function Contact() {
         inputs.forEach((input) => {
           input.parentNode.classList.remove("active");
         });
+        setLoading(false);
+        setModalOpen(true);
       });
   };
 
@@ -155,6 +161,7 @@ export default function Contact() {
         >
           <div className="link">
             <input
+              required
               value={data.name}
               onChange={(e) => handleChange(e)}
               onBlur={(e) => handleBlur(e)}
@@ -195,10 +202,11 @@ export default function Contact() {
           </div>
           <div className="lg:w-max">
             <button
+              disabled={loading}
               onClick={() => handleClick()}
               className={` text-light border-light before:bg-light md:hover:text-dark hover:border-ligh cursor-none py-4 px-12 uppercase border-[1px] font-extralight transition-all text-base duration-300 relative hover:before:origin-left hover:before:scale-x-100 primary-btn`}
             >
-              Send
+              {loading ? "Sending..." : "Send"}
             </button>
           </div>
         </form>
@@ -283,6 +291,19 @@ export default function Contact() {
           </div>
         </div>
       </div>
+      <AnimatePresence>
+        {modalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="px-4 md:px-10 fixed w-full h-full left-0 top-0 bg-opacity-90 bg-bg z-40"
+          >
+            <ThankYouModal setIsOpen={setModalOpen} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
