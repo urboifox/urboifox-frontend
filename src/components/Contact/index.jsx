@@ -89,13 +89,15 @@ export default function Contact() {
         (error) => {
           console.log(error.text);
         }
-      );
-    setData(initialData);
-    setValidInputs(initialValidation);
-    const inputs = form.current.querySelectorAll("input, textarea");
-    inputs.forEach((input) => {
-      input.parentNode.classList.remove("active");
-    });
+      )
+      .finally(() => {
+        setData(initialData);
+        setValidInputs(initialValidation);
+        const inputs = form.current.querySelectorAll("input, textarea");
+        inputs.forEach((input) => {
+          input.parentNode.classList.remove("active");
+        });
+      });
   };
 
   const handleChange = (e) => {
@@ -153,7 +155,6 @@ export default function Contact() {
         >
           <div className="link">
             <input
-              required
               value={data.name}
               onChange={(e) => handleChange(e)}
               onBlur={(e) => handleBlur(e)}
@@ -176,13 +177,11 @@ export default function Contact() {
               type="email"
               name="email"
               id="email"
-              required
             />
             <label htmlFor="email">Email</label>
           </div>
           <div className="link">
             <textarea
-              required
               value={data.message}
               onChange={(e) => handleChange(e)}
               onBlur={(e) => handleBlur(e)}
@@ -197,7 +196,7 @@ export default function Contact() {
           <div className="lg:w-max">
             <button
               onClick={() => handleClick()}
-              className={`text-light border-light before:bg-light md:hover:text-dark hover:border-ligh cursor-none py-4 px-12 uppercase border-[1px] font-extralight transition-all text-base duration-300 relative hover:before:origin-left hover:before:scale-x-100 primary-btn`}
+              className={` text-light border-light before:bg-light md:hover:text-dark hover:border-ligh cursor-none py-4 px-12 uppercase border-[1px] font-extralight transition-all text-base duration-300 relative hover:before:origin-left hover:before:scale-x-100 primary-btn`}
             >
               Send
             </button>
