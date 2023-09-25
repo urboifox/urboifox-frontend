@@ -74,22 +74,7 @@ export default function Contact() {
     }
   };
 
-  const handleChange = (e) => {
-    setData((prevData) => ({
-      ...prevData,
-      [e.target.name]: e.target.value,
-    }));
-    if (handleValidate(e.target)) {
-      e.target.parentNode.classList.remove("invalid");
-    } else {
-      e.target.parentNode.classList.add("invalid");
-    }
-    setFormIsValid(Object.values(validInputs).every((val) => val === true));
-  };
-  // submit form
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const sendEmail = () => {
     emailjs
       .sendForm(
         "service_ox9qmkf",
@@ -113,6 +98,44 @@ export default function Contact() {
     });
   };
 
+  const handleChange = (e) => {
+    setData((prevData) => ({
+      ...prevData,
+      [e.target.name]: e.target.value,
+    }));
+
+    if (e.target.parentNode.classList.contains("invalid")) {
+      if (handleValidate(e.target)) {
+        e.target.parentNode.classList.remove("invalid");
+      } else {
+        e.target.parentNode.classList.add("invalid");
+      }
+    }
+    setFormIsValid(Object.values(validInputs).every((val) => val === true));
+  };
+  // submit form
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (formIsValid) {
+      sendEmail();
+    }
+  };
+
+  const handleClick = () => {
+    const inputs = form.current.querySelectorAll("input, textarea");
+    let num = 0;
+    inputs.forEach((input) => {
+      if (!handleValidate(input)) {
+        input.parentNode.classList.add("invalid");
+      } else {
+        num += 1;
+      }
+    });
+    if (num === 3) {
+      sendEmail();
+    }
+  };
   return (
     <div className="cont mx-auto pt-20 md:pt-32">
       <div className="cont mx-auto relative aboutHeading">
@@ -130,6 +153,7 @@ export default function Contact() {
         >
           <div className="link">
             <input
+              required
               value={data.name}
               onChange={(e) => handleChange(e)}
               onBlur={(e) => handleBlur(e)}
@@ -152,11 +176,13 @@ export default function Contact() {
               type="email"
               name="email"
               id="email"
+              required
             />
             <label htmlFor="email">Email</label>
           </div>
           <div className="link">
             <textarea
+              required
               value={data.message}
               onChange={(e) => handleChange(e)}
               onBlur={(e) => handleBlur(e)}
@@ -170,8 +196,7 @@ export default function Contact() {
           </div>
           <div className="lg:w-max">
             <button
-              disabled={!formIsValid}
-              onClick={() => form.current.submit}
+              onClick={() => handleClick()}
               className={`text-light border-light before:bg-light md:hover:text-dark hover:border-ligh cursor-none py-4 px-12 uppercase border-[1px] font-extralight transition-all text-base duration-300 relative hover:before:origin-left hover:before:scale-x-100 primary-btn`}
             >
               Send
