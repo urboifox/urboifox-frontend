@@ -2,7 +2,7 @@ const HomeText = () => {
   return (
     <div>
       <code
-        className={`text-light lg:-skew-y-12 opacity-50 flex flex-col link absolute top-[21%] md:top-[20%] max-sm:-translate-x-16 left-5 md:left-20 text-xs max-sm:scale-[70%] tracking-wide md:text-sm font-thin transition-all duration-500 md:hover:opacity-100`}
+        className={`text-light opacity-50 flex flex-col link absolute top-[21%] md:top-[20%] max-sm:-translate-x-16 left-5 md:left-20 text-xs max-sm:scale-[70%] tracking-wide md:text-sm font-thin transition-all duration-500 md:hover:opacity-100`}
       >
         <span className="block text-primary-100">{"<p>"}</span>
         <div className="inline-block translate-x-5">
@@ -25,7 +25,7 @@ const HomeText = () => {
         <span className="block text-primary-100">{"</p>"}</span>
       </code>
       <code
-        className={`text-light opacity-50 lg:-skew-y-12 flex flex-col ml-10 link absolute bottom-[22%] md:bottom-[20%] right-10 md:right-20 md:text-sm max-sm:translate-x-14 max-sm:scale-[70%] font-thin transition-all duration-500 lg:hover:opacity-100  text-xs tracking-wide`}
+        className={`text-light opacity-50 flex flex-col ml-10 link absolute bottom-[22%] md:bottom-[20%] right-10 md:right-20 md:text-sm max-sm:translate-x-14 max-sm:scale-[70%] font-thin transition-all duration-500 lg:hover:opacity-100  text-xs tracking-wide`}
       >
         <span className="block text-primary-100">{"<p>"}</span>
         <div className="inline-block translate-x-5">
