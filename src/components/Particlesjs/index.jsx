@@ -376,7 +376,7 @@ export default function Particlesjs() {
 
     particleground(document.getElementById("particles-background"), {
       dotColor: "rgba(255, 255, 255, 0.5)",
-      lineColor: "rgba(255, 255, 255, 0.1)",
+      lineColor: "rgba(255, 255, 255, .1)",
       minSpeedX: 0.075,
       maxSpeedX: 0.15,
       minSpeedY: 0.075,

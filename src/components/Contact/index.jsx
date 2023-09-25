@@ -195,7 +195,7 @@ export default function Contact() {
               </motion.a>
               <motion.a
                 aria-label="Go to my Facebook"
-                href="https://www.facebook.com/profile.php?id=100008910966277"
+                href="https://www.instagram.com/_urboifox/"
                 target="_blank"
                 whileTap={{ scale: 0.9 }}
               >
@@ -226,13 +226,13 @@ export default function Contact() {
                 />
               </motion.a>
             </div>
-            <div className=" mt-7 flex flex-col gap-7">
+            <div className=" mt-7 flex flex-col gap-4">
               <Link
                 to={
                   "https://www.google.com/maps/place/%D8%A7%D9%84%D8%A5%D8%B3%D9%83%D9%86%D8%AF%D8%B1%D9%8A%D8%A9%E2%80%AD/@31.2241109,29.9548859,12z/data=!3m1!4b1!4m6!3m5!1s0x14f5c49126710fd3:0xb4e0cda629ee6bb9!8m2!3d31.2000924!4d29.9187387!16zL20vMDEzZzM?entry=ttu"
                 }
                 target="_blank"
-                className="flex items-center gap-3 group hover:text-light transition-colors duration-300 text-dimmed font-light"
+                className="py-1  flex items-center gap-3 group hover:text-light transition-colors duration-300 text-dimmed font-light"
               >
                 <Pin
                   className={
@@ -245,9 +245,13 @@ export default function Contact() {
                 <a
                   href="/Mohamed Ashraf - Frontend Developer.pdf"
                   download
-                  className="tracking-wide font-light gap-2 transition-colors duration-300 hover:text-primary-100 justify-center flex items-center"
+                  className="group py-1 tracking-wide font-light gap-2 transition-colors duration-300 hover:text-primary-100 justify-center flex items-center"
                 >
-                  <Download className={"fill-light w-6"} />
+                  <Download
+                    className={
+                      "fill-light w-6 transition-colors duration-300 group-hover:fill-primary-100"
+                    }
+                  />
                   Download CV
                 </a>
               </div>
