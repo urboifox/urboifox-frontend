@@ -1,0 +1,107 @@
+$anims: float, floatReverse, float2, floatReverse2;
+$easeSmooth: cubic-bezier(0.39, 0.575, 0.28, 0.995);
+$color: #595959;
+
+.NotFoundContainer {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-color);
+  color: var(--main-color);
+  overflow: hidden;
+
+  .content {
+    position: relative;
+    max-width: 100%;
+    margin: 20px;
+    text-align: center;
+
+    p {
+      @apply text-lg md:text-2xl;
+
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.1rem;
+      color: var(--main-color-dimmed);
+      font-weight: 200;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .particle {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    opacity: 0.15;
+
+    @for $i from 1 through 80 {
+      &:nth-child(#{$i}) {
+        $size: random(20) + 10;
+        $blur: $i * 0.02;
+        $speed: random(20) + 20;
+        $delay: random(10) * 0.1;
+        $anim: nth($anims, random(length($anims)));
+
+        top: random(100) / (100 + $size/8) * 100%;
+        left: random(100) / (100 + $size/10) * 100%;
+        font-size: $size + px;
+        filter: blur((#{$blur}) + px);
+        animation: $speed + s $anim infinite;
+      }
+    }
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(180px);
+  }
+}
+
+@keyframes floatReverse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-180px);
+  }
+}
+
+@keyframes float2 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(28px);
+  }
+}
+
+@keyframes floatReverse2 {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-28px);
+  }
+}
+
+@mixin animation($delay, $duration, $animation) {
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
