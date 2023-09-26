@@ -7,6 +7,7 @@ import { RouterProvider } from "react-router";
 import myRouter from "./routes.jsx";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { SkeletonTheme } from "react-loading-skeleton";
+import { Analytics } from "@vercel/analytics/react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -17,5 +18,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </SkeletonTheme>
       </ReactLenis>
     </Provider>
+    <Analytics
+      beforeSend={(event) => {
+        if (event.url.includes("/private")) {
+          return null;
+        }
+        return event;
+      }}
+    />
   </React.StrictMode>
 );

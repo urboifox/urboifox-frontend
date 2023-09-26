@@ -13,6 +13,7 @@
     "@emailjs/browser": "^3.11.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@studio-freight/react-lenis": "^0.0.30",
+    "@vercel/analytics": "^1.0.2",
     "axios": "^1.4.0",
     "framer-motion": "^10.15.2",
     "gsap": "^3.12.2",
