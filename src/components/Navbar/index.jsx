@@ -91,14 +91,14 @@ const Navbar = () => {
       </AnimatePresence>
 
       <motion.div
-        aria-label="toggle navigation menu"
+        aria-description="toggle navigation menu"
         className={`${
           typeof selected === "number"
             ? "!translate-x-6 md:!translate-x-14"
             : ""
         } link w-6 md:w-8 aspect-square group relative transition-all duration-1000`}
         onClick={() => handleNavToggle()}
-        tabIndex={1}
+        tabIndex={0}
       >
         <span
           className={`${
