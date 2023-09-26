@@ -7,7 +7,6 @@ const NotFound = () => {
       {Array(80)
         .fill(0)
         .map((_, i) => {
-          console.log(1);
           return (
             <span key={i} className="particle">
               {i <= 30 ? "4" : "0"}

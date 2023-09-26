@@ -19,8 +19,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       </ReactLenis>
     </Provider>
     <Analytics
+      debug={false}
+      mode="production"
       beforeSend={(event) => {
-        if (event.url.includes("/private")) {
+        if (
+          event.url.includes("/private") ||
+          localStorage.getItem("developer")
+        ) {
           return null;
         }
         return event;
