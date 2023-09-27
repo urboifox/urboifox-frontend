@@ -1,9 +1,18 @@
 .textSection h2 {
-  & > div {
-    @apply transition-all w-full hover:before:scale-y-100 duration-500 hover:text-[var(--bg-color)] relative;
-    &::before {
-      content: "";
-      @apply absolute w-screen transition-transform duration-500 h-full scale-y-0 origin-center -z-10 bg-[var(--main-color)] bottom-0 left-0;
+  & > span {
+    @apply relative px-4 md:px-10;
+    &:hover .inner {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
+    background: linear-gradient(to right, #b6b6b6, #b6b6b6) no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 0%;
+  }
+
+  .inner {
+    @apply bg-primary-100 px-4 md:px-10 text-dark origin-center w-full absolute inline-block top-0 -translate-x-1/2 left-1/2;
+    clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+    transition: all cubic-bezier(0.1, 0.5, 0.5, 1) 0.4s;
   }
 }

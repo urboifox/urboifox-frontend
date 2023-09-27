@@ -41,12 +41,14 @@ body {
 }
 
 @media (min-width: 1280px) {
-  .cont {
+  .cont,
+  .textSection .inner {
     max-width: 1280px;
   }
 }
 @media (min-width: 1536px) {
-  .cont {
+  .cont,
+  .textSection .inner {
     max-width: 1536px;
   }
 }

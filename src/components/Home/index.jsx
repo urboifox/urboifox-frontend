@@ -20,17 +20,27 @@ const Home = () => {
 
       <div className="mt-20 md:mt-32 lg:mt-96">
         <TextSection>
-          <span>I bring people</span>
-          <span>Ideas to life</span>
+          <span>
+            I bring people<span className="inner">They rarely</span>
+          </span>
+          <span>
+            Ideas to life<span className="inner">Look good</span>
+          </span>
         </TextSection>
       </div>
       <SelectedWork />
 
       <div className="mt-20 md:mt-32 mb-32">
         <TextSection>
-          <span>I&apos;m constantly</span>
-          <span>Expanding my</span>
-          <span>Knowledge</span>
+          <span>
+            I&apos;m constantly<span className="inner">I hate</span>
+          </span>
+          <span>
+            Expanding my<span className="inner">Studying for</span>
+          </span>
+          <span>
+            Knowledge<span className="inner">Too long</span>
+          </span>
         </TextSection>
       </div>
       <Skills />
