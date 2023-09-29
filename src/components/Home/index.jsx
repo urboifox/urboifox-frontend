@@ -12,7 +12,7 @@ import ModelWrapper from "../ModelWrapper/inde";
 const Home = () => {
   return (
     <>
-      <div className="cont mx-auto relative home h-screen w-full flex items-center justify-center">
+      <div className="mb-10 md:mb-20 lg:mb-96 cont mx-auto relative home h-screen w-full flex items-center justify-center">
         <Heading />
         <HomeText />
         <div className="left-5 bottom-5 lg:-left-12 lg:-bottom-48 absolute">
