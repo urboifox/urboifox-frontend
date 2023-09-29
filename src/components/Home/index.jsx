@@ -45,13 +45,13 @@ const Home = () => {
       <div className="mt-20 md:mt-32 mb-32">
         <TextSection>
           <span>
-            I&apos;m constantly<span className="inner">I hate</span>
+            I&apos;m constantly<span className="inner">I don&apos;t study</span>
           </span>
           <span>
-            Expanding my<span className="inner">Studying for</span>
+            Expanding my<span className="inner">My college</span>
           </span>
           <span>
-            Knowledge<span className="inner">Too long</span>
+            Knowledge<span className="inner">Subjects tho</span>
           </span>
         </TextSection>
       </div>
