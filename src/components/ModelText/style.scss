@@ -1,5 +1,5 @@
 #model-text {
-  @apply text-9xl font-medium tracking-widest font-sec uppercase;
+  @apply text-5xl md:text-9xl font-medium tracking-widest font-sec uppercase;
   & > div {
     @apply absolute top-[13%] left-1/2 -translate-x-1/2 w-full text-center;
   }
