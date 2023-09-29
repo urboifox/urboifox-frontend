@@ -1,0 +1,13 @@
+#model-text {
+  @apply text-9xl font-medium tracking-widest font-sec uppercase;
+  & > div {
+    @apply absolute top-[13%] left-1/2 -translate-x-1/2 w-full text-center;
+  }
+  & > div.front-text {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px var(--main-color);
+  }
+  & > div.blur-text {
+    text-shadow: 0 0 15px #fff;
+  }
+}

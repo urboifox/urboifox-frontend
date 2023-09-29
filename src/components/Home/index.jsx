@@ -7,6 +7,7 @@ import {
   TextSection,
 } from "../";
 import { Fox } from "../Fox";
+import ModelText from "../ModelText";
 import ModelWrapper from "../ModelWrapper/inde";
 
 const Home = () => {
@@ -31,9 +32,13 @@ const Home = () => {
         </TextSection>
       </div>
 
-      <ModelWrapper id={"foxContainer3D"}>
-        <Fox />
-      </ModelWrapper>
+      <div className="relative">
+        <ModelText text={"urboifox"} />
+
+        <ModelWrapper id={"foxContainer3D"}>
+          <Fox />
+        </ModelWrapper>
+      </div>
 
       <SelectedWork />
 

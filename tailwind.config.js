@@ -6,6 +6,9 @@ export default {
 
   theme: {
     extend: {
+      fontFamily: {
+        sec: ["Roboto", "sans-serif"],
+      },
       colors: {
         primary: {
           100: primaryColor,
