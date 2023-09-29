@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@react-three/drei": "^9.86.0",
+    "@react-three/fiber": "^8.14.3",
     "@reduxjs/toolkit": "^1.9.5",
     "@studio-freight/react-lenis": "^0.0.30",
+    "@types/three": "^0.156.0",
     "@vercel/analytics": "^1.0.2",
     "axios": "^1.4.0",
     "framer-motion": "^10.15.2",
@@ -29,6 +32,7 @@
     "react-tsparticles": "^2.12.2",
     "sass": "^1.65.1",
     "sort-by": "^1.2.0",
+    "three": "^0.157.0",
     "tsparticles": "^2.12.0"
   },
   "devDependencies": {

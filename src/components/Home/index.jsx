@@ -6,6 +6,8 @@ import {
   Skills,
   TextSection,
 } from "../";
+import { Fox } from "../Fox";
+import ModelWrapper from "../ModelWrapper/inde";
 
 const Home = () => {
   return (
@@ -18,7 +20,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="mt-20 md:mt-32 lg:mt-96">
+      <div>
         <TextSection>
           <span>
             I bring people<span className="inner">They rarely</span>
@@ -28,6 +30,11 @@ const Home = () => {
           </span>
         </TextSection>
       </div>
+
+      <ModelWrapper id={"foxContainer3D"}>
+        <Fox />
+      </ModelWrapper>
+
       <SelectedWork />
 
       <div className="mt-20 md:mt-32 mb-32">
