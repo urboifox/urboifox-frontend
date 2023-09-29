@@ -24,6 +24,7 @@ export function Fox(props) {
         ref.current.rotation,
         {
           y: 5,
+          x: -0.7,
           duration: 1,
           scrollTrigger: {
             trigger: "#foxContainer3D",
