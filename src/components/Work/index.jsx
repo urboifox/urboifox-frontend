@@ -23,6 +23,11 @@ const Work = () => {
     });
   }, [projects]);
 
+  useEffect(() => {
+    const root = document.documentElement;
+    root.style.setProperty("--products-length", projects?.length);
+  });
+
   return (
     <div className="min-h-screen pt-32 md:pt-40" ref={scope}>
       <div className="mb-20">
