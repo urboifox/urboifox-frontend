@@ -16,7 +16,7 @@ export default function MainElements() {
       <AnimatePresence initial={false} mode="wait">
         {loading && <Loading />}
       </AnimatePresence>
-      {/* <Particlesjs /> */}
+      <Particlesjs />
       <Cursor />
       <LoadBehaviour />
       <ScrollBar />
