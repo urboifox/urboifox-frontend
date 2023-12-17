@@ -210,7 +210,7 @@ export default function Contact() {
             </button>
           </div>
         </form>
-        <div className="lg:w-1/3 flex flex-col py-10 border border-dimmed px-4 md:px-10">
+        <div className="z-[10] lg:w-1/3 flex flex-col py-10 border border-dimmed px-4 md:px-10">
           <h3 className="text-center uppercase text-dimmed tracking-widest text-base md:text-xl font-extralight">
             More Info!
           </h3>
