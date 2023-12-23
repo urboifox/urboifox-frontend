@@ -8,6 +8,7 @@ import myRouter from "./routes.jsx";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { SkeletonTheme } from "react-loading-skeleton";
 import { Analytics } from "@vercel/analytics/react";
+import "react-loading-skeleton/dist/skeleton.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
