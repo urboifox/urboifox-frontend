@@ -1,14 +1,14 @@
 import {
-  ChevronButton,
   Heading,
-  HomeText,
+  ModelText,
   SelectedWork,
+  ScrollBottom,
+  HomeText,
+  ModelWrapper,
   Skills,
+  Fox,
   TextSection,
-} from "../";
-import { Fox } from "../Fox";
-import ModelText from "../ModelText";
-import ModelWrapper from "../ModelWrapper/inde";
+} from "./components";
 
 const Home = () => {
   return (
@@ -17,7 +17,7 @@ const Home = () => {
         <Heading />
         <HomeText />
         <div className="left-5 bottom-5 lg:-left-12 lg:-bottom-48 absolute">
-          <ChevronButton />
+          <ScrollBottom />
         </div>
       </div>
 

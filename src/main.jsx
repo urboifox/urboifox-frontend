@@ -22,10 +22,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       debug={false}
       mode="production"
       beforeSend={(event) => {
-        if (
-          event.url.includes("/private") ||
-          localStorage.getItem("developer")
-        ) {
+        if (event.url.includes("/admin")) {
           return null;
         }
         return event;

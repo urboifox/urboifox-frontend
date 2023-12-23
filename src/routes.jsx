@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { DefaultLayout } from "./components/layouts";
+import DefaultLayout from "./components/layouts/DefaultLayout";
 import {
   About,
   InfoPage,
@@ -11,7 +11,7 @@ import {
   Work,
   ProjectPage,
   Contact,
-  Developer,
+  Admin,
 } from "./components";
 
 const myRouter = createBrowserRouter([
@@ -56,8 +56,8 @@ const myRouter = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/_developer",
-        element: <Developer />,
+        path: "/admin",
+        element: <Admin />,
       },
       {
         path: "*",

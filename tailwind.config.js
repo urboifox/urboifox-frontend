@@ -1,4 +1,4 @@
-import { primaryColor } from "./src/constants";
+import { primaryColor } from "./src/utils/constants";
 
 /** @type {import('tailwindcss').Config} */
 export default {

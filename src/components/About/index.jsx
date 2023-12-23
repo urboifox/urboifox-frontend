@@ -5,7 +5,7 @@ import { Fragment, useEffect, useRef } from "react";
 import { Circ, gsap } from "gsap";
 import { Link } from "react-router-dom";
 import { setSelected } from "../../redux/slices/aboutSlice";
-import { aboutPages } from "../../constants";
+import { aboutPages } from "../../utils/constants";
 const About = () => {
   // const selected = useSelector((state) => state.about.selected);
   const dispatch = useDispatch();

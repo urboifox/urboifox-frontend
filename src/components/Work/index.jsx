@@ -2,14 +2,14 @@ import { useSelector } from "react-redux";
 import "./style.scss";
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import TextSection from "../TextSection";
+import TextSection from "../Home/components/TextSection";
 import { nanoid } from "@reduxjs/toolkit";
 
 const Work = () => {
   const scope = useRef(null);
   const sliderOne = useRef(null);
   const sliderTwo = useRef(null);
-  const projects = useSelector((state) => state.websiteData.data.work);
+  const projects = useSelector((state) => state.websiteData.projects);
   const doubleProjects = projects?.concat(...projects);
 
   useEffect(() => {
@@ -70,16 +70,16 @@ const Work = () => {
         </div>
       </div>
       <div className="cont mx-auto px-4 md:px-10 mb-20 flex flex-col gap-5">
-        {projects?.map((project) => {
+        {projects?.map((project, i) => {
           return (
-            <div key={project.id}>
+            <div key={project._id}>
               <Link
                 className="cursor-default peer h-fit relative z-10 flex w-fit"
-                to={`/work/${project.id}`}
+                to={`/work/${project._id}`}
               >
                 <p className="text-[var(--main-color-dimmed)] w-fit hover:text-[var(--main-color)] transition-colors duration-500 font-light text-xl md:text-6xl">
                   <span className="text-[var(--main-color-dimmed)]">
-                    {project.id}.
+                    {i + 1}.
                   </span>{" "}
                   {project.title}
                 </p>

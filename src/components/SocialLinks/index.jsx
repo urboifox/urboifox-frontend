@@ -1,4 +1,4 @@
-import { Facebook, Github, Linkedin } from "../../assets/icons";
+import { Facebook, Github, Linkedin } from "../Icons";
 import { motion } from "framer-motion";
 import "./style.scss";
 const SocialLinks = () => {

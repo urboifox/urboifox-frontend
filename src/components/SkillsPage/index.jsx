@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
-import { SkillGridCard } from "../";
+import SkillGridCard from "./components/SkillGridCard";
 import { Fragment } from "react";
 import "./style.scss";
 import { motion } from "framer-motion";
 export default function SkillsPage() {
-  const skills = useSelector((state) => state.websiteData.data?.skills);
+  const skills = useSelector((state) => state.websiteData.skills);
 
   return (
     <motion.div className="aboutContainer">
@@ -18,7 +18,7 @@ export default function SkillsPage() {
       <div className="skillsGrid cont mx-auto">
         {skills?.map((skill) => {
           return (
-            <Fragment key={skill.id}>
+            <Fragment key={skill._id}>
               <SkillGridCard skill={skill} />
             </Fragment>
           );

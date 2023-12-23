@@ -100,3 +100,30 @@ body {
   height: 150vh !important;
   margin-top: 10rem;
 }
+
+// project page
+.projectPage {
+  & p,
+  & h2,
+  & h1,
+  & h6 {
+    @apply transition-colors duration-500;
+  }
+  .projectInfo {
+    h6 {
+      @apply text-[var(--main-color)] font-medium;
+      & + p {
+        @apply text-[var(--main-color-dimmed)] mt-1 font-light;
+      }
+    }
+  }
+  .rightCol {
+    @apply text-[var(--main-color)] max-md:w-full max-md:mt-10;
+    h2 {
+      @apply mb-2 md:mb-5 text-primary-100 font-light text-sm md:text-xl;
+      & + p {
+        @apply text-xl md:text-4xl font-light text-[var(--sec-color)] max-w-md;
+      }
+    }
+  }
+}

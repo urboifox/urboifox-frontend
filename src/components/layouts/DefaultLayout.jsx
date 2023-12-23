@@ -2,17 +2,16 @@ import { Circ, gsap } from "gsap";
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useDispatch } from "react-redux";
-import { AnimatedOutled } from "../";
+import AnimatedOutled from "./components/AnimatedOutlet";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router";
 import { motion } from "framer-motion";
-import { routesAnimation } from "../../animations";
-import { aboutPages, primaryColor } from "../../constants";
+import { routesAnimation } from "../../utils/routesAnimation";
+import { aboutPages, primaryColor } from "../../utils/constants";
 import { setSelected } from "../../redux/slices/aboutSlice";
-import { initiateData } from "../../redux/slices/websiteDataSlice";
+import { fetchData } from "../../redux/slices/websiteDataSlice";
 import { setLoading } from "../../redux/slices/loadingSlice";
-import MainElements from "../MainElements";
-import axios from "axios";
+import MainElements from "./components/MainElements";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,21 +24,11 @@ const DefaultLayout = () => {
 
   // get api data
   useEffect(() => {
-    const handleSetData = (data) => {
-      dispatch(initiateData(data));
-    };
-    try {
-      const res = axios.get("https://api.npoint.io/8170167729955bc6815a");
-      res.then((res) => {
-        handleSetData(res.data);
-        dispatch(setLoading(false));
-      });
-    } catch (error) {
-      console.log(`error fetching data: ${error}`);
-    }
+    dispatch(fetchData());
+    dispatch(setLoading(false));
   }, [dispatch]);
 
-  // if current location = one of the about page, set the selected about page the the current location
+  // if current location = one of the about pages, set the selected about page the the current location
   useEffect(() => {
     const currentLocation = location.pathname.slice(
       location.pathname.lastIndexOf("/") + 1

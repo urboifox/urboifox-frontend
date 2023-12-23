@@ -2,16 +2,9 @@ import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import "./style.scss";
-import {
-  Download,
-  Facebook,
-  Github,
-  Instagram,
-  Linkedin,
-  Pin,
-} from "../../assets/icons";
+import { Download, Facebook, Github, Instagram, Linkedin, Pin } from "../Icons";
 import { Link } from "react-router-dom";
-import ThankYouModal from "../ThankYouModal";
+import ThankYouModal from "./components/ThankYouModal";
 export default function Contact() {
   const form = useRef(null);
   const initialData = {
