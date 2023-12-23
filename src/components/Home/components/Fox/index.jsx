@@ -13,7 +13,7 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
 export function Fox(props) {
-  const { nodes, materials } = useGLTF("/public/models/fox_shield/scene.gltf");
+  const { nodes, materials } = useGLTF("/models/fox_shield/scene.gltf");
   const ref = useRef(null);
   const tl = useRef(null);
   useEffect(() => {
