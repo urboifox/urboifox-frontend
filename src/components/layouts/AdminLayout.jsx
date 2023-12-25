@@ -1,22 +1,23 @@
 import AdminButton from "./components/AdminButton";
 import { adminPages, noEditPages } from "../../utils/constants";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 export default function AdminLayout({ children }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = searchParams.get("page");
+  const location = useLocation();
 
   useEffect(() => {
-    if (!currentPage)
+    if (!currentPage && location.pathname === "/admin")
       setSearchParams((params) => {
         params.set("page", adminPages[0]);
         return params;
       });
-  }, [currentPage, setSearchParams]);
+  }, [currentPage, setSearchParams, location.pathname]);
 
   return (
-    <div className="w-full pt-32 cont mx-auto relative min-h-screen">
+    <div className="w-full h-screen cont mx-auto relative">
       <div className="absolute z-50 flex flex-col gap-5  left-4 md:left-10 top-1/2 -translate-y-1/2">
         {adminPages.map((page, i) => {
           return (

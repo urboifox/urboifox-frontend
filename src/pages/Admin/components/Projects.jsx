@@ -1,3 +1,3 @@
 export default function Projects() {
-  return <div>Projects</div>;
+  return <div className="w-full">Projects</div>;
 }
