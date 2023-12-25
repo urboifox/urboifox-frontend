@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import AdminLayout from "../layouts/AdminLayout";
+import AdminLayout from "../../components/layouts/AdminLayout";
 import { adminPages } from "../../utils/constants";
 import { AnimatePresence } from "framer-motion";
 import AnimatedWrapper from "./components/AnimatedWrapper";

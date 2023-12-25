@@ -2,7 +2,14 @@ import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import "./style.scss";
-import { Download, Facebook, Github, Instagram, Linkedin, Pin } from "../Icons";
+import {
+  Download,
+  Facebook,
+  Github,
+  Instagram,
+  Linkedin,
+  Pin,
+} from "../../components/Icons";
 import { Link } from "react-router-dom";
 import ThankYouModal from "./components/ThankYouModal";
 export default function Contact() {

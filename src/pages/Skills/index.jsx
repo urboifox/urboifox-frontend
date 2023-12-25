@@ -3,7 +3,7 @@ import SkillGridCard from "./components/SkillGridCard";
 import { Fragment } from "react";
 import "./style.scss";
 import { motion } from "framer-motion";
-export default function SkillsPage() {
+export default function Skills() {
   const skills = useSelector((state) => state.websiteData.skills);
 
   return (

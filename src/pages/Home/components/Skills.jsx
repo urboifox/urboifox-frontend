@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { PrimaryButton, SectionHeading } from "../../";
+import { PrimaryButton, SectionHeading } from "../../../components";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Link } from "react-router-dom";

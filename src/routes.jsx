@@ -1,18 +1,19 @@
 import { createBrowserRouter } from "react-router-dom";
 import DefaultLayout from "./components/layouts/DefaultLayout";
 import {
+  Login,
   About,
-  InfoPage,
-  EducationPage,
-  ExperiencePage,
+  Info,
+  Education,
+  Experience,
   Home,
   NotFound,
-  SkillsPage,
+  Skills,
   Work,
-  ProjectPage,
+  Project,
   Contact,
   Admin,
-} from "./components";
+} from "./pages";
 
 const myRouter = createBrowserRouter([
   {
@@ -29,19 +30,19 @@ const myRouter = createBrowserRouter([
       },
       {
         path: "/about/skills",
-        element: <SkillsPage />,
+        element: <Skills />,
       },
       {
         path: "/about/education",
-        element: <EducationPage />,
+        element: <Education />,
       },
       {
         path: "/about/experience",
-        element: <ExperiencePage />,
+        element: <Experience />,
       },
       {
         path: "/about/info",
-        element: <InfoPage />,
+        element: <Info />,
       },
       {
         path: "/work",
@@ -49,7 +50,7 @@ const myRouter = createBrowserRouter([
       },
       {
         path: "/work/:id",
-        element: <ProjectPage />,
+        element: <Project />,
       },
       {
         path: "/contact",
@@ -58,6 +59,10 @@ const myRouter = createBrowserRouter([
       {
         path: "/admin",
         element: <Admin />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "*",

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { PrimaryButton } from "../../";
+import { PrimaryButton } from "../../../components/";
 import gsap, { Circ } from "gsap";
 export default function ThankYouModal({ setIsOpen }) {
   const handleClick = () => {

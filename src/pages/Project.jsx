@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import { ArrowRight, Code, GoToLink } from "./Icons";
+import { ArrowRight, Code, GoToLink } from "../components/Icons";
 
-export default function ProjectPage() {
+export default function Project() {
   const allProjects = useSelector((state) => state.websiteData.projects);
   const { id } = useParams();
 

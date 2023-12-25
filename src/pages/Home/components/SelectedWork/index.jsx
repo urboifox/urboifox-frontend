@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import "./style.scss";
-import { PrimaryButton, SectionHeading } from "../../../";
+import { PrimaryButton, SectionHeading } from "../../../../components";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import { useSelector } from "react-redux";

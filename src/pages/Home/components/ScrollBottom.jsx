@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronBottom } from "../../Icons";
+import { ChevronBottom } from "../../../components/Icons";
 import { motion } from "framer-motion";
 import { useLenis } from "@studio-freight/react-lenis";
 

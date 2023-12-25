@@ -1,6 +1,6 @@
-import { PrimaryButton } from ".";
+import { PrimaryButton } from "../components";
 
-export default function InfoPage() {
+export default function Info() {
   const birthDate = new Date("2004-02-15");
   const currentDate = new Date();
   const ageInMilliseconds = currentDate - birthDate;
