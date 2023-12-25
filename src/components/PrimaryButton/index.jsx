@@ -9,7 +9,7 @@ const PrimaryButton = ({ text, noScale }) => {
       transition={{ duration: 0.3 }}
     >
       <button
-        className={`text-light border-light before:bg-light md:hover:text-dark hover:border-ligh cursor-none text-lg py-4 px-12 uppercase border-[1px] font-extralight transition-all md:text-xl duration-300 relative hover:before:origin-left hover:before:scale-x-100 primary-btn`}
+        className={`text-light border-light before:bg-light md:hover:text-dark hover:border-ligh cursor-none text-lg py-4 px-12 uppercase border-[1px] font-extralight transition-all md:text-xl duration-300 relative hover:before:origin-left hover:before:scale-x-100 primary-btn `}
       >
         {text}
       </button>
