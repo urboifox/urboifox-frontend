@@ -14,8 +14,18 @@ const websiteDataSlice = createSlice({
     setProjects: (state, action) => {
       state.projects = action.payload;
     },
+    deleteProject: (state, action) => {
+      state.projects = state.projects.filter(
+        (project) => project._id !== action.payload
+      );
+    },
     setSkills: (state, action) => {
       state.skills = action.payload;
+    },
+    deleteSkill: (state, action) => {
+      state.skills = state.skills.filter(
+        (skill) => skill._id !== action.payload
+      );
     },
     setInfo: (state, action) => {
       state.info = action.payload;
@@ -37,6 +47,6 @@ export const fetchData = () => async (dispatch) => {
   }
 };
 
-export const { initiateData, setProjects, setSkills, setInfo } =
+export const { setProjects, setSkills, deleteSkill, setInfo, deleteProject } =
   websiteDataSlice.actions;
 export default websiteDataSlice;

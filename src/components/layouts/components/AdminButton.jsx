@@ -1,23 +1,21 @@
 /* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
-const AdminButton = ({ children, active = false, basic = false }) => {
+const AdminButton = ({ children, active = false, basic = false, ...props }) => {
   return (
-    <motion.div
+    <motion.button
+      {...props}
       whileTap={{ scale: !basic ? 1 : 0.95, transition: { duration: 0.1 } }}
       transition={{ duration: 0.3 }}
+      className={`w-full flex items-center justify-center border-light cursor-none text-xs py-4 px-8 uppercase border-[1px] transition-all md:text-sm duration-300 relative hover:before:origin-left hover:before:scale-x-100 primary-btn ${
+        basic
+          ? "font-normal text-dark bg-light"
+          : active
+          ? "bg-light font-normal text-dark before:bg-dark"
+          : "font-light text-light before:bg-light md:hover:text-dark"
+      }`}
     >
-      <button
-        className={`w-full border-light cursor-none text-xs py-4 px-8 uppercase border-[1px] transition-all md:text-sm duration-300 relative hover:before:origin-left hover:before:scale-x-100 primary-btn ${
-          basic
-            ? "font-normal text-dark bg-light"
-            : active
-            ? "bg-light font-normal text-dark before:bg-dark"
-            : "font-light text-light before:bg-light md:hover:text-dark"
-        }`}
-      >
-        {children}
-      </button>
-    </motion.div>
+      <div>{children}</div>
+    </motion.button>
   );
 };
 

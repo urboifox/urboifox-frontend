@@ -11,8 +11,12 @@ import Mail from "./Mail";
 import Instagram from "./Instagram";
 import Pin from "./Pin";
 import Download from "./Download";
+import DeleteIcon from "./DeleteIcon";
+import EditIcon from "./EditIcon";
 export {
   ChevronBottom,
+  EditIcon,
+  DeleteIcon,
   Download,
   Pin,
   Instagram,

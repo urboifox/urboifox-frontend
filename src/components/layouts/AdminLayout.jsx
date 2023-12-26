@@ -6,15 +6,54 @@ import {
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCookies } from "react-cookie";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "../../utils/axios";
+import { clearPendingUpdates } from "../../redux/slices/pendingUpdatesSlice";
 export default function AdminLayout({ children }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = searchParams.get("page");
   const location = useLocation();
   const [cookies] = useCookies(["token"]);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+
+  const toDelete = useSelector((state) => state.pendingUpdates.toDelete);
+  const toUpdate = useSelector((state) => state.pendingUpdates.toUpdate);
+  const modified = useSelector((state) => state.pendingUpdates.modified);
+
+  const handleSave = async () => {
+    setLoading(true);
+
+    for (const item of toDelete) {
+      try {
+        await axios.delete(`/${item.type}/${item.id}`, {
+          headers: {
+            Authorization: `Bearer ${cookies.token}`,
+          },
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    for (const item of toUpdate) {
+      try {
+        await axios.patch(`/${item.type}/${item.id}`, item.data, {
+          headers: {
+            Authorization: `Bearer ${cookies.token}`,
+          },
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    setLoading(false);
+    dispatch(clearPendingUpdates());
+  };
 
   useEffect(() => {
     if (!cookies.token) {
@@ -58,7 +97,17 @@ export default function AdminLayout({ children }) {
             className="absolute z-50 flex flex-col gap-5 right-4 md:right-10 top-32"
           >
             <AdminButton>Add new +</AdminButton>
-            <AdminButton basic={true}>Save</AdminButton>
+            <AdminButton
+              onClick={() => handleSave()}
+              disabled={loading}
+              basic={true}
+              style={{
+                pointerEvents: modified ? "auto" : "none",
+                opacity: modified ? 1 : 0.2,
+              }}
+            >
+              {loading ? "Saving..." : "Save"}
+            </AdminButton>
           </motion.div>
         )}
       </AnimatePresence>

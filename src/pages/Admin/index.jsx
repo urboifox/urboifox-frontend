@@ -31,7 +31,7 @@ export default function Admin() {
     <AdminLayout>
       <div
         data-lenis-prevent
-        className="overflow-scroll h-screen pt-32 mx-auto cont px-60"
+        className="pb-20 overflow-scroll h-screen pt-32 mx-auto cont px-60"
       >
         <AnimatePresence mode="wait">
           {adminPages.map((page, i) => {

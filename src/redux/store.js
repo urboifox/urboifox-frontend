@@ -4,6 +4,7 @@ import websiteDataSlice from "./slices/websiteDataSlice";
 import navbarSlice from "./slices/navbarSlice";
 import loadingSlice from "./slices/loadingSlice";
 import aboutSlice from "./slices/aboutSlice";
+import pendingUpdatesSlice from "./slices/pendingUpdatesSlice";
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     navbar: navbarSlice.reducer,
     load: loadingSlice.reducer,
     about: aboutSlice.reducer,
+    pendingUpdates: pendingUpdatesSlice.reducer,
   },
 });
 

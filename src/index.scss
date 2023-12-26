@@ -127,3 +127,10 @@ body {
     }
   }
 }
+
+.projectsGrid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.adminSkillsGrid {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
