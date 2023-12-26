@@ -2,7 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import AdminLayout from "../../components/layouts/AdminLayout";
 import { adminPages } from "../../utils/constants";
 import { AnimatePresence } from "framer-motion";
-import AnimatedWrapper from "./components/AnimatedWrapper";
+import { AnimatedWrapper } from "../../components";
 import Overview from "./components/Overview";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";

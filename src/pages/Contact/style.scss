@@ -1,4 +1,5 @@
-.contact {
+.contact,
+.hasForm {
   input,
   textarea {
     @apply border border-[var(--light-color)] font-light px-5 transition-colors duration-300 text-base py-4 bg-transparent w-full;
@@ -6,8 +7,8 @@
   textarea {
     @apply h-full;
   }
-  form > div {
-    @apply relative;
+  form .input {
+    @apply relative w-full;
     label {
       @apply absolute z-20 top-4 transition-all text-[#ffffffa0] text-base duration-300 left-5 font-extralight;
     }

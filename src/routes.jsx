@@ -13,6 +13,7 @@ import {
   Project,
   Contact,
   Admin,
+  Logout,
 } from "./pages";
 
 const myRouter = createBrowserRouter([
@@ -63,6 +64,10 @@ const myRouter = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/logout",
+        element: <Logout />,
       },
       {
         path: "*",

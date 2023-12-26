@@ -25,6 +25,7 @@
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-animated-cursor": "^2.8.1",
+    "react-cookie": "^6.1.1",
     "react-dom": "^18.2.0",
     "react-loading-skeleton": "^3.3.1",
     "react-redux": "^8.1.2",

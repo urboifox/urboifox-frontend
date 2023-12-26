@@ -8,12 +8,6 @@ const LoadBehaviour = () => {
 
   const lenis = useLenis();
 
-  // window.onbeforeunload = function () {
-  //   setTimeout(() => {
-  //     window.scrollTo(0, 0);
-  //   }, 500);
-  // };
-
   useEffect(() => {
     lenis?.stop();
     setTimeout(() => {

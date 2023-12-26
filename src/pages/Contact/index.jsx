@@ -159,7 +159,7 @@ export default function Contact() {
           onSubmit={(e) => handleSubmit(e)}
           className="flex-1 flex  flex-col gap-5 md:gap-10"
         >
-          <div className="link">
+          <div className="link input">
             <input
               required
               value={data.name}
@@ -174,7 +174,7 @@ export default function Contact() {
             />
             <label htmlFor="name">Name</label>
           </div>
-          <div className="link">
+          <div className="link input">
             <input
               value={data.email}
               onChange={(e) => handleChange(e)}
@@ -187,7 +187,7 @@ export default function Contact() {
             />
             <label htmlFor="email">Email</label>
           </div>
-          <div className="link">
+          <div className="link input">
             <textarea
               value={data.message}
               onChange={(e) => handleChange(e)}

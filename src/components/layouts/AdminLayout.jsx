@@ -1,20 +1,41 @@
 import AdminButton from "./components/AdminButton";
 import { adminPages, noEditPages } from "../../utils/constants";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 import { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useCookies } from "react-cookie";
 export default function AdminLayout({ children }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = searchParams.get("page");
   const location = useLocation();
+  const [cookies] = useCookies(["token"]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if (!currentPage && location.pathname === "/admin")
+    if (!cookies.token) {
+      navigate("/login");
+    }
+
+    if (!currentPage && location.pathname === "/admin") {
       setSearchParams((params) => {
         params.set("page", adminPages[0]);
         return params;
       });
-  }, [currentPage, setSearchParams, location.pathname]);
+    }
+
+    return () => {};
+  }, [
+    cookies.token,
+    navigate,
+    currentPage,
+    setSearchParams,
+    location.pathname,
+  ]);
 
   return (
     <div className="w-full h-screen cont mx-auto relative">

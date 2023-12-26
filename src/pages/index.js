@@ -10,8 +10,10 @@ import Info from "./Info";
 import Project from "./Project";
 import Contact from "./Contact";
 import Admin from "./Admin";
+import Logout from "./Logout";
 export {
   Login,
+  Logout,
   Home,
   NotFound,
   About,
