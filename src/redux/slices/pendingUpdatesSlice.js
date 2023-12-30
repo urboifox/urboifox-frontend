@@ -18,10 +18,20 @@ const pendingUpdatesSlice = createSlice({
       state.modified = true;
     },
     addToUpdate: (state, action) => {
-      state.toUpdate = [
-        ...state.toUpdate.filter((i) => i.id !== action.payload.id),
-        action.payload,
-      ];
+      const oldItem = state.toUpdate.find((i) => i.id === action.payload.id);
+
+      if (!oldItem) {
+        state.toUpdate.push(action.payload);
+      } else {
+        state.toUpdate = [
+          ...state.toUpdate.filter((i) => i.id !== action.payload.id),
+          {
+            ...oldItem,
+            data: { ...oldItem.data, ...action.payload.data },
+          },
+        ];
+      }
+
       state.modified = true;
     },
 

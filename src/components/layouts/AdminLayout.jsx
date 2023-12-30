@@ -78,25 +78,39 @@ export default function AdminLayout({ children }) {
 
   return (
     <div className="w-full h-screen cont mx-auto relative">
-      <div className="absolute z-50 flex flex-col gap-5  left-4 md:left-10 top-1/2 -translate-y-1/2">
-        {adminPages.map((page, i) => {
-          return (
-            <Link key={i} to={`?page=${page}`}>
-              <AdminButton active={page === currentPage}>{page}</AdminButton>
-            </Link>
-          );
-        })}
-      </div>
+      <AnimatePresence>
+        {currentPage !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 0.5 } }}
+            exit={{ opacity: 0 }}
+            className="absolute z-50 flex flex-col gap-5  left-4 md:left-10 top-1/2 -translate-y-1/2"
+          >
+            {adminPages.map((page, i) => {
+              return (
+                <Link key={i} to={`/admin?page=${page}`}>
+                  <AdminButton active={page === currentPage}>
+                    {page}
+                  </AdminButton>
+                </Link>
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
       {children}
       <AnimatePresence>
-        {!noEditPages.includes(currentPage) && (
+        {currentPage !== null && !noEditPages.includes(currentPage) && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { delay: 0.5 } }}
             exit={{ opacity: 0 }}
             className="absolute z-50 flex flex-col gap-5 right-4 md:right-10 top-32"
           >
-            <AdminButton>Add new +</AdminButton>
+            <Link to={`/admin/${currentPage}/add`}>
+              <AdminButton>Add new +</AdminButton>
+            </Link>
+
             <AdminButton
               onClick={() => handleSave()}
               disabled={loading}

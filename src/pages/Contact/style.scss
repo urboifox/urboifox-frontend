@@ -12,7 +12,8 @@
     label {
       @apply absolute z-20 top-4 transition-all text-[#ffffffa0] text-base duration-300 left-5 font-extralight;
     }
-    &.active label {
+    &.active label,
+    &.date label {
       @apply -top-4 text-[var(--main-color-dimmed)];
     }
     &.invalid input,
@@ -23,7 +24,8 @@
       content: "";
       @apply absolute top-0 left-3 bg-[var(--bg-color)] h-[1px] w-0 transition-all duration-300;
     }
-    &.active::after {
+    &.active::after,
+    &.date::after {
       @apply w-32;
     }
   }
@@ -40,4 +42,8 @@
       @apply w-5 md:w-8;
     }
   }
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  @apply bg-white p-2 rounded-md cursor-none;
 }

@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router-dom";
+import { Outlet, useSearchParams } from "react-router-dom";
 import AdminLayout from "../../components/layouts/AdminLayout";
 import { adminPages } from "../../utils/constants";
 import { AnimatePresence } from "framer-motion";
@@ -23,7 +23,7 @@ export default function Admin() {
       case "information":
         return <Info />;
       default:
-        return <Overview />;
+        return null;
     }
   };
 
@@ -37,7 +37,9 @@ export default function Admin() {
           {adminPages.map((page, i) => {
             return (
               activePage === page && (
-                <AnimatedWrapper key={i}>{renderPage(page)}</AnimatedWrapper>
+                <AnimatedWrapper key={i}>
+                  {(searchParams.get("page") && renderPage(page)) || <Outlet />}
+                </AnimatedWrapper>
               )
             );
           })}

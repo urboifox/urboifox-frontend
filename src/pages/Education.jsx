@@ -17,7 +17,7 @@ export default function Education() {
       </div>
 
       <article className="w-full min-h-screen my-20 flex items-start justify-center py-10">
-        <div className=" timeLineHolder">
+        <div className="timeLineHolder">
           {timeLines?.map((timeline) => {
             return <TimeLineItem key={timeline.title} tl={timeline} />;
           })}

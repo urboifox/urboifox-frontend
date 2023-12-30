@@ -14,6 +14,12 @@ import {
   Contact,
   Admin,
   Logout,
+  AddProject,
+  EditProject,
+  AddSkill,
+  EditSkill,
+  AddInfo,
+  EditInfo,
 } from "./pages";
 
 const myRouter = createBrowserRouter([
@@ -60,6 +66,32 @@ const myRouter = createBrowserRouter([
       {
         path: "/admin",
         element: <Admin />,
+        children: [
+          {
+            path: "projects/add",
+            element: <AddProject />,
+          },
+          {
+            path: "projects/:projectId",
+            element: <EditProject />,
+          },
+          {
+            path: "skills/add",
+            element: <AddSkill />,
+          },
+          {
+            path: "skills/:skillId",
+            element: <EditSkill />,
+          },
+          {
+            path: "information/add",
+            element: <AddInfo />,
+          },
+          {
+            path: "information/:infoId",
+            element: <EditInfo />,
+          },
+        ],
       },
       {
         path: "/login",

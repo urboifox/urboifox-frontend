@@ -25,7 +25,10 @@
   background-color: transparent;
 }
 
-::selection {
+::selection,
+input::-webkit-datetime-edit-day-field:focus,
+input::-webkit-datetime-edit-month-field:focus,
+input::-webkit-datetime-edit-year-field:focus {
   color: var(--main-color-dimmed);
   background-color: #333;
 }

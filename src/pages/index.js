@@ -11,8 +11,21 @@ import Project from "./Project";
 import Contact from "./Contact";
 import Admin from "./Admin";
 import Logout from "./Logout";
+import AddProject from "./Admin/components/AddProject";
+import EditProject from "./Admin/components/EditProject";
+import AddSkill from "./Admin/components/AddSkill";
+import EditSkill from "./Admin/components/EditSkill";
+import AddInfo from "./Admin/components/AddInfo";
+import EditInfo from "./Admin/components/EditInfo";
+
 export {
   Login,
+  AddProject,
+  EditProject,
+  AddSkill,
+  EditSkill,
+  AddInfo,
+  EditInfo,
   Logout,
   Home,
   NotFound,
