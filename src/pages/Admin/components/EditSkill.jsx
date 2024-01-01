@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { ChevronBottom } from "../../../components/Icons";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../../redux/slices/websiteDataSlice";
-export default function EditProject() {
+export default function EditSkill() {
   const [cookies] = useCookies(["token"]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
