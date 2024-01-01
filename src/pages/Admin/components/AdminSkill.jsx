@@ -9,6 +9,7 @@ import {
   deleteSkill,
   updateSkill,
 } from "../../../redux/slices/websiteDataSlice";
+import { Link } from "react-router-dom";
 
 export default function AdminSkill({ skill }) {
   const dispatch = useDispatch();
@@ -50,13 +51,13 @@ export default function AdminSkill({ skill }) {
               } transition-colors duration-200 hover:stroke-neutral-500`}
             />
           </button>
-          <button className="link">
+          <Link to={`/admin/skills/${skill._id}`} className="link">
             <EditIcon
               className={
                 "w-6 stroke-light transition-colors duration-200 hover:stroke-neutral-500"
               }
             />
-          </button>
+          </Link>
           <button onClick={() => handleDelete(skill._id)} className="link">
             <DeleteIcon
               className={

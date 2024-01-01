@@ -41,7 +41,7 @@ export default function EditProject() {
       date: project?.date,
       description: project?.description,
     });
-  }, [project]);
+  }, [project, setData]);
 
   const [loading, setLoading] = useState(false);
   const img = useRef(null);
@@ -51,7 +51,6 @@ export default function EditProject() {
     setLoading(true);
 
     const formData = objectToFormData(data);
-    console.log(data);
     if (cookies.token) {
       axios
         .patch(`/projects/${projectId}`, formData, {
@@ -59,9 +58,6 @@ export default function EditProject() {
             "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${cookies.token}`,
           },
-        })
-        .then((res) => {
-          console.log(res);
         })
         .catch((err) => {
           console.log(err);

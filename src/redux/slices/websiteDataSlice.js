@@ -46,6 +46,9 @@ const websiteDataSlice = createSlice({
     setInfo: (state, action) => {
       state.info = action.payload;
     },
+    deleteInfo: (state, action) => {
+      state.info = state.info.filter((info) => info._id !== action.payload);
+    },
   },
 });
 
@@ -66,6 +69,7 @@ export const fetchData = () => async (dispatch) => {
 export const {
   setProjects,
   setSkills,
+  deleteInfo,
   deleteSkill,
   setInfo,
   deleteProject,

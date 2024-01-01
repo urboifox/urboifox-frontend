@@ -59,7 +59,7 @@ export default function AdminProject({ project }) {
           <button onClick={() => handleDelete(project._id)} className="link">
             <DeleteIcon
               className={
-                "w-5 fill-red-600 transition-colors duration-200 hover:fill-neutral-500"
+                "w-5 fill-red-600 transition-all duration-200 hover:fill-neutral-500"
               }
             />
           </button>
