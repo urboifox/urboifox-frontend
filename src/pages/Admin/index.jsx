@@ -3,7 +3,6 @@ import AdminLayout from "../../components/layouts/AdminLayout";
 import { adminPages } from "../../utils/constants";
 import { AnimatePresence } from "framer-motion";
 import { AnimatedWrapper } from "../../components";
-import Overview from "./components/Overview";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Info from "./components/Info";
@@ -14,8 +13,6 @@ export default function Admin() {
 
   const renderPage = (page) => {
     switch (page) {
-      case "overview":
-        return <Overview />;
       case "projects":
         return <Projects />;
       case "skills":
