@@ -44,7 +44,11 @@ const Work = () => {
                 return (
                   <div key={nanoid()} className="overflow-hidden rounded-lg">
                     <Link to={project.link} target="_blank">
-                      <img src={project.img} alt={project.title} />
+                      <img
+                        className="object-cover"
+                        src={project.img}
+                        alt={project.title}
+                      />
                     </Link>
                   </div>
                 );
@@ -60,7 +64,11 @@ const Work = () => {
                 return (
                   <div key={nanoid()} className="overflow-hidden rounded-lg">
                     <Link to={project.link} target="_blank">
-                      <img src={project.img} alt={project.title} />
+                      <img
+                        className="object-cover"
+                        src={project.img}
+                        alt={project.title}
+                      />
                     </Link>
                   </div>
                 );
