@@ -36,7 +36,7 @@ export default function Info() {
             href="mailto:mohamed.dev.egy@gmail.com"
             className="text-[var(--main-color)] transition-colors duration-300"
           >
-            mohamed.dev.egy@gmail.com
+            urboifox@gmail.com
           </a>
         </p>
         <a href="/Mohamed Ashraf - Frontend Developer.pdf" download={true}>
