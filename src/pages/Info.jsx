@@ -1,7 +1,7 @@
 import { PrimaryButton } from "../components";
 
 export default function Info() {
-  const birthDate = new Date("2002-02-15");
+  const birthDate = new Date("2004-02-15");
   const currentDate = new Date();
   const ageInMilliseconds = currentDate - birthDate;
   const age = Math.floor(ageInMilliseconds / (1000 * 60 * 60 * 24 * 365.25));
